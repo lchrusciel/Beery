@@ -11,6 +11,7 @@
         "symfony/yaml": "^3.4"
     },
     "require-dev": {
+        "friends-of-behat/symfony-extension": "^1.0",
         "symfony/dotenv": "^3.4"
     },
     "config": {

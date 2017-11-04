@@ -97,5 +97,29 @@
     },
     "symfony/dotenv": {
         "version": "v3.4.0-beta2"
+    },
+    "symfony/translation": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "58f37511a2ceec2761716413ce679cbe118e37c3"
+        }
+    },
+    "container-interop/container-interop": {
+        "version": "1.2.0"
+    },
+    "behat/transliterator": {
+        "version": "v1.2.0"
+    },
+    "behat/gherkin": {
+        "version": "v4.5.1"
+    },
+    "behat/behat": {
+        "version": "v3.4.1"
+    },
+    "friends-of-behat/symfony-extension": {
+        "version": "v1.0.0"
     }
 }

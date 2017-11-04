@@ -1,0 +1,101 @@
+{
+    "symfony/flex": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "e921bdbfe20cdefa3b82f379d1cd36df1bc8d115"
+        }
+    },
+    "symfony/lts": {
+        "version": "v3"
+    },
+    "psr/log": {
+        "version": "1.0.2"
+    },
+    "symfony/debug": {
+        "version": "v3.4.0-beta2"
+    },
+    "symfony/polyfill-mbstring": {
+        "version": "v1.6.0"
+    },
+    "symfony/console": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "5ec5bb098bc693cd92f03390dd488ea0847cfcc7"
+        }
+    },
+    "symfony/routing": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "5b2f0ee78c90d671860ac6450e37dec10fbc0719"
+        }
+    },
+    "paragonie/random_compat": {
+        "version": "v2.0.11"
+    },
+    "symfony/polyfill-php70": {
+        "version": "v1.6.0"
+    },
+    "symfony/http-foundation": {
+        "version": "v3.4.0-beta2"
+    },
+    "symfony/event-dispatcher": {
+        "version": "v3.4.0-beta2"
+    },
+    "symfony/http-kernel": {
+        "version": "v3.4.0-beta2"
+    },
+    "symfony/finder": {
+        "version": "v3.4.0-beta2"
+    },
+    "symfony/filesystem": {
+        "version": "v3.4.0-beta2"
+    },
+    "psr/container": {
+        "version": "1.0.0"
+    },
+    "symfony/dependency-injection": {
+        "version": "v3.4.0-beta2"
+    },
+    "symfony/config": {
+        "version": "v3.4.0-beta2"
+    },
+    "symfony/class-loader": {
+        "version": "v3.4.0-beta2"
+    },
+    "psr/simple-cache": {
+        "version": "1.0.0"
+    },
+    "psr/cache": {
+        "version": "1.0.1"
+    },
+    "symfony/polyfill-apcu": {
+        "version": "v1.6.0"
+    },
+    "symfony/cache": {
+        "version": "v3.4.0-beta2"
+    },
+    "symfony/framework-bundle": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "bcd70105a1e87e41f31af2ae84aaf948c8bfb189"
+        }
+    },
+    "symfony/yaml": {
+        "version": "v3.4.0-beta2"
+    },
+    "symfony/dotenv": {
+        "version": "v3.4.0-beta2"
+    }
+}

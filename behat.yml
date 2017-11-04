@@ -1,0 +1,8 @@
+default:
+    suites:
+        application_features:
+            paths:    ['%paths.base%/features']
+            contexts:
+                - 'Tests\Behat\Context\ApplicationContext'
+            filters:
+                tags: "@application"

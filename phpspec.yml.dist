@@ -2,3 +2,8 @@ suites:
     main:
         namespace: App
         psr4_prefix: App
+
+extensions:
+    PhpSpec\NyanFormattersExtension\Extension: ~
+
+formatter.name: nyan.cat

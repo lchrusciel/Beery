@@ -136,5 +136,44 @@
     },
     "prooph/service-bus-symfony-bundle": {
         "version": "v0.5"
+    },
+    "symfony/process": {
+        "version": "v3.4.0-beta2"
+    },
+    "sebastian/recursion-context": {
+        "version": "3.0.0"
+    },
+    "sebastian/exporter": {
+        "version": "3.1.0"
+    },
+    "doctrine/instantiator": {
+        "version": "1.1.0"
+    },
+    "sebastian/diff": {
+        "version": "2.0.1"
+    },
+    "sebastian/comparator": {
+        "version": "2.1.0"
+    },
+    "webmozart/assert": {
+        "version": "1.2.0"
+    },
+    "phpdocumentor/reflection-common": {
+        "version": "1.0.1"
+    },
+    "phpdocumentor/type-resolver": {
+        "version": "0.4.0"
+    },
+    "phpdocumentor/reflection-docblock": {
+        "version": "4.1.1"
+    },
+    "phpspec/prophecy": {
+        "version": "v1.7.2"
+    },
+    "phpspec/php-diff": {
+        "version": "v1.1.0"
+    },
+    "phpspec/phpspec": {
+        "version": "4.2.0"
     }
 }

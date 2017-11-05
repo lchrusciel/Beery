@@ -1,0 +1,22 @@
+language: php
+
+php:
+    - 7.1
+
+cache:
+    directories:
+        - vendor
+
+before_install:
+    - phpenv config-rm xdebug.ini || true
+    - composer self-update
+
+install:
+    - composer install
+    - bin/console doctrine:database:create
+    - bin/console doctrine:schema:create
+
+script:
+    - composer validate --strict
+    - vendor/bin/behat --strict
+    - vendor/bin/phpspec run

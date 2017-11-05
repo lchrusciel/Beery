@@ -121,5 +121,20 @@
     },
     "friends-of-behat/symfony-extension": {
         "version": "v1.0.0"
+    },
+    "beberlei/assert": {
+        "version": "v2.7.8"
+    },
+    "ramsey/uuid": {
+        "version": "3.7.1"
+    },
+    "prooph/common": {
+        "version": "v4.1.0"
+    },
+    "prooph/service-bus": {
+        "version": "v6.1.1"
+    },
+    "prooph/service-bus-symfony-bundle": {
+        "version": "v0.5"
     }
 }

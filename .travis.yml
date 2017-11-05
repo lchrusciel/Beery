@@ -18,5 +18,5 @@ install:
 
 script:
     - composer validate --strict
-    - vendor/bin/behat --strict
-    - vendor/bin/phpspec run
+    - vendor/bin/behat --strict -v
+    - vendor/bin/phpspec run -fpretty

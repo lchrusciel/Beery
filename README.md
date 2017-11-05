@@ -8,7 +8,6 @@ Backend application for sharing beers information and rating them.
 **0.1.0**
 
 - Adding new beers
-- Removing beers
 - Browsing list of beers
 
 **0.2.0**

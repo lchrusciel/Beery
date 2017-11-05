@@ -20,6 +20,11 @@ Backend application for sharing beers information and rating them.
 
 - Presenting list of recommended beers
 
+**0.4.0**
+
+- Editing beers descriptions
+- Beers info validation
+
 ### Usage
 
 ### Testing

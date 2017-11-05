@@ -1,9 +1,12 @@
 {
+    "name": "lchrusciel/beery",
+    "description": "Backend application for sharing beers information and rating them.",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "beta",
     "require": {
         "php": "^7.1",
+
         "phpspec/phpspec": "^4.2",
         "prooph/service-bus-symfony-bundle": "^0.5.0",
         "ramsey/uuid-doctrine": "^1.4",

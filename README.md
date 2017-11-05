@@ -1,4 +1,5 @@
 # Beery
+[![Build Status](https://travis-ci.com/lchrusciel/Beery.svg?token=cTZwsneSCKxJFLqtmGSW&branch=master)](https://travis-ci.com/lchrusciel/Beery)
 
 Backend application for sharing beers information and rating them. 
 

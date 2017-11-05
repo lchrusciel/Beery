@@ -3,6 +3,10 @@ language: php
 php:
     - 7.1
 
+env:
+    global:
+        - DATABASE_URL="mysql://root@127.0.0.1:3306/symfony?charset=utf8mb4&serverVersion=5.7"
+
 cache:
     directories:
         - vendor
@@ -13,8 +17,8 @@ before_install:
 
 install:
     - composer install
-    - bin/console doctrine:database:create
-    - bin/console doctrine:schema:create
+    - bin/console doctrine:database:create --env test
+    - bin/console doctrine:schema:create --env test
 
 script:
     - composer validate --strict

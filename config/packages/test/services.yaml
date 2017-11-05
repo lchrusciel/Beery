@@ -1,0 +1,3 @@
+parameters:
+    env(APP_SECRET): s3cr3t_1234
+    env(DATABASE_URL): sqlite:////tmp/beer.sqlite

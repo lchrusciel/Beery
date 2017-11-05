@@ -1,0 +1,14 @@
+doctrine:
+    dbal:
+        dbname: "beery"
+        url: '%env(DATABASE_URL)%'
+    orm:
+        auto_generate_proxy_classes: '%kernel.debug%'
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: true
+        mappings:
+            Domain:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/src/Infrastructure/Resources/config/doctrine/domain'
+                prefix: 'App\Domain\Model'

@@ -6,10 +6,12 @@
         "php": "^7.1",
         "phpspec/phpspec": "^4.2",
         "prooph/service-bus-symfony-bundle": "^0.5.0",
+        "ramsey/uuid-doctrine": "^1.4",
         "symfony/console": "^3.4",
         "symfony/flex": "^1.0",
         "symfony/framework-bundle": "^3.4",
         "symfony/lts": "^3",
+        "symfony/orm-pack": "^1.0",
         "symfony/yaml": "^3.4"
     },
     "require-dev": {

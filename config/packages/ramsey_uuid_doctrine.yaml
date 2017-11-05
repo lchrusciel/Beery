@@ -1,0 +1,9 @@
+doctrine:
+    dbal:
+        types:
+            uuid:  Ramsey\Uuid\Doctrine\UuidType
+            # Feel free to add regular uuid type to database, it is just not need at the moment of wringing this
+            # More details about this usage of this type instead of regular uuid can be found here https://www.percona.com/blog/2014/12/19/store-uuid-optimized-way/
+            uuid_binary_ordered_time: Ramsey\Uuid\Doctrine\UuidBinaryOrderedTimeType
+        mapping_types:
+            uuid_binary_ordered_time: binary

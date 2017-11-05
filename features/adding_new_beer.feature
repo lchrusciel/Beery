@@ -1,4 +1,4 @@
-@todo
+@application
 Feature: Adding a new beer
     In order to share details about the beer with the community
     As a Community Member

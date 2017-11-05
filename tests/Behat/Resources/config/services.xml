@@ -6,5 +6,10 @@
             <argument type="service" id="__symfony__.doctrine.orm.entity_manager" />
             <tag name="fob.context_service" />
         </service>
+
+        <service id="tests.behat.context.api_context" class="Tests\Behat\Context\ApiContext">
+            <argument type="service" id="__symfony__.test.client" />
+            <tag name="fob.context_service" />
+        </service>
     </services>
 </container>

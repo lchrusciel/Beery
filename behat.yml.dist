@@ -16,3 +16,9 @@ default:
                 - 'tests.behat.context.application_context'
             filters:
                 tags: '@application'
+        api_features:
+            paths:    ['%paths.base%/features']
+            contexts_services:
+                - 'tests.behat.context.api_context'
+            filters:
+                tags: '@api'

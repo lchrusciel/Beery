@@ -6,3 +6,17 @@
 #controllers:
 #    resource: ../src/Controller/
 #    type: annotation
+
+add-beer:
+    path: '/beers'
+    methods: ['POST']
+    defaults:
+        _controller: 'App\Infrastructure\Controller\AddBeerAction'
+
+show-beers:
+    path: '/beers/{slug}'
+    methods: ['GET']
+    defaults:
+        _controller: 'App\Infrastructure\Controller\ShowBeerListAction'
+    requirements:
+        slug: .*

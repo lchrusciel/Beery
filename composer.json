@@ -13,6 +13,8 @@
         "symfony/yaml": "^3.4"
     },
     "require-dev": {
+        "friends-of-behat/context-service-extension": "^1.0",
+        "friends-of-behat/cross-container-extension": "^1.0",
         "friends-of-behat/symfony-extension": "^1.0",
         "symfony/dotenv": "^3.4"
     },

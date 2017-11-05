@@ -175,5 +175,38 @@
     },
     "phpspec/phpspec": {
         "version": "4.2.0"
+    },
+    "friends-of-behat/context-service-extension": {
+        "version": "v1.0.0"
+    },
+    "friends-of-behat/cross-container-extension": {
+        "version": "v1.0.0"
+    },
+    "monolog/monolog": {
+        "version": "1.23.0"
+    },
+    "symfony/monolog-bridge": {
+        "version": "v3.4.0-beta2"
+    },
+    "doctrine/lexer": {
+        "version": "v1.0.1"
+    },
+    "doctrine/inflector": {
+        "version": "v1.2.0"
+    },
+    "doctrine/collections": {
+        "version": "v1.5.0"
+    },
+    "doctrine/cache": {
+        "version": "v1.7.1"
+    },
+    "doctrine/annotations": {
+        "version": "v1.5.0"
+    },
+    "doctrine/common": {
+        "version": "v2.8.1"
+    },
+    "symfony/doctrine-bridge": {
+        "version": "v3.4.0-beta2"
     }
 }

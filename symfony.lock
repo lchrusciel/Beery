@@ -274,5 +274,11 @@
     },
     "phpspec/nyan-formatters": {
         "version": "2.0.1"
+    },
+    "symfony/dom-crawler": {
+        "version": "v3.4.0-beta2"
+    },
+    "symfony/browser-kit": {
+        "version": "v3.4.0-beta2"
     }
 }

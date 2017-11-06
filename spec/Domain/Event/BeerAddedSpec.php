@@ -6,6 +6,7 @@ namespace spec\App\Domain\Event;
 
 use App\Domain\Event\BeerAdded;
 use PhpSpec\ObjectBehavior;
+use Prooph\Common\Messaging\DomainEvent;
 use Prophecy\Argument;
 
 final class BeerAddedSpec extends ObjectBehavior
@@ -18,9 +19,9 @@ final class BeerAddedSpec extends ObjectBehavior
         ]);
     }
 
-    function it_is_initializable(): void
+    function it_is_a_domain_event(): void
     {
-        $this->shouldHaveType(BeerAdded::class);
+        $this->shouldHaveType(DomainEvent::class);
     }
 
     function it_has_name()

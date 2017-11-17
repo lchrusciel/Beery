@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<container
+        xmlns="http://symfony.com/schema/dic/services"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd"
+>
+    <imports>
+        <import resource="services/**/*.xml" />
+    </imports>
+
+    <parameters>
+        <parameter key="locale">en</parameter>
+    </parameters>
+
+    <services>
+        <defaults public="true" />
+
+        <service id="app.command_bus" alias="prooph_service_bus.app_command_bus" />
+    </services>
+</container>

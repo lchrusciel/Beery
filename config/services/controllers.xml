@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<container
+        xmlns="http://symfony.com/schema/dic/services"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd"
+>
+    <services>
+        <defaults public="true" />
+
+        <service id="app.infrastructure.controller.add_beer_action" class="App\Infrastructure\Controller\AddBeerAction">
+            <argument type="service" id="prooph_service_bus.app_command_bus" />
+        </service>
+    </services>
+</container>

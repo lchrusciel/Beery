@@ -1,22 +1,5 @@
-#index:
-#    path: /
-#    defaults: { _controller: 'App\Controller\DefaultController::index' }
-
-# first, run composer req annotations
-#controllers:
-#    resource: ../src/Controller/
-#    type: annotation
-
-add-beer:
+berry_add_beer:
     path: '/beers'
     methods: ['POST']
     defaults:
-        _controller: 'App\Infrastructure\Controller\AddBeerAction'
-
-show-beers:
-    path: '/beers/{slug}'
-    methods: ['GET']
-    defaults:
-        _controller: 'App\Infrastructure\Controller\ShowBeerListAction'
-    requirements:
-        slug: .*
+        _controller: 'app.infrastructure.controller.add_beer_action'

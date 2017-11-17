@@ -1,2 +1,0 @@
-parameters:
-    env(APP_SECRET): s3cr3t_1234

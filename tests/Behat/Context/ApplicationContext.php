@@ -37,7 +37,7 @@ final class ApplicationContext implements Context
     /**
      * @Then the :beerName beer should be available in the catalogue
      */
-    public function theBeerShouldBeAvailableInTheCatalogue($beerName)
+    public function theBeerShouldBeAvailableInTheCatalogue(string $beerName): void
     {
         Assert::notNull(
             $this->objectManager->getRepository(Beer::class)->findOneBy(['name' => $beerName]),

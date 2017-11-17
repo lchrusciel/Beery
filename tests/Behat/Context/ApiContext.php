@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Tests\Behat\Context;
 
-use App\Application\Generator\SlugGenerator;
 use Behat\Behat\Context\Context;
 use Symfony\Component\BrowserKit\Client;
+use Symfony\Component\HttpFoundation\Response;
 use Webmozart\Assert\Assert;
 
 final class ApiContext implements Context
@@ -32,12 +32,9 @@ final class ApiContext implements Context
      */
     public function theBeerShouldBeAvailableInTheCatalogue(string $beerName): void
     {
-        $this->client->request('GET', 'beers/' . SlugGenerator::generate($beerName));
+        /** @var Response $response */
+        $response = $this->client->getResponse();
 
-        $response = json_decode($this->client->getResponse()->getContent(), true);
-
-        Assert::same($response, [
-            'name' => $beerName,
-        ]);
+        Assert::same(Response::HTTP_CREATED, $response->getStatusCode());
     }
 }

@@ -27,6 +27,6 @@ final class AddBeerAction
             $request->request->get('abv')
         ));
 
-        return new JsonResponse(null, Response::HTTP_NO_CONTENT);
+        return new JsonResponse(null, Response::HTTP_CREATED);
     }
 }

@@ -18,6 +18,4 @@ install:
     - bin/console doctrine:schema:create --env test
 
 script:
-    - composer validate --strict
-    - vendor/bin/behat --strict -vvv
-    - vendor/bin/phpspec run -fpretty -vvv
+    - composer check

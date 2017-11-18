@@ -48,6 +48,14 @@
         }
     },
     "scripts": {
+        "check": [
+            "composer validate --strict",
+            "@test"
+        ],
+        "test": [
+            "vendor/bin/phpspec run --ansi",
+            "vendor/bin/behat --strict --colors"
+        ],
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd"

@@ -6,8 +6,8 @@ namespace spec\App\Application\CommandHandler;
 
 use App\Application\Command\AddBeer;
 use App\Application\CommandHandler\AddBeerHandler;
+use App\Application\Event\BeerAdded;
 use App\Application\Repository\Beers;
-use App\Domain\Event\BeerAdded;
 use App\Domain\Model\Beer;
 use PhpSpec\ObjectBehavior;
 use Prooph\ServiceBus\EventBus;

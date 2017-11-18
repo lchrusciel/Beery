@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\Event;
+namespace App\Application\Event;
 
 use Prooph\Common\Messaging\DomainEvent;
 use Prooph\Common\Messaging\PayloadTrait;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace spec\App\Domain\Event;
+namespace spec\App\Application\Event;
 
 use PhpSpec\ObjectBehavior;
 use Prooph\Common\Messaging\DomainEvent;

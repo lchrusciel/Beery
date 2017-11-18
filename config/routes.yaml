@@ -1,8 +1,5 @@
-#index:
-#    path: /
-#    defaults: { _controller: 'App\Controller\DefaultController::index' }
-
-# first, run composer req annotations
-#controllers:
-#    resource: ../src/Controller/
-#    type: annotation
+berry_add_beer:
+    path: '/beers'
+    methods: ['POST']
+    defaults:
+        _controller: 'app.infrastructure.controller.add_beer_action'

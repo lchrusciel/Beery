@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<container
+        xmlns="http://symfony.com/schema/dic/services"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd"
+>
+    <services>
+        <defaults public="true" />
+
+        <service class="App\Application\CommandHandler\AddBeerHandler">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument type="service" id="prooph_service_bus.app_event_bus" />
+            <tag name="prooph_service_bus.app_command_bus.route_target" message_detection="true" />
+        </service>
+    </services>
+</container>

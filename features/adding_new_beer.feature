@@ -1,4 +1,4 @@
-@application
+@application @api
 Feature: Adding a new beer
     In order to share details about the beer with the community
     As a Community Member
@@ -6,4 +6,4 @@ Feature: Adding a new beer
 
     Scenario: Adding a new beer
         When I add a new "King of Hop" beer which has 5% ABV
-        Then the "King of Hop" beer should be available in the catalogue
+        And the "King of Hop" beer should be available in the catalogue

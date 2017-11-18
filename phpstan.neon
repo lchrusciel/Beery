@@ -1,0 +1,6 @@
+includes:
+    - vendor/phpstan/phpstan-doctrine/extension.neon
+
+parameters:
+    excludes_analyse:
+        - 'spec/'

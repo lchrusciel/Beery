@@ -364,5 +364,14 @@
     },
     "sylius-labs/coding-standard": {
         "version": "v1.0.0"
+    },
+    "jean85/pretty-package-versions": {
+        "version": "1.0.2"
+    },
+    "phpstan/phpstan": {
+        "version": "0.8.5"
+    },
+    "phpstan/phpstan-doctrine": {
+        "version": "0.8"
     }
 }

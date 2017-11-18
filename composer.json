@@ -55,7 +55,7 @@
             "@test"
         ],
         "test": [
-            "vendor/bin/phpspec run --ansi",
+            "vendor/bin/phpspec run -fpretty --ansi",
             "vendor/bin/behat --strict --colors"
         ],
         "fix": [

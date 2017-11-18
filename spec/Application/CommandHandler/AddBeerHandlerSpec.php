@@ -9,7 +9,6 @@ use App\Application\CommandHandler\AddBeerHandler;
 use App\Application\Repository\Beers;
 use App\Domain\Event\BeerAdded;
 use App\Domain\Model\Beer;
-use Doctrine\Common\Persistence\ObjectManager;
 use PhpSpec\ObjectBehavior;
 use Prooph\ServiceBus\EventBus;
 use Prophecy\Argument;

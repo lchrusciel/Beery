@@ -8,7 +8,6 @@ use App\Application\Command\AddBeer;
 use App\Application\Repository\Beers;
 use App\Domain\Event\BeerAdded;
 use App\Domain\Model\Beer;
-use Doctrine\Common\Persistence\ObjectManager;
 use Prooph\ServiceBus\EventBus;
 
 final class AddBeerHandler

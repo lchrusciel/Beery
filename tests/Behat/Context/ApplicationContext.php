@@ -6,7 +6,6 @@ namespace Tests\Behat\Context;
 
 use App\Application\Command\AddBeer;
 use App\Domain\Model\Beer;
-use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Behat\Context\Context;
 use Doctrine\Common\Persistence\ObjectManager;
 use Prooph\ServiceBus\CommandBus;

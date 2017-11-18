@@ -6,4 +6,4 @@ Feature: Adding a new beer
 
     Scenario: Adding a new beer
         When I add a new "King of Hop" beer which has 5% ABV
-        And the "King of Hop" beer should be available in the catalogue
+        Then the "King of Hop" beer should be available in the catalogue

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace spec\App\Infrastructure\Projection;
 
-use App\Domain\Event\BeerAdded;
+use App\Application\Event\BeerAdded;
 use App\Infrastructure\Projection\BeerProjection;
 use App\Infrastructure\View\BeerView;
 use Doctrine\Common\Persistence\ObjectManager;

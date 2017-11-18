@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Application\CommandHandler;
 
 use App\Application\Command\AddBeer;
+use App\Application\Event\BeerAdded;
 use App\Application\Repository\Beers;
-use App\Domain\Event\BeerAdded;
 use App\Domain\Model\Beer;
 use Prooph\ServiceBus\EventBus;
 

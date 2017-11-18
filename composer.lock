@@ -1400,12 +1400,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lchrusciel/service-bus-symfony-bundle.git",
-                "reference": "dfab6ee0b08b3fbc0cfebc980c12790012f6a912"
+                "reference": "e6734843336c98d4af68f8f64c5e3f75e9ad9265"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lchrusciel/service-bus-symfony-bundle/zipball/dfab6ee0b08b3fbc0cfebc980c12790012f6a912",
-                "reference": "dfab6ee0b08b3fbc0cfebc980c12790012f6a912",
+                "url": "https://api.github.com/repos/lchrusciel/service-bus-symfony-bundle/zipball/e6734843336c98d4af68f8f64c5e3f75e9ad9265",
+                "reference": "e6734843336c98d4af68f8f64c5e3f75e9ad9265",
                 "shasum": ""
             },
             "archive": {
@@ -1520,7 +1520,7 @@
                 "source": "https://github.com/prooph/service-bus-symfony-bundle",
                 "docs": "http://getprooph.org/"
             },
-            "time": "2017-11-05T18:04:25+00:00"
+            "time": "2017-11-14T12:17:13+00:00"
         },
         {
             "name": "psr/cache",

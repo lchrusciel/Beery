@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace spec\App\Application\Command;
 
-use App\Application\Command\AddBeer;
 use PhpSpec\ObjectBehavior;
 use Prooph\Common\Messaging\Command;
-use Prophecy\Argument;
 
 final class AddBeerSpec extends ObjectBehavior
 {

@@ -6,7 +6,6 @@ namespace spec\App\Domain\Model;
 
 use App\Domain\Model\Beer;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 final class BeerSpec extends ObjectBehavior
 {

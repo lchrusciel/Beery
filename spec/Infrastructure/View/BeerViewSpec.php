@@ -6,7 +6,6 @@ namespace spec\App\Infrastructure\View;
 
 use App\Infrastructure\View\BeerView;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 final class BeerViewSpec extends ObjectBehavior
 {

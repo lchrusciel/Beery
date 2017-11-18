@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace spec\App\Domain\Event;
 
-use App\Domain\Event\BeerAdded;
 use PhpSpec\ObjectBehavior;
 use Prooph\Common\Messaging\DomainEvent;
-use Prophecy\Argument;
 
 final class BeerAddedSpec extends ObjectBehavior
 {

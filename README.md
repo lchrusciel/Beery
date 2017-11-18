@@ -24,12 +24,20 @@ Backend application for sharing beers information and rating them.
 - Editing beers descriptions
 - Beers info validation
 
+### Installation
+
+```bash
+$ composer install --prefer-dist
+$ bin/console doctrine:database:create
+$ bin/console doctrine:schema:create
+```
+
 ### Usage
 
 ### Testing
 
 To run existing tests, type in console:
 
-```
-vendor/bin/behat
+```bash
+$ composer test
 ```

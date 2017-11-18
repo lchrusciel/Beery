@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastructure\Projection;
+namespace App\Infrastructure\Doctrine\Repository;
 
 use App\Application\Repository\Beers;
 use App\Domain\Model\Beer;

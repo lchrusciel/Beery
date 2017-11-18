@@ -6,8 +6,6 @@
     "minimum-stability": "beta",
     "require": {
         "php": "^7.1",
-        "phpspec/phpspec": "^4.2",
-        "phpstan/phpstan": "^0.9@dev",
         "prooph/service-bus-symfony-bundle": "dev-patch-1",
         "ramsey/uuid-doctrine": "^1.4",
         "symfony/console": "^3.4",
@@ -23,6 +21,8 @@
         "friends-of-behat/cross-container-extension": "^1.0",
         "friends-of-behat/symfony-extension": "^1.0",
         "phpspec/nyan-formatters": "^2.0",
+        "phpspec/phpspec": "^4.2",
+        "phpstan/phpstan": "^0.9@dev",
         "phpstan/phpstan-doctrine": "^0.9@dev",
         "sylius-labs/coding-standard": "^1.0",
         "symfony/browser-kit": "^3",

@@ -373,5 +373,8 @@
     },
     "phpstan/phpstan-doctrine": {
         "version": "0.8"
+    },
+    "symfony/serializer": {
+        "version": "v3.4.0-beta4"
     }
 }

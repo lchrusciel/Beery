@@ -16,5 +16,9 @@
         <defaults public="true" />
 
         <service id="app.command_bus" alias="prooph_service_bus.app_command_bus" />
+
+        <service id="app.infrastructure.projection.beers_orm_repository" class="App\Infrastructure\Projection\BeersORMRepository">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+        </service>
     </services>
 </container>

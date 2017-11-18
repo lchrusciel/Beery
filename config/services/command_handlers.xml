@@ -8,8 +8,8 @@
         <defaults public="true" />
 
         <service class="App\Application\CommandHandler\AddBeerHandler">
-            <argument type="service" id="doctrine.orm.entity_manager" />
             <argument type="service" id="prooph_service_bus.app_event_bus" />
+            <argument type="service" id="app.infrastructure.projection.beers_orm_repository" />
             <tag name="prooph_service_bus.app_command_bus.route_target" message_detection="true" />
         </service>
     </services>

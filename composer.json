@@ -51,22 +51,23 @@
     "scripts": {
         "check": [
             "composer validate --strict",
+            "@analyse",
             "@test"
         ],
         "test": [
             "vendor/bin/phpspec run --ansi",
             "vendor/bin/behat --strict --colors"
         ],
-        "auto-scripts": {
-            "cache:clear": "symfony-cmd",
-            "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd"
-        },
         "fix": [
             "vendor/bin/ecs check --ansi --no-progress-bar bin public spec src tests --fix"
         ],
         "analyse": [
             "vendor/bin/ecs check --ansi --no-progress-bar bin public spec src tests"
         ],
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd"
+        },
         "post-install-cmd": [
             "@auto-scripts"
         ],

@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <container xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://symfony.com/schema/dic/services">
-    <services>
-        <service id="tests.behat.context.application_context" class="Tests\Behat\Context\ApplicationContext">
-            <argument type="service" id="__symfony__.prooph_service_bus.app_command_bus" />
-            <argument type="service" id="__symfony__.doctrine.orm.entity_manager" />
-            <tag name="fob.context_service" />
-        </service>
+    <imports>
+        <import resource="services/*.xml"/>
+    </imports>
 
-        <service id="tests.behat.context.api_context" class="Tests\Behat\Context\ApiContext">
-            <argument type="service" id="__symfony__.test.client" />
-            <tag name="fob.context_service" />
-        </service>
+    <services>
+        <service id="tests.behat.service.json_asserter" class="Tests\Behat\Service\JsonAsserter" />
     </services>
 </container>

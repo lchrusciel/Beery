@@ -14,9 +14,12 @@
         "symfony/lts": "^3",
         "symfony/monolog-bundle": "^3.1",
         "symfony/orm-pack": "^1.0",
+        "symfony/serializer": "^3",
         "symfony/yaml": "^3.4"
     },
     "require-dev": {
+        "coduo/php-matcher": "^2.3",
+        "doctrine/data-fixtures": "^1.2",
         "friends-of-behat/context-service-extension": "^1.0",
         "friends-of-behat/cross-container-extension": "^1.0",
         "friends-of-behat/symfony-extension": "^1.0",

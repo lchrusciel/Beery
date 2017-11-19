@@ -19,12 +19,12 @@ final class BeerViewSpec extends ObjectBehavior
         $this->shouldHaveType(BeerView::class);
     }
 
-    function it_has_title()
+    function it_has_a_name()
     {
-        $this->title()->shouldReturn('King of Hop');
+        $this->name()->shouldReturn('King of Hop');
     }
 
-    function it_has_abv()
+    function it_has_an_abv()
     {
         $this->abv()->shouldReturn(5);
     }

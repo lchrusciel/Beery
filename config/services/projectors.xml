@@ -7,13 +7,9 @@
     <services>
         <defaults public="true" />
 
-        <service id="app.infrastructure.controller.add_beer_action" class="App\Infrastructure\Controller\AddBeerAction">
-            <argument type="service" id="prooph_service_bus.app_command_bus" />
-        </service>
-
-        <service id="app.infrastructure.controller.browse_beers_action" class="App\Infrastructure\Controller\BrowseBeersAction">
+        <service class="App\Infrastructure\Projection\BeerProjection">
             <argument type="service" id="doctrine.orm.entity_manager" />
-            <argument type="service" id="serializer" />
+            <tag name="prooph_service_bus.app_event_bus.route_target" message_detection="true" />
         </service>
     </services>
 </container>

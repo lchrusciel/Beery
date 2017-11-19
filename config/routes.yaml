@@ -3,3 +3,9 @@ berry_add_beer:
     methods: ['POST']
     defaults:
         _controller: 'app.infrastructure.controller.add_beer_action'
+
+berry_browse_beers:
+    path: '/beers'
+    methods: ['GET']
+    defaults:
+        _controller: 'app.infrastructure.controller.browse_beers_action'

@@ -7,16 +7,20 @@ namespace Tests\Behat\Context;
 use Behat\Behat\Context\Context;
 use Symfony\Component\BrowserKit\Client;
 use Symfony\Component\HttpFoundation\Response;
-use Webmozart\Assert\Assert;
+use Tests\Behat\Service\JsonAsserterInterface;
 
 final class ApiContext implements Context
 {
     /** @var Client */
     private $client;
 
-    public function __construct(Client $client)
+    /** @var JsonAsserterInterface */
+    private $jsonAsserter;
+
+    public function __construct(Client $client, JsonAsserterInterface $jsonAsserter)
     {
         $this->client = $client;
+        $this->jsonAsserter = $jsonAsserter;
     }
 
     /**
@@ -28,6 +32,14 @@ final class ApiContext implements Context
     }
 
     /**
+     * @When I browse the beers catalogue
+     */
+    public function iBrowseTheBeersCatalogue()
+    {
+        $this->client->request('GET', 'beers');
+    }
+
+    /**
      * @Then the :beerName beer should be available in the catalogue
      */
     public function theBeerShouldBeAvailableInTheCatalogue(string $beerName): void
@@ -35,6 +47,21 @@ final class ApiContext implements Context
         /** @var Response $response */
         $response = $this->client->getResponse();
 
-        Assert::same(Response::HTTP_CREATED, $response->getStatusCode());
+        $this->jsonAsserter->assertResponseCode($response, Response::HTTP_CREATED);
+    }
+
+    /**
+     * @Then I should see the :beerName beer
+     */
+    public function iShouldSeeTheBeer(string $beerName): void
+    {
+        /** @var Response $response */
+        $response = $this->client->getResponse();
+
+        $this->jsonAsserter->assertResponse(
+            $response,
+            Response::HTTP_OK,
+            sprintf('[{"id":@integer@,"name":"%s","abv":5}]', $beerName)
+        );
     }
 }

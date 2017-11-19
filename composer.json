@@ -18,6 +18,7 @@
         "symfony/yaml": "^3.4"
     },
     "require-dev": {
+        "coduo/php-matcher": "^2.3",
         "doctrine/data-fixtures": "^1.2",
         "friends-of-behat/context-service-extension": "^1.0",
         "friends-of-behat/cross-container-extension": "^1.0",

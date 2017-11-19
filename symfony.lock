@@ -379,5 +379,23 @@
     },
     "doctrine/data-fixtures": {
         "version": "v1.2.2"
+    },
+    "openlss/lib-array2xml": {
+        "version": "0.0.10"
+    },
+    "symfony/expression-language": {
+        "version": "v3.4.0-beta4"
+    },
+    "symfony/inflector": {
+        "version": "v3.4.0-beta4"
+    },
+    "symfony/property-access": {
+        "version": "v3.4.0-beta4"
+    },
+    "coduo/php-to-string": {
+        "version": "2.0.1"
+    },
+    "coduo/php-matcher": {
+        "version": "2.3.0"
     }
 }

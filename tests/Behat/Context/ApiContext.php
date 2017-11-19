@@ -28,6 +28,14 @@ final class ApiContext implements Context
     }
 
     /**
+     * @When I browse the beers catalogue
+     */
+    public function iBrowseTheBeersCatalogue()
+    {
+        $this->client->request('GET', 'beers');
+    }
+
+    /**
      * @Then the :beerName beer should be available in the catalogue
      */
     public function theBeerShouldBeAvailableInTheCatalogue(string $beerName): void
@@ -36,5 +44,16 @@ final class ApiContext implements Context
         $response = $this->client->getResponse();
 
         Assert::same(Response::HTTP_CREATED, $response->getStatusCode());
+    }
+
+    /**
+     * @Then I should see the :beerName beer
+     */
+    public function iShouldSeeTheBeer(string $beerName): void
+    {
+        /** @var Response $response */
+        $response = $this->client->getResponse();
+
+        Assert::same($response->getContent(), sprintf('[{"id":1,"name":"%s","abv":5}]', $beerName));
     }
 }

@@ -4,23 +4,26 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\View;
 
-final class BeerView
+class BeerView
 {
+    /** @var int */
+    private $id;
+
     /** @var string */
-    private $title;
+    private $name;
 
     /** @var int */
     private $abv;
 
-    public function __construct(string $title, int $abv)
+    public function __construct(string $name, int $abv)
     {
-        $this->title = $title;
+        $this->name = $name;
         $this->abv = $abv;
     }
 
-    public function title(): string
+    public function name(): string
     {
-        return $this->title;
+        return $this->name;
     }
 
     public function abv(): int

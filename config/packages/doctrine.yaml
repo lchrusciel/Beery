@@ -12,3 +12,8 @@ doctrine:
                 type: xml
                 dir: '%kernel.project_dir%/src/Infrastructure/Resources/config/doctrine/domain'
                 prefix: 'App\Domain\Model'
+            View:
+                type: 'xml'
+                dir: '%kernel.root_dir%/Resources/config/doctrine/view'
+                prefix: 'App\Infrastructure\View'
+                is_bundle: false

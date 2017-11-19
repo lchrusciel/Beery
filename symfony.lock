@@ -376,5 +376,8 @@
     },
     "symfony/serializer": {
         "version": "v3.4.0-beta4"
+    },
+    "doctrine/data-fixtures": {
+        "version": "v1.2.2"
     }
 }

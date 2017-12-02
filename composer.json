@@ -3,7 +3,6 @@
     "description": "Backend application for sharing beers information and rating them.",
     "type": "project",
     "license": "proprietary",
-    "minimum-stability": "beta",
     "require": {
         "php": "^7.1",
         "prooph/service-bus-symfony-bundle": "dev-patch-1",

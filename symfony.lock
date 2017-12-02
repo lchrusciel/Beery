@@ -397,5 +397,8 @@
     },
     "coduo/php-matcher": {
         "version": "2.3.0"
+    },
+    "phpstan/phpdoc-parser": {
+        "version": "0.1"
     }
 }

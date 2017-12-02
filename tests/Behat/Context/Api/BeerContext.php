@@ -7,7 +7,7 @@ namespace Tests\Behat\Context\Api;
 use Behat\Behat\Context\Context;
 use Symfony\Component\BrowserKit\Client;
 use Symfony\Component\HttpFoundation\Response;
-use Tests\Behat\Service\JsonAsserterInterface;
+use Tests\Service\Asserter\JsonAsserterInterface;
 
 final class BeerContext implements Context
 {

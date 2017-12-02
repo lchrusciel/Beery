@@ -13,15 +13,15 @@ default:
         application_features:
             paths:    ['%paths.base%/features']
             contexts_services:
-                - 'tests.behat.context.application_context'
+                - 'tests.behat.context.application.beer_context'
                 - 'tests.behat.context.hook.doctrine_context'
             filters:
                 tags: '@application'
         api_features:
             paths:    ['%paths.base%/features']
             contexts_services:
-                - 'tests.behat.context.api_context'
+                - 'tests.behat.context.api.beer_context'
                 - 'tests.behat.context.hook.doctrine_context'
-                - 'tests.behat.context.setup_context'
+                - 'tests.behat.context.setup.beer_context'
             filters:
                 tags: '@api'

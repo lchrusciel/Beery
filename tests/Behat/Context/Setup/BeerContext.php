@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tests\Behat\Context;
+namespace Tests\Behat\Context\Setup;
 
 use App\Application\Command\AddBeer;
 use Behat\Behat\Context\Context;
 use Prooph\ServiceBus\CommandBus;
 
-final class SetupContext implements Context
+final class BeerContext implements Context
 {
     /** @var CommandBus */
     private $commandBus;

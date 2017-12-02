@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Tests\Behat\Context;
+namespace Tests\Behat\Context\Api;
 
 use Behat\Behat\Context\Context;
 use Symfony\Component\BrowserKit\Client;
 use Symfony\Component\HttpFoundation\Response;
 use Tests\Behat\Service\JsonAsserterInterface;
 
-final class ApiContext implements Context
+final class BeerContext implements Context
 {
     /** @var Client */
     private $client;

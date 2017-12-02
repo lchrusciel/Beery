@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Behat\Context;
+namespace Tests\Behat\Context\Application;
 
 use App\Application\Command\AddBeer;
 use App\Domain\Model\Beer;
@@ -11,7 +11,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Prooph\ServiceBus\CommandBus;
 use Webmozart\Assert\Assert;
 
-final class ApplicationContext implements Context
+final class BeerContext implements Context
 {
     /** @var CommandBus */
     private $commandBus;

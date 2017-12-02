@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <container xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://symfony.com/schema/dic/services">
     <services>
-        <service id="tests.behat.context.application_context" class="Tests\Behat\Context\ApplicationContext">
+        <service id="tests.behat.context.application.beer_context" class="Tests\Behat\Context\Application\BeerContext">
             <argument type="service" id="__symfony__.prooph_service_bus.app_command_bus" />
             <argument type="service" id="__symfony__.doctrine.orm.entity_manager" />
             <tag name="fob.context_service" />
         </service>
 
-        <service id="tests.behat.context.setup_context" class="Tests\Behat\Context\SetupContext">
+        <service id="tests.behat.context.setup.beer_context" class="Tests\Behat\Context\Setup\BeerContext">
             <argument type="service" id="__symfony__.prooph_service_bus.app_command_bus" />
             <tag name="fob.context_service" />
         </service>
 
-        <service id="tests.behat.context.api_context" class="Tests\Behat\Context\ApiContext">
+        <service id="tests.behat.context.api.beer_context" class="Tests\Behat\Context\Api\BeerContext">
             <argument type="service" id="__symfony__.test.client" />
             <argument type="service" id="tests.behat.service.json_asserter" />
             <tag name="fob.context_service" />

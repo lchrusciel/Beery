@@ -5,6 +5,6 @@
     </imports>
 
     <services>
-        <service id="tests.behat.service.json_asserter" class="Tests\Behat\Service\JsonAsserter" />
+        <service id="tests.service.json_asserter" class="Tests\Service\Asserter\JsonAsserter" />
     </services>
 </container>

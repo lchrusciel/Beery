@@ -5,10 +5,11 @@ declare(strict_types=1);
 namespace Tests\Behat\Context\Application;
 
 use App\Application\Command\AddBeer;
+use App\Application\Event\BeerAdded;
 use App\Domain\Model\Beer;
 use Behat\Behat\Context\Context;
-use Doctrine\Common\Persistence\ObjectManager;
 use Prooph\ServiceBus\CommandBus;
+use Tests\Service\Prooph\Plugin\EventsRecorder;
 use Webmozart\Assert\Assert;
 
 final class BeerContext implements Context
@@ -16,13 +17,13 @@ final class BeerContext implements Context
     /** @var CommandBus */
     private $commandBus;
 
-    /** @var ObjectManager */
-    private $objectManager;
+    /** @var EventsRecorder */
+    private $eventsRecorder;
 
-    public function __construct(CommandBus $commandBus, ObjectManager $objectManager)
+    public function __construct(CommandBus $commandBus, EventsRecorder $eventsRecorder)
     {
         $this->commandBus = $commandBus;
-        $this->objectManager = $objectManager;
+        $this->eventsRecorder = $eventsRecorder;
     }
 
     /**
@@ -38,9 +39,14 @@ final class BeerContext implements Context
      */
     public function theBeerShouldBeAvailableInTheCatalogue(string $beerName): void
     {
-        Assert::notNull(
-            $this->objectManager->getRepository(Beer::class)->findOneBy(['name' => $beerName]),
-            'The beer has not been found!'
-        );
+        $message = $this->eventsRecorder->getLastMessage();
+
+        $event = $message->event();
+        \assert($event instanceof BeerAdded, sprintf(
+            'Event has to be of class %s, but %s given',
+            BeerAdded::class,
+            get_class($event)
+        ));
+        Assert::same($event->name(), $beerName);
     }
 }

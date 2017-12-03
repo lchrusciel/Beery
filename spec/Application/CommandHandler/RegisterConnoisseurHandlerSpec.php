@@ -34,7 +34,7 @@ final class RegisterConnoisseurHandlerSpec extends ObjectBehavior
             ->add(Argument::exact(Connoisseur::register(
                 new Name('Krzysztof Krawczyk'),
                 new Email('krawczyk@biale.pl'),
-                new Password('parostatkiem1'))
+                new Password('$2a$04$N2x1MTIgy8fth66TdWZ1NeHIjJIrK7Ns09I9xk1PDRn8IqkQSckua'))
             ))->shouldBeCalled()
         ;
 
@@ -43,7 +43,7 @@ final class RegisterConnoisseurHandlerSpec extends ObjectBehavior
                 return
                     $connoisseurRegistered->name() == new Name('Krzysztof Krawczyk') &&
                     $connoisseurRegistered->email() == new Email('krawczyk@biale.pl') &&
-                    $connoisseurRegistered->password() == new Password('parostatkiem1')
+                    $connoisseurRegistered->password() == new Password('$2a$04$N2x1MTIgy8fth66TdWZ1NeHIjJIrK7Ns09I9xk1PDRn8IqkQSckua')
                 ;
             }))
             ->shouldBeCalled()
@@ -52,7 +52,7 @@ final class RegisterConnoisseurHandlerSpec extends ObjectBehavior
         $this(RegisterConnoisseur::create(
             new Name('Krzysztof Krawczyk'),
             new Email('krawczyk@biale.pl'),
-            new Password('parostatkiem1')
+            new Password('$2a$04$N2x1MTIgy8fth66TdWZ1NeHIjJIrK7Ns09I9xk1PDRn8IqkQSckua')
         ));
     }
 
@@ -69,7 +69,7 @@ final class RegisterConnoisseurHandlerSpec extends ObjectBehavior
             ->during('__invoke', [RegisterConnoisseur::create(
                 new Name('Krzysztof Krawczyk'),
                 new Email('krawczyk@biale.pl'),
-                new Password('parostatkiem1')
+                new Password('$2a$04$N2x1MTIgy8fth66TdWZ1NeHIjJIrK7Ns09I9xk1PDRn8IqkQSckua')
             )])
         ;
     }

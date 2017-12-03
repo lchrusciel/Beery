@@ -27,6 +27,7 @@ final class Password
 
     private function validatePassword(string $value): bool
     {
-        return preg_match('"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"', $value) === 1;
+        // Pattern explanation https://stackoverflow.com/a/32190124/4243630
+        return preg_match('"^\$2[ayb]\$.{56}$"', $value) === 1;
     }
 }

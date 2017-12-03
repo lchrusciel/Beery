@@ -33,7 +33,11 @@ final class ConnoisseurContext implements Context
      */
     public function iRegisterTheConnoisseurWithTheEmailAndTheEmail(string $name, string $email, string $password): void
     {
-        $this->commandBus->dispatch(RegisterConnoisseur::create(new Name($name), new Email($email), new Password($password)));
+        $this->commandBus->dispatch(RegisterConnoisseur::create(
+            new Name($name),
+            new Email($email),
+            new Password(password_hash($password, PASSWORD_BCRYPT)))
+        );
     }
 
     /**

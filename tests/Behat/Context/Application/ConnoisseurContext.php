@@ -29,11 +29,11 @@ final class ConnoisseurContext implements Context
     }
 
     /**
-     * @When I register the :name connoisseur with the :email email and the :passoword email
+     * @When I register the :name connoisseur with the :email email and the :password password
      */
-    public function iRegisterTheConnoisseurWithTheEmailAndTheEmail(string $name, string $email, string $passoword): void
+    public function iRegisterTheConnoisseurWithTheEmailAndTheEmail(string $name, string $email, string $password): void
     {
-        $this->commandBus->dispatch(RegisterConnoisseur::create(new Name($name), new Email($email), new Password($passoword)));
+        $this->commandBus->dispatch(RegisterConnoisseur::create(new Name($name), new Email($email), new Password($password)));
     }
 
     /**

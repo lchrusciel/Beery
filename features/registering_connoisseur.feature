@@ -1,4 +1,4 @@
-@connoisseur @application
+@connoisseur @application @api
 Feature: Registering a connoisseur
     In order to be able to use application fully
     As a Connoisseur

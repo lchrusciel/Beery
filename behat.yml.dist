@@ -32,3 +32,10 @@ default:
                 - 'tests.behat.context.setup.beer_context'
             filters:
                 tags: '@beer && @api'
+        connoisseur_api_features:
+            paths:    ['%paths.base%/features']
+            contexts_services:
+                - 'tests.behat.context.api.connoisseur_context'
+                - 'tests.behat.context.hook.doctrine_context'
+            filters:
+                tags: '@connoisseur && @api'

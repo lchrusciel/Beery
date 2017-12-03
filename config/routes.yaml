@@ -1,3 +1,9 @@
+berry_add_connoisseur:
+    path: '/connoisseurs'
+    methods: ['POST']
+    defaults:
+        _controller: 'app.infrastructure.controller.register_connoisseur_action'
+
 berry_add_beer:
     path: '/beers'
     methods: ['POST']

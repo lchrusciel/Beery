@@ -24,7 +24,7 @@ final class ConnoisseurContext implements Context
     }
 
     /**
-     * @When I register the :name connoisseur with the :email email and the :password email
+     * @When I register the :name connoisseur with the :email email and the :password password
      */
     public function iRegisterTheConnoisseurWithTheEmailAndTheEmail(string $name, string $email, string $password): void
     {

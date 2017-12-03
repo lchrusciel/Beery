@@ -11,6 +11,10 @@
             <argument type="service" id="prooph_service_bus.app_command_bus" />
         </service>
 
+        <service id="app.infrastructure.controller.register_connoisseur_action" class="App\Infrastructure\Controller\RegisterConnoisseurAction">
+            <argument type="service" id="prooph_service_bus.app_command_bus" />
+        </service>
+
         <service id="app.infrastructure.controller.browse_beers_action" class="App\Infrastructure\Controller\BrowseBeersAction">
             <argument type="service" id="doctrine.orm.entity_manager" />
             <argument type="service" id="serializer" />

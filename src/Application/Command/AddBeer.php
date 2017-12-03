@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Application\Command;
 
 use App\Domain\Model\Abv;
+use App\Domain\Model\Name;
 use Prooph\Common\Messaging\Command;
 use Prooph\Common\Messaging\PayloadTrait;
 
@@ -18,17 +19,17 @@ final class AddBeer extends Command
         $this->setPayload($payload);
     }
 
-    public static function create(string $beerName, Abv $abv): self
+    public static function create(Name $name, Abv $abv): self
     {
         return new self([
-            'beerName' => $beerName,
+            'name' => $name->value(),
             'abv' => $abv->value(),
         ]);
     }
 
-    public function name(): string
+    public function name(): Name
     {
-        return $this->payload()['beerName'];
+        return new Name($this->payload()['name']);
     }
 
     public function abv(): Abv

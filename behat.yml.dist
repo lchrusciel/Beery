@@ -10,18 +10,25 @@ default:
            imports:
                - 'tests/Behat/Resources/config/services.xml'
     suites:
-        application_features:
+        beer_application_features:
             paths:    ['%paths.base%/features']
             contexts_services:
                 - 'tests.behat.context.application.beer_context'
                 - 'tests.behat.context.hook.doctrine_context'
             filters:
-                tags: '@application'
-        api_features:
+                tags: '@beer && @application'
+        connoisseur_application_features:
+            paths:    ['%paths.base%/features']
+            contexts_services:
+                - 'tests.behat.context.application.connoisseur_context'
+                - 'tests.behat.context.hook.doctrine_context'
+            filters:
+                tags: '@connoisseur && @application'
+        beer_api_features:
             paths:    ['%paths.base%/features']
             contexts_services:
                 - 'tests.behat.context.api.beer_context'
                 - 'tests.behat.context.hook.doctrine_context'
                 - 'tests.behat.context.setup.beer_context'
             filters:
-                tags: '@api'
+                tags: '@beer && @api'

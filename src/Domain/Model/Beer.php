@@ -14,16 +14,16 @@ class Beer
     /** @var string */
     private $name;
 
-    /** @var int */
+    /** @var Abv */
     private $abv;
 
-    private function __construct(string $name, int $abv)
+    private function __construct(string $name, Abv $abv)
     {
         $this->name = $name;
         $this->abv = $abv;
     }
 
-    public static function add(string $name, int $abv): self
+    public static function add(string $name, Abv $abv): self
     {
         return new self($name, $abv);
     }

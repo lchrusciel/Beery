@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Infrastructure\Controller;
 
 use App\Application\Command\AddBeer;
+use App\Domain\Model\Abv;
 use Prooph\ServiceBus\CommandBus;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -24,7 +25,7 @@ final class AddBeerAction
     {
         $this->commandBus->dispatch(AddBeer::create(
             $request->request->get('beerName'),
-            $request->request->get('abv')
+            new Abv((float) $request->request->getDigits('abv'))
         ));
 
         return new JsonResponse(null, Response::HTTP_CREATED);

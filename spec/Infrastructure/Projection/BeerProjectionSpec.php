@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace spec\App\Infrastructure\Projection;
 
 use App\Application\Event\BeerAdded;
+use App\Domain\Model\Abv;
 use App\Infrastructure\Projection\BeerProjection;
 use App\Infrastructure\View\BeerView;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -35,6 +36,6 @@ final class BeerProjectionSpec extends ObjectBehavior
 
         $objectManager->flush()->shouldBeCalled();
 
-        $this(BeerAdded::occur('King of Hop', 5));
+        $this(BeerAdded::occur('King of Hop', new Abv(5)));
     }
 }

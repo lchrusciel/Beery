@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Application\Event;
 
+use App\Domain\Model\Abv;
 use Prooph\Common\Messaging\DomainEvent;
 use Prooph\Common\Messaging\PayloadTrait;
 
@@ -17,9 +18,9 @@ final class BeerAdded extends DomainEvent
         $this->setPayload($payload);
     }
 
-    public static function occur(string $name, int $abv): self
+    public static function occur(string $name, Abv $abv): self
     {
-        return new self(['name' => $name, 'abv' => $abv]);
+        return new self(['name' => $name, 'abv' => $abv->value()]);
     }
 
     public function name(): string
@@ -27,8 +28,8 @@ final class BeerAdded extends DomainEvent
         return $this->payload()['name'];
     }
 
-    public function abv(): int
+    public function abv(): Abv
     {
-        return $this->payload()['abv'];
+        return new Abv($this->payload()['abv']);
     }
 }

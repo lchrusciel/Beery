@@ -1,5 +1,5 @@
-@application @api
-Feature: Adding a new beer
+@beer @application @api
+Feature: Adding a beer
     In order to share details about the beer with the community
     As a Community Member
     I want to add a beer to catalogue

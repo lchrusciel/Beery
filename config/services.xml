@@ -17,10 +17,6 @@
 
         <service id="app.command_bus" alias="prooph_service_bus.app_command_bus" />
 
-        <service id="app.infrastructure.doctrine.repository.beers_orm_repository" class="App\Infrastructure\Doctrine\Repository\BeersORMRepository">
-            <argument type="service" id="doctrine.orm.entity_manager" />
-        </service>
-
         <service id="symfony.component.serializer.normalizer.property_normalizer" class="Symfony\Component\Serializer\Normalizer\PropertyNormalizer" public="false">
             <tag name="serializer.normalizer" />
         </service>

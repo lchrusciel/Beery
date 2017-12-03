@@ -1,4 +1,4 @@
-@api
+@beer @api
 Feature: Browsing beers
     In order to being aware of current beers catalogue
     As a Community Member

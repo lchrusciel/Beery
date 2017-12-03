@@ -12,10 +12,10 @@ class BeerView
     /** @var string */
     private $name;
 
-    /** @var int */
+    /** @var float */
     private $abv;
 
-    public function __construct(string $name, int $abv)
+    public function __construct(string $name, float $abv)
     {
         $this->name = $name;
         $this->abv = $abv;
@@ -26,7 +26,7 @@ class BeerView
         return $this->name;
     }
 
-    public function abv(): int
+    public function abv(): float
     {
         return $this->abv;
     }

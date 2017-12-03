@@ -27,14 +27,14 @@ final class AddBeerHandler
     public function __invoke(AddBeer $addBeer)
     {
         $beer = Beer::add(
-            $addBeer->beerName(),
+            $addBeer->name(),
             $addBeer->abv()
         );
 
         $this->beers->add($beer);
 
         $this->eventBus->dispatch(BeerAdded::occur(
-            $addBeer->beerName(),
+            $addBeer->name(),
             $addBeer->abv()
         ));
     }

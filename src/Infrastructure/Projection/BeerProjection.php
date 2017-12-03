@@ -20,7 +20,7 @@ final class BeerProjection
 
     public function __invoke(BeerAdded $beerAdded)
     {
-        $this->objectManager->persist(new BeerView($beerAdded->name(), $beerAdded->abv()));
+        $this->objectManager->persist(new BeerView($beerAdded->name(), $beerAdded->abv()->value()));
 
         $this->objectManager->flush();
     }

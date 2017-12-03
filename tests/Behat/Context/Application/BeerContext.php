@@ -6,6 +6,7 @@ namespace Tests\Behat\Context\Application;
 
 use App\Application\Command\AddBeer;
 use App\Application\Event\BeerAdded;
+use App\Domain\Model\Abv;
 use App\Domain\Model\Beer;
 use Behat\Behat\Context\Context;
 use Prooph\ServiceBus\CommandBus;
@@ -31,7 +32,7 @@ final class BeerContext implements Context
      */
     public function iAddANewBeerWhichHasAbv(string $beerName, int $abv): void
     {
-        $this->commandBus->dispatch(AddBeer::create($beerName, $abv));
+        $this->commandBus->dispatch(AddBeer::create($beerName, new Abv($abv)));
     }
 
     /**

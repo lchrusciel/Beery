@@ -26,6 +26,6 @@ final class BeerViewSpec extends ObjectBehavior
 
     function it_has_an_abv()
     {
-        $this->abv()->shouldReturn(5);
+        $this->abv()->shouldReturn((float) 5);
     }
 }

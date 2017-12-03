@@ -10,7 +10,7 @@
         </id>
 
         <field name="name" column="name" type="string" />
-        <field name="abv" column="abv" type="integer" />
+        <field name="abv" column="abv" type="abv" />
     </entity>
 
 </doctrine-mapping>

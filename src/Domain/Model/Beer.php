@@ -11,19 +11,19 @@ class Beer
     /** @var UuidInterface */
     private $id;
 
-    /** @var string */
+    /** @var Name */
     private $name;
 
     /** @var Abv */
     private $abv;
 
-    private function __construct(string $name, Abv $abv)
+    private function __construct(Name $name, Abv $abv)
     {
         $this->name = $name;
         $this->abv = $abv;
     }
 
-    public static function add(string $name, Abv $abv): self
+    public static function add(Name $name, Abv $abv): self
     {
         return new self($name, $abv);
     }

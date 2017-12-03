@@ -8,6 +8,7 @@ use App\Application\Command\AddBeer;
 use App\Application\Event\BeerAdded;
 use App\Domain\Model\Abv;
 use App\Domain\Model\Beer;
+use App\Domain\Model\Name;
 use Behat\Behat\Context\Context;
 use Prooph\ServiceBus\CommandBus;
 use Tests\Service\Prooph\Plugin\EventsRecorder;
@@ -32,7 +33,7 @@ final class BeerContext implements Context
      */
     public function iAddANewBeerWhichHasAbv(string $beerName, int $abv): void
     {
-        $this->commandBus->dispatch(AddBeer::create($beerName, new Abv($abv)));
+        $this->commandBus->dispatch(AddBeer::create(new Name($beerName), new Abv($abv)));
     }
 
     /**
@@ -48,6 +49,6 @@ final class BeerContext implements Context
             BeerAdded::class,
             get_class($event)
         ));
-        Assert::same($event->name(), $beerName);
+        Assert::eq($event->name(), new Name($beerName));
     }
 }

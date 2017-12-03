@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace spec\App\Application\Event;
 
 use App\Domain\Model\Abv;
+use App\Domain\Model\Name;
 use PhpSpec\ObjectBehavior;
 use Prooph\Common\Messaging\DomainEvent;
 
@@ -13,7 +14,7 @@ final class BeerAddedSpec extends ObjectBehavior
     function let()
     {
         $this->beConstructedThrough('occur', [
-            'King of Hop',
+            new Name('King of Hop'),
             new Abv(5),
         ]);
     }
@@ -25,7 +26,7 @@ final class BeerAddedSpec extends ObjectBehavior
 
     function it_has_name()
     {
-        $this->name()->shouldReturn('King of Hop');
+        $this->name()->shouldBeLike(new Name('King of Hop'));
     }
 
     function it_has_abv()

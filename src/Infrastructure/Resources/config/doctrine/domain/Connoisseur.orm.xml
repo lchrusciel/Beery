@@ -8,6 +8,10 @@
             <generator strategy="CUSTOM"/>
             <custom-id-generator class="Ramsey\Uuid\Doctrine\UuidOrderedTimeGenerator"/>
         </id>
+
+        <field name="name" column="name" type="name" />
+        <field name="email" column="email" type="email" />
+        <field name="password" column="password" type="password" />
     </entity>
 
 </doctrine-mapping>

@@ -400,5 +400,23 @@
     },
     "phpstan/phpdoc-parser": {
         "version": "0.1"
+    },
+    "symfony/polyfill-util": {
+        "version": "v1.6.0"
+    },
+    "symfony/polyfill-php56": {
+        "version": "v1.6.0"
+    },
+    "symfony/security": {
+        "version": "v3.4.0"
+    },
+    "symfony/security-bundle": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "85834af1496735f28d831489d12ab1921a875e0d"
+        }
     }
 }

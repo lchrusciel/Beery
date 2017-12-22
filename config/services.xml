@@ -15,8 +15,6 @@
     <services>
         <defaults public="true" />
 
-        <service id="app.command_bus" alias="prooph_service_bus.app_command_bus" />
-
         <service id="symfony.component.serializer.normalizer.property_normalizer" class="Symfony\Component\Serializer\Normalizer\PropertyNormalizer" public="false">
             <tag name="serializer.normalizer" />
         </service>

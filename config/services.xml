@@ -18,5 +18,13 @@
         <service id="symfony.component.serializer.normalizer.property_normalizer" class="Symfony\Component\Serializer\Normalizer\PropertyNormalizer" public="false">
             <tag name="serializer.normalizer" />
         </service>
+
+        <service id="App\Infrastructure\Security\ConnoisseurPasswordHasher" class="App\Infrastructure\Security\ConnoisseurPasswordHasher">
+            <argument type="service" id="security.user_password_encoder.generic" />
+        </service>
+
+        <service id="App\Infrastructure\Security\ConnoisseurProvider" class="App\Infrastructure\Security\ConnoisseurProvider">
+            <argument type="service" id="App\Infrastructure\Doctrine\Repository\ConnoisseurViewORMRepository" />
+        </service>
     </services>
 </container>

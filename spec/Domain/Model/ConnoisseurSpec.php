@@ -17,7 +17,7 @@ final class ConnoisseurSpec extends ObjectBehavior
         $this->beConstructedThrough('register', [
             new Name('Krzystof Krawczyk'),
             new Email('krawczyk@biale.pl'),
-            new Password('parostatkiem1'),
+            new Password('$2a$04$N2x1MTIgy8fth66TdWZ1NeHIjJIrK7Ns09I9xk1PDRn8IqkQSckua'),
         ]);
     }
 

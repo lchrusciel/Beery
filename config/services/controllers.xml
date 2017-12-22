@@ -13,6 +13,7 @@
 
         <service id="app.infrastructure.controller.register_connoisseur_action" class="App\Infrastructure\Controller\RegisterConnoisseurAction">
             <argument type="service" id="prooph_service_bus.app_command_bus" />
+            <argument type="service" id="App\Infrastructure\Security\ConnoisseurPasswordHasher" />
         </service>
 
         <service id="app.infrastructure.controller.browse_beers_action" class="App\Infrastructure\Controller\BrowseBeersAction">

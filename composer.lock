@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d6f50938d0ac4353bafec8181d41be47",
+    "content-hash": "a87360e54eefcd5482989f6be6bc7385",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -5400,16 +5400,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "dev-master",
+            "version": "0.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "4af7e0915affc6cc42e32913dd86cdd94b8c2ea6"
+                "reference": "ef60e5cc0a32ddb2637523dafef966e0aac1e16f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/4af7e0915affc6cc42e32913dd86cdd94b8c2ea6",
-                "reference": "4af7e0915affc6cc42e32913dd86cdd94b8c2ea6",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/ef60e5cc0a32ddb2637523dafef966e0aac1e16f",
+                "reference": "ef60e5cc0a32ddb2637523dafef966e0aac1e16f",
                 "shasum": ""
             },
             "require": {
@@ -5456,20 +5456,20 @@
                 "MIT"
             ],
             "description": "PHPStan - PHP Static Analysis Tool",
-            "time": "2017-12-02T17:12:20+00:00"
+            "time": "2017-12-02T19:34:06+00:00"
         },
         {
             "name": "phpstan/phpstan-doctrine",
-            "version": "dev-master",
+            "version": "0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan-doctrine.git",
-                "reference": "c534c1d4a154df3cb3a0d834887ed04eade009f1"
+                "reference": "af4cb66359784fce8a126e5d267b45fb6899cb26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan-doctrine/zipball/c534c1d4a154df3cb3a0d834887ed04eade009f1",
-                "reference": "c534c1d4a154df3cb3a0d834887ed04eade009f1",
+                "url": "https://api.github.com/repos/phpstan/phpstan-doctrine/zipball/af4cb66359784fce8a126e5d267b45fb6899cb26",
+                "reference": "af4cb66359784fce8a126e5d267b45fb6899cb26",
                 "shasum": ""
             },
             "require": {
@@ -5503,7 +5503,7 @@
                 "MIT"
             ],
             "description": "Doctrine extensions for PHPStan",
-            "time": "2017-12-01T14:45:45+00:00"
+            "time": "2017-11-26T20:03:54+00:00"
         },
         {
             "name": "sebastian/comparator",
@@ -6858,9 +6858,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "prooph/service-bus-symfony-bundle": 20,
-        "phpstan/phpstan": 20,
-        "phpstan/phpstan-doctrine": 20
+        "prooph/service-bus-symfony-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

@@ -14,5 +14,9 @@
         <service id="app.infrastructure.doctrine.repository.connoisseur_orm_repository" class="App\Infrastructure\Doctrine\Repository\ConnoisseurORMRepository">
             <argument type="service" id="doctrine.orm.entity_manager" />
         </service>
+
+        <service id="App\Infrastructure\Doctrine\Repository\ConnoisseurViewORMRepository" class="App\Infrastructure\Doctrine\Repository\ConnoisseurViewORMRepository">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+        </service>
     </services>
 </container>

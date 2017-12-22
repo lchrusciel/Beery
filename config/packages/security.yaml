@@ -1,7 +1,13 @@
 security:
     # https://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
-        in_memory: { memory: ~ }
+        administrator:
+            id: App\Infrastructure\Security\ConnoisseurProvider
+
+    encoders:
+        App\Infrastructure\Security\ConnoisseurSecurity:
+            algorithm: bcrypt
+
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/

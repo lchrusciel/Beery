@@ -6,7 +6,7 @@ namespace App\Infrastructure\Security;
 
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
-final class AdministratorPasswordHasher
+final class ConnoisseurPasswordHasher implements PasswordHasher
 {
     /** @var UserPasswordEncoderInterface */
     private $passwordEncoder;
@@ -15,9 +15,11 @@ final class AdministratorPasswordHasher
     {
         $this->passwordEncoder = $passwordEncoder;
     }
+
     public function __invoke(string $password): string
     {
         $user = ConnoisseurSecurity::withPassword($password);
+
         return $this->passwordEncoder->encodePassword($user, $user->getPassword());
     }
 }

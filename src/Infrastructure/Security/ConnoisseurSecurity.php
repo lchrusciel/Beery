@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Security;
 
+use App\Infrastructure\View\ConnoisseurView;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 final class ConnoisseurSecurity implements UserInterface
@@ -18,6 +19,11 @@ final class ConnoisseurSecurity implements UserInterface
     {
         $this->username = $username;
         $this->password = $password;
+    }
+
+    public static function fromConnoisseurView(ConnoisseurView $connoisseurView): self
+    {
+        return new self($connoisseurView->email(), $connoisseurView->password());
     }
 
     public static function withPassword(string $password): self

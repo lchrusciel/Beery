@@ -36,14 +36,14 @@ final class ConnoisseurContext implements Context
         $this->commandBus->dispatch(RegisterConnoisseur::create(
             new Name($name),
             new Email($email),
-            new Password(password_hash($password, PASSWORD_BCRYPT)))
-        );
+            new Password(password_hash($password, PASSWORD_BCRYPT))
+        ));
     }
 
     /**
-     * @Then the :name connoisseur should be created
+     * @Then I should be able to log in as :name with :password password
      */
-    public function theConnoisseurShouldBeCreated(string $name): void
+    public function theConnoisseurShouldBeCreated(string $name, string $password): void
     {
         $message = $this->eventsRecorder->getLastMessage();
 

@@ -17,5 +17,9 @@ install:
     - bin/console doctrine:database:create --env test
     - bin/console doctrine:schema:create --env test
 
+    - mkdir var/jwt
+    - openssl genrsa -out var/jwt/private.pem 4096 -passout env:JWT_PASSPHRAS
+    - openssl rsa -pubout -in var/jwt/private.pem -out var/jwt/public.pem
+
 script:
     - composer check

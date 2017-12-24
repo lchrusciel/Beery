@@ -12,13 +12,27 @@ security:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-        main:
-            anonymous: ~
 
-            # activate different ways to authenticate
+        register:
+            pattern: "^/register"
+            stateless: true
+            anonymous: true
 
-            # http_basic: ~
-            # https://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
+        login:
+            pattern: "^/login"
+            stateless: true
+            anonymous: true
+            form_login:
+                check_path: "/login_check"
+                success_handler: "lexik_jwt_authentication.handler.authentication_success"
+                failure_handler: "lexik_jwt_authentication.handler.authentication_failure"
+                require_previous_session: false
 
-            # form_login: ~
-            # https://symfony.com/doc/current/cookbook/security/form_login_setup.html
+        api:
+            pattern: "^/"
+            stateless: true
+            anonymous: true
+
+    access_control:
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }

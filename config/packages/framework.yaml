@@ -12,3 +12,4 @@ framework:
     #fragments: ~
     php_errors:
         log: true
+    session: ~

@@ -6,4 +6,4 @@ Feature: Registering a connoisseur
 
     Scenario: Registering a connoisseur
         When I register the "Rick Sanchez" connoisseur with the "rick@morty.com" email and the "birdperson1" password
-        Then I should be able to log in as "Rick Sanchez" with "birdperson1" password
+        Then I should be able to log in as "rick@morty.com" with "birdperson1" password

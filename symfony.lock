@@ -104,8 +104,20 @@
     "jean85/pretty-package-versions": {
         "version": "1.0.2"
     },
+    "lexik/jwt-authentication-bundle": {
+        "version": "2.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.3",
+            "ref": "751ee6748c1026fa4350c155d1b3a77b7ddca69c"
+        }
+    },
     "monolog/monolog": {
         "version": "1.23.0"
+    },
+    "namshi/jose": {
+        "version": "7.2.3"
     },
     "nette/bootstrap": {
         "version": "v3.0.0-beta"

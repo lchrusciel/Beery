@@ -1,5 +1,5 @@
 berry_add_connoisseur:
-    path: '/connoisseurs'
+    path: '/register'
     methods: ['POST']
     defaults:
         _controller: 'app.infrastructure.controller.register_connoisseur_action'
@@ -15,3 +15,6 @@ berry_browse_beers:
     methods: ['GET']
     defaults:
         _controller: 'app.infrastructure.controller.browse_beers_action'
+
+api_login_check:
+    path: '/login_check'

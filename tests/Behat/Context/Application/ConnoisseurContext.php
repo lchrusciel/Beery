@@ -41,14 +41,14 @@ final class ConnoisseurContext implements Context
     }
 
     /**
-     * @Then I should be able to log in as :name with :password password
+     * @Then I should be able to log in as :email with :password password
      */
-    public function theConnoisseurShouldBeCreated(string $name, string $password): void
+    public function theConnoisseurShouldBeCreated(string $email, string $password): void
     {
         $message = $this->eventsRecorder->getLastMessage();
 
         $event = $message->event();
         \assert($event instanceof ConnoisseurRegistered);
-        Assert::eq($event->name(), new Name($name));
+        Assert::eq($event->email(), new Email($email));
     }
 }

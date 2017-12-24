@@ -28,7 +28,7 @@ final class ConnoisseurContext implements Context
      */
     public function iRegisterTheConnoisseurWithTheEmailAndTheEmail(string $name, string $email, string $password): void
     {
-        $this->client->request('POST', 'connoisseurs', ['name' => $name, 'email' => $email, 'password' => $password]);
+        $this->client->request('POST', 'register', ['name' => $name, 'email' => $email, 'password' => $password]);
     }
 
     /**
@@ -36,9 +36,10 @@ final class ConnoisseurContext implements Context
      */
     public function theConnoisseurShouldBeCreated(string $name, string $password): void
     {
+        $this->client->request('POST', 'login_check', ['_username' => $name, '_password' => $password]);
         /** @var Response $response */
         $response = $this->client->getResponse();
 
-        $this->jsonAsserter->assertResponseCode($response, Response::HTTP_CREATED);
+        $this->jsonAsserter->assertResponse($response, Response::HTTP_OK, '{"token": "@string@"}');
     }
 }

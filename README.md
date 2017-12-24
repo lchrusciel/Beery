@@ -24,6 +24,14 @@ Backend application for sharing beers information and rating them.
 - Editing beers descriptions
 - Beers info validation
 
+**Future**
+
+- Beer images
+- Geolocal recommendation
+- Closest recommended beer
+- Friends
+- Friends recommendation
+
 ### Installation
 
 ```bash

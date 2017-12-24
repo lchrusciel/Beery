@@ -39,5 +39,6 @@ $ bin/console doctrine:schema:create
 To run existing tests, type in console:
 
 ```bash
+$ source .test.env
 $ composer test
 ```

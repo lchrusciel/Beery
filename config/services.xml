@@ -13,23 +13,13 @@
     </parameters>
 
     <services>
-        <defaults public="true" />
+        <defaults public="false" />
 
         <service id="Prooph\ServiceBus\CommandBus" alias="prooph_service_bus.app_command_bus" />
         <service id="Prooph\ServiceBus\EventBus" alias="prooph_service_bus.app_event_bus" />
 
-        <service id="symfony.component.serializer.normalizer.property_normalizer" class="Symfony\Component\Serializer\Normalizer\PropertyNormalizer" public="false">
+        <service id="Symfony\Component\Serializer\Normalizer\PropertyNormalizer" public="false">
             <tag name="serializer.normalizer" />
-        </service>
-
-        <service id="App\Infrastructure\Security\ConnoisseurPasswordHasher">
-            <argument type="service" id="security.user_password_encoder.generic" />
-        </service>
-
-        <service id="App\Infrastructure\Security\ConnoisseurPasswordHasherInterface" alias="App\Infrastructure\Security\ConnoisseurPasswordHasher" />
-
-        <service id="App\Infrastructure\Security\ConnoisseurProvider" class="App\Infrastructure\Security\ConnoisseurProvider">
-            <argument type="service" id="App\Infrastructure\Repository\ConnoisseurViews" />
         </service>
     </services>
 </container>

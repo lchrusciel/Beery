@@ -22,7 +22,7 @@ security:
             pattern: "^/beers"
             stateless: true
             anonymous: true
-            methods: [GET, POST]
+            methods: [GET]
 
         login:
             pattern: "^/login"

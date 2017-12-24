@@ -32,9 +32,9 @@ final class ConnoisseurContext implements Context
     }
 
     /**
-     * @Then the :name connoisseur should be created
+     * @Then I should be able to log in as :name with :password password
      */
-    public function theConnoisseurShouldBeCreated(string $name): void
+    public function theConnoisseurShouldBeCreated(string $name, string $password): void
     {
         /** @var Response $response */
         $response = $this->client->getResponse();

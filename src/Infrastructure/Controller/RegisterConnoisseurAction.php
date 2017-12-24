@@ -8,7 +8,7 @@ use App\Application\Command\RegisterConnoisseur;
 use App\Domain\Model\Email;
 use App\Domain\Model\Name;
 use App\Domain\Model\Password;
-use App\Infrastructure\Security\PasswordHasher;
+use App\Infrastructure\Security\ConnoisseurPasswordHasherInterface;
 use Prooph\ServiceBus\CommandBus;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,10 +19,10 @@ final class RegisterConnoisseurAction
     /** @var CommandBus */
     private $commandBus;
 
-    /** @var PasswordHasher */
+    /** @var ConnoisseurPasswordHasherInterface */
     private $passwordHasher;
 
-    public function __construct(CommandBus $commandBus, PasswordHasher $passwordHasher)
+    public function __construct(CommandBus $commandBus, ConnoisseurPasswordHasherInterface $passwordHasher)
     {
         $this->commandBus = $commandBus;
         $this->passwordHasher = $passwordHasher;

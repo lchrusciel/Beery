@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastructure\View;
+namespace App\Infrastructure\ReadModel\View;
 
 class ConnoisseurView
 {

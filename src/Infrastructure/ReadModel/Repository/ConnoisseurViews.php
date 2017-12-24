@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastructure\Repository;
+namespace App\Infrastructure\ReadModel\Repository;
 
-use App\Infrastructure\View\ConnoisseurView;
+use App\Infrastructure\ReadModel\View\ConnoisseurView;
 
 interface ConnoisseurViews
 {

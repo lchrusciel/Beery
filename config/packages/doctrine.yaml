@@ -20,5 +20,5 @@ doctrine:
             View:
                 type: 'xml'
                 dir: '%kernel.root_dir%/Resources/config/doctrine/view'
-                prefix: 'App\Infrastructure\View'
+                prefix: 'App\Infrastructure\ReadModel\View'
                 is_bundle: false

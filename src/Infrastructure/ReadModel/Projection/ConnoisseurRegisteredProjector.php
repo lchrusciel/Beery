@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastructure\Projection;
+namespace App\Infrastructure\ReadModel\Projection;
 
 use App\Application\Event\ConnoisseurRegistered;
-use App\Infrastructure\Repository\ConnoisseurViews;
-use App\Infrastructure\View\ConnoisseurView;
+use App\Infrastructure\ReadModel\Repository\ConnoisseurViews;
+use App\Infrastructure\ReadModel\View\ConnoisseurView;
 
 final class ConnoisseurRegisteredProjector
 {

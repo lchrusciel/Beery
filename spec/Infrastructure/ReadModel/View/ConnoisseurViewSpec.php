@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace spec\App\Infrastructure\View;
+namespace spec\App\Infrastructure\ReadModel\View;
 
 use PhpSpec\ObjectBehavior;
 

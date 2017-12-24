@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Security;
 
-use App\Infrastructure\View\ConnoisseurView;
+use App\Infrastructure\ReadModel\View\ConnoisseurView;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 final class ConnoisseurSecurity implements UserInterface

@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace spec\App\Infrastructure\Projection;
+namespace spec\App\Infrastructure\ReadModel\Projection;
 
 use App\Application\Event\ConnoisseurRegistered;
 use App\Domain\Model\Email;
 use App\Domain\Model\Name;
 use App\Domain\Model\Password;
-use App\Infrastructure\Projection\ConnoisseurRegisteredProjector;
-use App\Infrastructure\Repository\ConnoisseurViews;
-use App\Infrastructure\View\ConnoisseurView;
+use App\Infrastructure\ReadModel\Projection\ConnoisseurRegisteredProjector;
+use App\Infrastructure\ReadModel\Repository\ConnoisseurViews;
+use App\Infrastructure\ReadModel\View\ConnoisseurView;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 

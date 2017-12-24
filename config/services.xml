@@ -24,7 +24,7 @@
         </service>
 
         <service id="App\Infrastructure\Security\ConnoisseurProvider" class="App\Infrastructure\Security\ConnoisseurProvider">
-            <argument type="service" id="App\Infrastructure\Doctrine\Repository\ConnoisseurViewORMRepository" />
+            <argument type="service" id="App\Infrastructure\Repository\ConnoisseurViews" />
         </service>
     </services>
 </container>

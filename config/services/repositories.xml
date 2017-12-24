@@ -8,5 +8,7 @@
         <defaults autowire="true" autoconfigure="true" public="false" />
 
         <prototype namespace="App\Infrastructure\Doctrine\Repository\" resource="%kernel.project_dir%/src/Infrastructure/Doctrine/Repository/*" />
+
+        <service id="App\Infrastructure\Repository\ConnoisseurViews" alias="App\Infrastructure\Doctrine\Repository\ConnoisseurViewORMRepository" />
     </services>
 </container>

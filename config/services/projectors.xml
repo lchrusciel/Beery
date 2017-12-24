@@ -5,16 +5,10 @@
         xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd"
 >
     <services>
-        <defaults public="true" />
+        <defaults autowire="true" autoconfigure="true" public="true" />
 
-        <service class="App\Infrastructure\Projection\BeerProjection">
-            <argument type="service" id="doctrine.orm.entity_manager" />
+        <prototype namespace="App\Infrastructure\Projection\" resource="%kernel.project_dir%/src/Infrastructure/Projection/*" >
             <tag name="prooph_service_bus.app_event_bus.route_target" message_detection="true" />
-        </service>
-
-        <service class="App\Infrastructure\Projection\ConnoisseurRegisteredProjector">
-            <argument type="service" id="App\Infrastructure\Doctrine\Repository\ConnoisseurViewORMRepository" />
-            <tag name="prooph_service_bus.app_event_bus.route_target" message_detection="true" />
-        </service>
+        </prototype>
     </services>
 </container>

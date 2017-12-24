@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace spec\App\Infrastructure\Projection;
+namespace spec\App\Infrastructure\ReadModel\Projection;
 
 use App\Application\Event\BeerAdded;
 use App\Domain\Model\Abv;
 use App\Domain\Model\Name;
-use App\Infrastructure\Projection\BeerProjection;
-use App\Infrastructure\View\BeerView;
+use App\Infrastructure\ReadModel\Projection\BeerProjection;
+use App\Infrastructure\ReadModel\View\BeerView;
 use Doctrine\Common\Persistence\ObjectManager;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;

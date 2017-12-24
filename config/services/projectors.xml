@@ -7,7 +7,7 @@
     <services>
         <defaults autowire="true" autoconfigure="true" public="true" />
 
-        <prototype namespace="App\Infrastructure\Projection\" resource="%kernel.project_dir%/src/Infrastructure/Projection/*" >
+        <prototype namespace="App\Infrastructure\ReadModel\Projection\" resource="%kernel.project_dir%/src/Infrastructure/ReadModel/Projection/*" >
             <tag name="prooph_service_bus.app_event_bus.route_target" message_detection="true" />
         </prototype>
     </services>

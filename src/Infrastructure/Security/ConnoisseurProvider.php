@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Infrastructure\Security;
 
 use App\Infrastructure\Exception\ConnoisseurViewNotFound;
-use App\Infrastructure\Repository\ConnoisseurViews;
+use App\Infrastructure\ReadModel\Repository\ConnoisseurViews;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;

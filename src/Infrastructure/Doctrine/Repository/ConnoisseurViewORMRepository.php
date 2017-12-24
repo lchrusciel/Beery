@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Doctrine\Repository;
 
-use App\Infrastructure\Repository\ConnoisseurViews;
-use App\Infrastructure\View\ConnoisseurView;
+use App\Infrastructure\ReadModel\Repository\ConnoisseurViews;
+use App\Infrastructure\ReadModel\View\ConnoisseurView;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\Persistence\ObjectRepository;
 

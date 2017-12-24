@@ -2,7 +2,7 @@
 
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping">
 
-    <entity name="App\Infrastructure\View\ConnoisseurView" table="app_connoisseur_view">
+    <entity name="App\Infrastructure\ReadModel\View\ConnoisseurView" table="app_connoisseur_view">
         <id name="id" type="integer">
             <generator strategy="AUTO" />
         </id>

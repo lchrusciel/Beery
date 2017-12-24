@@ -18,6 +18,12 @@ security:
             stateless: true
             anonymous: true
 
+        beers:
+            pattern: "^/beers"
+            stateless: true
+            anonymous: true
+            methods: [GET, POST]
+
         login:
             pattern: "^/login"
             stateless: true
@@ -31,7 +37,10 @@ security:
         api:
             pattern: "^/"
             stateless: true
-            anonymous: true
+            provider: administrator
+            guard:
+                authenticators:
+                    - lexik_jwt_authentication.jwt_token_authenticator
 
     access_control:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }

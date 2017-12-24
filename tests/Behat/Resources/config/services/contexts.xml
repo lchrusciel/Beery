@@ -13,8 +13,18 @@
             <tag name="fob.context_service" />
         </service>
 
+        <service id="tests.behat.context.application.security_context" class="Tests\Behat\Context\Application\SecurityContext">
+            <tag name="fob.context_service" />
+        </service>
+
         <service id="tests.behat.context.setup.beer_context" class="Tests\Behat\Context\Setup\BeerContext">
             <argument type="service" id="__symfony__.prooph_service_bus.app_command_bus" />
+            <tag name="fob.context_service" />
+        </service>
+
+        <service id="tests.behat.context.setup.connoisseur_context" class="Tests\Behat\Context\Setup\ConnoisseurContext">
+            <argument type="service" id="__symfony__.prooph_service_bus.app_command_bus" />
+            <argument type="service" id="__symfony__.App\Infrastructure\Security\ConnoisseurPasswordHasher" />
             <tag name="fob.context_service" />
         </service>
 
@@ -25,6 +35,12 @@
         </service>
 
         <service id="tests.behat.context.api.connoisseur_context" class="Tests\Behat\Context\Api\ConnoisseurContext">
+            <argument type="service" id="__symfony__.test.client" />
+            <argument type="service" id="tests.service.json_asserter" />
+            <tag name="fob.context_service" />
+        </service>
+
+        <service id="tests.behat.context.api.security_context" class="Tests\Behat\Context\Api\SecurityContext">
             <argument type="service" id="__symfony__.test.client" />
             <argument type="service" id="tests.service.json_asserter" />
             <tag name="fob.context_service" />

@@ -6,7 +6,7 @@ namespace App\Infrastructure\Security;
 
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
-final class ConnoisseurPasswordHasher implements PasswordHasher
+final class ConnoisseurPasswordHasher implements ConnoisseurPasswordHasherInterface
 {
     /** @var UserPasswordEncoderInterface */
     private $passwordEncoder;

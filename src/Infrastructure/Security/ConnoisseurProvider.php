@@ -13,19 +13,19 @@ use Symfony\Component\Security\Core\User\UserProviderInterface;
 final class ConnoisseurProvider implements UserProviderInterface
 {
     /** @var ConnoisseurViews */
-    private $administratorViewRepository;
+    private $connoisseurViewRepository;
 
-    public function __construct(ConnoisseurViews $administratorViewRepository)
+    public function __construct(ConnoisseurViews $connoisseurViewRepository)
     {
-        $this->administratorViewRepository = $administratorViewRepository;
+        $this->connoisseurViewRepository = $connoisseurViewRepository;
     }
 
     public function loadUserByUsername($username): ConnoisseurSecurity
     {
         try {
-            $administratorView = $this->administratorViewRepository->getByEmail($username);
+            $connoisseurView = $this->connoisseurViewRepository->getByEmail($username);
 
-            return ConnoisseurSecurity::fromConnoisseurView($administratorView);
+            return ConnoisseurSecurity::fromConnoisseurView($connoisseurView);
         } catch (ConnoisseurViewNotFound $exception) {
             throw new UsernameNotFoundException('', 0, $exception);
         }

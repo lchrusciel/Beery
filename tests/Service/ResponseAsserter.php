@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tests\Service\Asserter;
+namespace Tests\Service;
 
 use Symfony\Component\HttpFoundation\Response;
 
-interface JsonAsserterInterface
+interface ResponseAsserter
 {
     public function assertResponse(Response $response, int $code, string $expectedContent): void;
 

@@ -2,13 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Tests\Service\Asserter;
+namespace Tests\Service\Json;
 
 use Coduo\PHPMatcher\Matcher;
 use Symfony\Component\HttpFoundation\Response;
+use Tests\Service\MatcherFactory;
+use Tests\Service\ResponseAsserter;
 use Webmozart\Assert\Assert;
 
-final class JsonAsserter implements JsonAsserterInterface
+final class JsonResponseAsserter implements ResponseAsserter
 {
     /** @var Matcher */
     private $matcher;

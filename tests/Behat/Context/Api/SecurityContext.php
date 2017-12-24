@@ -6,17 +6,17 @@ namespace Tests\Behat\Context\Api;
 
 use Behat\Behat\Context\Context;
 use Symfony\Component\BrowserKit\Client;
-use Tests\Service\Asserter\JsonAsserterInterface;
+use Tests\Service\ResponseAsserter;
 
 final class SecurityContext implements Context
 {
     /** @var Client */
     private $client;
 
-    /** @var JsonAsserterInterface */
+    /** @var ResponseAsserter */
     private $jsonAsserter;
 
-    public function __construct(Client $client, JsonAsserterInterface $jsonAsserter)
+    public function __construct(Client $client, ResponseAsserter $jsonAsserter)
     {
         $this->client = $client;
         $this->jsonAsserter = $jsonAsserter;

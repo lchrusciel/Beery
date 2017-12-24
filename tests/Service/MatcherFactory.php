@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Service\Asserter;
+namespace Tests\Service;
 
 use Coduo\PHPMatcher\Lexer;
 use Coduo\PHPMatcher\Matcher;

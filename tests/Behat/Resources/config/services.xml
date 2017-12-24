@@ -5,6 +5,6 @@
     </imports>
 
     <services>
-        <service id="tests.service.json_asserter" class="Tests\Service\Asserter\JsonAsserter" />
+        <service id="tests.service.json.json_response_asserter" class="Tests\Service\Json\JsonResponseAsserter" />
     </services>
 </container>

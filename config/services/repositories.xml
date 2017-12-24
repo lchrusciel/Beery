@@ -10,5 +10,7 @@
         <prototype namespace="App\Infrastructure\Doctrine\Repository\" resource="%kernel.project_dir%/src/Infrastructure/Doctrine/Repository/*" />
 
         <service id="App\Infrastructure\Repository\ConnoisseurViews" alias="App\Infrastructure\Doctrine\Repository\ConnoisseurViewORMRepository" />
+        <service id="App\Application\Repository\Beers" alias="App\Infrastructure\Doctrine\Repository\BeersORMRepository" />
+        <service id="App\Application\Repository\Connoisseurs" alias="App\Infrastructure\Doctrine\Repository\ConnoisseurORMRepository" />
     </services>
 </container>

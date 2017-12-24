@@ -5,18 +5,10 @@
         xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd"
 >
     <services>
-        <defaults public="true" />
+        <defaults autowire="true" autoconfigure="true" public="true" />
 
-        <service class="App\Application\CommandHandler\AddBeerHandler">
-            <argument type="service" id="prooph_service_bus.app_event_bus" />
-            <argument type="service" id="App\Infrastructure\Doctrine\Repository\BeersORMRepository" />
+        <prototype namespace="App\Application\CommandHandler\" resource="%kernel.project_dir%/src/Application/CommandHandler/*" >
             <tag name="prooph_service_bus.app_command_bus.route_target" message_detection="true" />
-        </service>
-
-        <service class="App\Application\CommandHandler\RegisterConnoisseurHandler">
-            <argument type="service" id="prooph_service_bus.app_event_bus" />
-            <argument type="service" id="App\Infrastructure\Doctrine\Repository\ConnoisseurORMRepository" />
-            <tag name="prooph_service_bus.app_command_bus.route_target" message_detection="true" />
-        </service>
+        </prototype>
     </services>
 </container>

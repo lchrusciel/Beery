@@ -191,6 +191,9 @@
     "phpstan/phpstan-doctrine": {
         "version": "0.8"
     },
+    "phpstan/phpstan-strict-rules": {
+        "version": "0.9"
+    },
     "prooph/common": {
         "version": "v4.1.0"
     },

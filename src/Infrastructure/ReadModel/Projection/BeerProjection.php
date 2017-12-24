@@ -6,22 +6,20 @@ namespace App\Infrastructure\ReadModel\Projection;
 
 use App\Application\Event\BeerAdded;
 use App\Infrastructure\ReadModel\View\BeerView;
-use Doctrine\Common\Persistence\ObjectManager;
+use App\Infrastructure\Repository\BeerViews;
 
 final class BeerProjection
 {
-    /** @var ObjectManager */
-    private $objectManager;
+    /** @var BeerViews */
+    private $beerViews;
 
-    public function __construct(ObjectManager $objectManager)
+    public function __construct(BeerViews $beerViews)
     {
-        $this->objectManager = $objectManager;
+        $this->beerViews = $beerViews;
     }
 
     public function __invoke(BeerAdded $beerAdded)
     {
-        $this->objectManager->persist(new BeerView($beerAdded->name()->value(), $beerAdded->abv()->value()));
-
-        $this->objectManager->flush();
+        $this->beerViews->add(new BeerView($beerAdded->name()->value(), $beerAdded->abv()->value()));
     }
 }

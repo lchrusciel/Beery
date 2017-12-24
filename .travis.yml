@@ -8,7 +8,7 @@ cache:
         - vendor
 
 before_install:
-    - source .travis.env
+    - source .test.env
 
     - phpenv config-rm xdebug.ini || true
 

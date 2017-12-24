@@ -1,7 +1,6 @@
 
 ###> symfony/framework-bundle ###
 .env
-test.env
 /public/bundles/
 /var/
 /vendor/

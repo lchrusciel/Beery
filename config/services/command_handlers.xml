@@ -9,13 +9,13 @@
 
         <service class="App\Application\CommandHandler\AddBeerHandler">
             <argument type="service" id="prooph_service_bus.app_event_bus" />
-            <argument type="service" id="app.infrastructure.doctrine.repository.beers_orm_repository" />
+            <argument type="service" id="App\Infrastructure\Doctrine\Repository\BeersORMRepository" />
             <tag name="prooph_service_bus.app_command_bus.route_target" message_detection="true" />
         </service>
 
         <service class="App\Application\CommandHandler\RegisterConnoisseurHandler">
             <argument type="service" id="prooph_service_bus.app_event_bus" />
-            <argument type="service" id="app.infrastructure.doctrine.repository.connoisseur_orm_repository" />
+            <argument type="service" id="App\Infrastructure\Doctrine\Repository\ConnoisseurORMRepository" />
             <tag name="prooph_service_bus.app_command_bus.route_target" message_detection="true" />
         </service>
     </services>

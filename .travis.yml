@@ -22,4 +22,7 @@ install:
     - openssl rsa -pubout -in var/jwt/private.pem -out var/jwt/public.pem
 
 script:
-    - composer check
+    - composer validate --strict
+    - composer analyse
+    - vendor/bin/phpspec run -fpretty --ansi
+    - vendor/bin/behat --strict --colors

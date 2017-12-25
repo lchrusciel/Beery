@@ -5,19 +5,19 @@ declare(strict_types=1);
 namespace Tests\Behat\Context\Api;
 
 use Behat\Behat\Context\Context;
-use Symfony\Component\BrowserKit\Client;
 use Symfony\Component\HttpFoundation\Response;
-use Tests\Service\Asserter\JsonAsserterInterface;
+use Tests\Service\HttpClient;
+use Tests\Service\ResponseAsserter;
 
 final class ConnoisseurContext implements Context
 {
-    /** @var Client */
+    /** @var HttpClient */
     private $client;
 
-    /** @var JsonAsserterInterface */
+    /** @var ResponseAsserter */
     private $jsonAsserter;
 
-    public function __construct(Client $client, JsonAsserterInterface $jsonAsserter)
+    public function __construct(HttpClient $client, ResponseAsserter $jsonAsserter)
     {
         $this->client = $client;
         $this->jsonAsserter = $jsonAsserter;
@@ -28,7 +28,7 @@ final class ConnoisseurContext implements Context
      */
     public function iRegisterTheConnoisseurWithTheEmailAndTheEmail(string $name, string $email, string $password): void
     {
-        $this->client->request('POST', 'register', ['name' => $name, 'email' => $email, 'password' => $password]);
+        $this->client->post('register', ['name' => $name, 'email' => $email, 'password' => $password]);
     }
 
     /**
@@ -36,9 +36,9 @@ final class ConnoisseurContext implements Context
      */
     public function theConnoisseurShouldBeCreated(string $name, string $password): void
     {
-        $this->client->request('POST', 'login_check', ['_username' => $name, '_password' => $password]);
+        $this->client->post('login_check', ['_username' => $name, '_password' => $password]);
         /** @var Response $response */
-        $response = $this->client->getResponse();
+        $response = $this->client->response();
 
         $this->jsonAsserter->assertResponse($response, Response::HTTP_OK, '{"token": "@string@"}');
     }

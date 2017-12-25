@@ -5,19 +5,19 @@ declare(strict_types=1);
 namespace Tests\Behat\Context\Api;
 
 use Behat\Behat\Context\Context;
-use Symfony\Component\BrowserKit\Client;
 use Symfony\Component\HttpFoundation\Response;
-use Tests\Service\Asserter\JsonAsserterInterface;
+use Tests\Service\HttpClient;
+use Tests\Service\ResponseAsserter;
 
 final class BeerContext implements Context
 {
-    /** @var Client */
+    /** @var HttpClient */
     private $client;
 
-    /** @var JsonAsserterInterface */
+    /** @var ResponseAsserter */
     private $jsonAsserter;
 
-    public function __construct(Client $client, JsonAsserterInterface $jsonAsserter)
+    public function __construct(HttpClient $client, ResponseAsserter $jsonAsserter)
     {
         $this->client = $client;
         $this->jsonAsserter = $jsonAsserter;
@@ -25,10 +25,11 @@ final class BeerContext implements Context
 
     /**
      * @When I add a new :beerName beer which has :abv% ABV
+     * @When I try to add a new :beerName beer which has :abv% ABV
      */
     public function iAddANewBeerWhichHasAbv(string $beerName, int $abv): void
     {
-        $this->client->request('POST', 'beers', ['beerName' => $beerName, 'abv' => $abv]);
+        $this->client->post('beers', ['beerName' => $beerName, 'abv' => $abv]);
     }
 
     /**
@@ -36,7 +37,7 @@ final class BeerContext implements Context
      */
     public function iBrowseTheBeersCatalogue()
     {
-        $this->client->request('GET', 'beers');
+        $this->client->get('beers');
     }
 
     /**
@@ -44,10 +45,7 @@ final class BeerContext implements Context
      */
     public function theBeerShouldBeAvailableInTheCatalogue(string $beerName): void
     {
-        /** @var Response $response */
-        $response = $this->client->getResponse();
-
-        $this->jsonAsserter->assertResponseCode($response, Response::HTTP_CREATED);
+        $this->jsonAsserter->assertResponseCode($this->client->response(), Response::HTTP_CREATED);
     }
 
     /**
@@ -55,13 +53,21 @@ final class BeerContext implements Context
      */
     public function iShouldSeeTheBeer(string $beerName): void
     {
-        /** @var Response $response */
-        $response = $this->client->getResponse();
-
         $this->jsonAsserter->assertResponse(
-            $response,
+            $this->client->response(),
             Response::HTTP_OK,
             sprintf('[{"id":@integer@,"name":"%s","abv":5}]', $beerName)
+        );
+    }
+
+    /**
+     * @Then I should be notified that I'm not allowed to do it
+     */
+    public function iShouldBeNotifiedThatImNotAllowedToDoIt()
+    {
+        $this->jsonAsserter->assertResponseCode(
+            $this->client->response(),
+            Response::HTTP_UNAUTHORIZED
         );
     }
 }

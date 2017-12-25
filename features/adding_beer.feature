@@ -1,13 +1,16 @@
-@beer @application @api
+@beer @api
 Feature: Adding a beer
     In order to share details about the beer with the community
     As a Community Member
     I want to add a beer to catalogue
 
-    Background:
+    @application
+    Scenario: Adding a new beer
         Given I registered as "Rick Sanchez" with the "rick@morty.com" email and the "birdperson1" password
         And I am logged in as "rick@morty.com" with "birdperson1" password
-
-    Scenario: Adding a new beer
         When I add a new "King of Hop" beer which has 5% ABV
         Then the "King of Hop" beer should be available in the catalogue
+
+    Scenario: It is impossible to add a new beer if customer is not registered
+        When I try to add a new "King of Hop" beer which has 5% ABV
+        Then I should be notified that I'm not allowed to do it

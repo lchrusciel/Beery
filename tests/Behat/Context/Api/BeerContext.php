@@ -25,6 +25,7 @@ final class BeerContext implements Context
 
     /**
      * @When I add a new :beerName beer which has :abv% ABV
+     * @When I try to add a new :beerName beer which has :abv% ABV
      */
     public function iAddANewBeerWhichHasAbv(string $beerName, int $abv): void
     {
@@ -56,6 +57,17 @@ final class BeerContext implements Context
             $this->client->response(),
             Response::HTTP_OK,
             sprintf('[{"id":@integer@,"name":"%s","abv":5}]', $beerName)
+        );
+    }
+
+    /**
+     * @Then I should be notified that I'm not allowed to do it
+     */
+    public function iShouldBeNotifiedThatImNotAllowedToDoIt()
+    {
+        $this->jsonAsserter->assertResponseCode(
+            $this->client->response(),
+            Response::HTTP_UNAUTHORIZED
         );
     }
 }

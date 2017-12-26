@@ -11,7 +11,7 @@ default:
                - 'tests/Behat/Resources/config/services.xml'
     suites:
         beer_application_features:
-            paths:    ['%paths.base%/features']
+            paths: ['%paths.base%/features']
             contexts_services:
                 - 'tests.behat.context.application.beer_context'
                 - 'tests.behat.context.application.security_context'
@@ -20,14 +20,14 @@ default:
             filters:
                 tags: '@beer && @application'
         connoisseur_application_features:
-            paths:    ['%paths.base%/features']
+            paths: ['%paths.base%/features']
             contexts_services:
                 - 'tests.behat.context.application.connoisseur_context'
                 - 'tests.behat.context.hook.doctrine_context'
             filters:
                 tags: '@connoisseur && @application'
         beer_api_features:
-            paths:    ['%paths.base%/features']
+            paths: ['%paths.base%/features']
             contexts_services:
                 - 'tests.behat.context.api.beer_context'
                 - 'tests.behat.context.api.security_context'
@@ -37,7 +37,7 @@ default:
             filters:
                 tags: '@beer && @api'
         connoisseur_api_features:
-            paths:    ['%paths.base%/features']
+            paths: ['%paths.base%/features']
             contexts_services:
                 - 'tests.behat.context.api.connoisseur_context'
                 - 'tests.behat.context.hook.doctrine_context'

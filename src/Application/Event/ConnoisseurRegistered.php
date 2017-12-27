@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Application\Event;
 
 use App\Domain\Model\Email;
+use App\Domain\Model\Id;
 use App\Domain\Model\Name;
 use App\Domain\Model\Password;
 use Prooph\Common\Messaging\DomainEvent;
@@ -20,13 +21,19 @@ final class ConnoisseurRegistered extends DomainEvent
         $this->setPayload($payload);
     }
 
-    public static function occur(Name $name, Email $email, Password $password)
+    public static function occur(Id $id, Name $name, Email $email, Password $password)
     {
         return new self([
+            'id' => $id->value(),
             'name' => $name->value(),
             'email' => $email->value(),
             'password' => $password->value(),
         ]);
+    }
+
+    public function id(): Id
+    {
+        return new Id($this->payload()['id']);
     }
 
     public function name(): Name

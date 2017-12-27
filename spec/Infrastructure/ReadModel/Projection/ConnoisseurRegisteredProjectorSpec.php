@@ -6,6 +6,7 @@ namespace spec\App\Infrastructure\ReadModel\Projection;
 
 use App\Application\Event\ConnoisseurRegistered;
 use App\Domain\Model\Email;
+use App\Domain\Model\Id;
 use App\Domain\Model\Name;
 use App\Domain\Model\Password;
 use App\Infrastructure\ReadModel\Projection\ConnoisseurRegisteredProjector;
@@ -38,6 +39,7 @@ final class ConnoisseurRegisteredProjectorSpec extends ObjectBehavior
         ;
 
         $this(ConnoisseurRegistered::occur(
+            new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'),
             new Name('Krzysztof Krawczyk'),
             new Email('krawczyk@biale.pl'),
             new Password('$2a$04$N2x1MTIgy8fth66TdWZ1NeHIjJIrK7Ns09I9xk1PDRn8IqkQSckua')

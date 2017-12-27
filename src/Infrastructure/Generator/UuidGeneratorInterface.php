@@ -6,5 +6,5 @@ namespace App\Infrastructure\Generator;
 
 interface UuidGeneratorInterface
 {
-    public function generate(): string ;
+    public function generate(): string;
 }

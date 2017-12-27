@@ -25,7 +25,7 @@ final class UuidOrderedTimeGeneratorSpec extends ObjectBehavior
         return [
             'returnUuid' => function ($subject): bool {
                 return Uuid::isValid($subject);
-            }
+            },
         ];
     }
 }

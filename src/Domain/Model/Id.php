@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Domain\Model;
 
-use Ramsey\Uuid\Uuid;
 use App\Domain\Exception\InvalidUuidFormatException;
+use Ramsey\Uuid\Uuid;
 
 final class Id
 {

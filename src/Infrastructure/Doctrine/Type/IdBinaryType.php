@@ -31,5 +31,4 @@ final class IdBinaryType extends UuidBinaryOrderedTimeType
     {
         return self::NAME;
     }
-
 }

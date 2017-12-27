@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace App\Domain\Model;
 
-use Ramsey\Uuid\UuidInterface;
-
 class Connoisseur
 {
-    /** @var UuidInterface */
+    /** @var Id */
     private $id;
 
     /** @var Name */
@@ -20,15 +18,16 @@ class Connoisseur
     /** @var Password */
     private $password;
 
-    private function __construct(Name $name, Email $email, Password $password)
+    private function __construct(Id $id, Name $name, Email $email, Password $password)
     {
+        $this->id = $id;
         $this->name = $name;
         $this->email = $email;
         $this->password = $password;
     }
 
-    public static function register(Name $name, Email $email, Password $password): self
+    public static function register(Id $id, Name $name, Email $email, Password $password): self
     {
-        return new self($name, $email, $password);
+        return new self($id, $name, $email, $password);
     }
 }

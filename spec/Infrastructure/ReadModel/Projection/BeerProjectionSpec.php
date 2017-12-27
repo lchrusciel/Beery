@@ -6,6 +6,7 @@ namespace spec\App\Infrastructure\ReadModel\Projection;
 
 use App\Application\Event\BeerAdded;
 use App\Domain\Model\Abv;
+use App\Domain\Model\Id;
 use App\Domain\Model\Name;
 use App\Infrastructure\ReadModel\Projection\BeerProjection;
 use App\Infrastructure\ReadModel\View\BeerView;
@@ -29,6 +30,6 @@ final class BeerProjectionSpec extends ObjectBehavior
     {
         $beerViews->add(Argument::exact(new BeerView('King of Hop', 5)))->shouldBeCalled();
 
-        $this(BeerAdded::occur(new Name('King of Hop'), new Abv(5)));
+        $this(BeerAdded::occur(new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'), new Name('King of Hop'), new Abv(5)));
     }
 }

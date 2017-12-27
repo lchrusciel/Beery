@@ -4,10 +4,7 @@
                   xmlns:gedmo="http://gediminasm.org/schemas/orm/doctrine-extensions-mapping">
 
     <entity name="App\Domain\Model\Beer" table="app_beer">
-        <id name="id" column="id" type="uuid_binary_ordered_time">
-            <generator strategy="CUSTOM"/>
-            <custom-id-generator class="Ramsey\Uuid\Doctrine\UuidOrderedTimeGenerator"/>
-        </id>
+        <id name="id" column="id" type="id_binary" />
 
         <field name="name" column="name" type="name" />
         <field name="abv" column="abv" type="abv" />

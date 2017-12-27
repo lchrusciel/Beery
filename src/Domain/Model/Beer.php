@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace App\Domain\Model;
 
-use Ramsey\Uuid\UuidInterface;
-
 class Beer
 {
-    /** @var UuidInterface */
+    /** @var Id */
     private $id;
 
     /** @var Name */
@@ -17,14 +15,15 @@ class Beer
     /** @var Abv */
     private $abv;
 
-    private function __construct(Name $name, Abv $abv)
+    private function __construct(Id $id, Name $name, Abv $abv)
     {
+        $this->id = $id;
         $this->name = $name;
         $this->abv = $abv;
     }
 
-    public static function add(Name $name, Abv $abv): self
+    public static function add(Id $id, Name $name, Abv $abv): self
     {
-        return new self($name, $abv);
+        return new self($id, $name, $abv);
     }
 }

@@ -4,6 +4,7 @@
         <service id="tests.behat.context.application.beer_context" class="Tests\Behat\Context\Application\BeerContext">
             <argument type="service" id="__symfony__.prooph_service_bus.app_command_bus" />
             <argument type="service" id="__symfony__.tests.service.prooph.plugin.event_collector_plugin" />
+            <argument type="service" id="__symfony__.App\Infrastructure\Generator\UuidGeneratorInterface" />
             <tag name="fob.context_service" />
         </service>
 
@@ -19,6 +20,7 @@
 
         <service id="tests.behat.context.setup.beer_context" class="Tests\Behat\Context\Setup\BeerContext">
             <argument type="service" id="__symfony__.prooph_service_bus.app_command_bus" />
+            <argument type="service" id="__symfony__.App\Infrastructure\Generator\UuidGeneratorInterface" />
             <tag name="fob.context_service" />
         </service>
 

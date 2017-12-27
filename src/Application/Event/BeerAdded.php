@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Application\Event;
 
 use App\Domain\Model\Abv;
+use App\Domain\Model\Id;
 use App\Domain\Model\Name;
 use Prooph\Common\Messaging\DomainEvent;
 use Prooph\Common\Messaging\PayloadTrait;
@@ -19,9 +20,14 @@ final class BeerAdded extends DomainEvent
         $this->setPayload($payload);
     }
 
-    public static function occur(Name $name, Abv $abv): self
+    public static function occur(Id $id, Name $name, Abv $abv): self
     {
-        return new self(['name' => $name->value(), 'abv' => $abv->value()]);
+        return new self(['id' => $id->value(), 'name' => $name->value(), 'abv' => $abv->value()]);
+    }
+
+    public function id(): Id
+    {
+        return new Id($this->payload()['id']);
     }
 
     public function name(): Name

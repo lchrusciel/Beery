@@ -27,6 +27,7 @@ final class RegisterConnoisseurHandler
     public function __invoke(RegisterConnoisseur $registerConnoisseur): void
     {
         $connoisseur = Connoisseur::register(
+            $registerConnoisseur->id(),
             $registerConnoisseur->name(),
             $registerConnoisseur->email(),
             $registerConnoisseur->password()
@@ -35,6 +36,7 @@ final class RegisterConnoisseurHandler
         $this->connoisseurs->add($connoisseur);
 
         $this->eventBus->dispatch(ConnoisseurRegistered::occur(
+            $registerConnoisseur->id(),
             $registerConnoisseur->name(),
             $registerConnoisseur->email(),
             $registerConnoisseur->password()

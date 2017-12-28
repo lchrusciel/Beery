@@ -10,6 +10,7 @@ use App\Application\Event\BeerAdded;
 use App\Application\Repository\Beers;
 use App\Domain\Model\Abv;
 use App\Domain\Model\Beer;
+use App\Domain\Model\Id;
 use App\Domain\Model\Name;
 use PhpSpec\ObjectBehavior;
 use Prooph\ServiceBus\EventBus;
@@ -29,11 +30,16 @@ final class AddBeerHandlerSpec extends ObjectBehavior
 
     function it_creates_a_beer(EventBus $eventBus, Beers $beers): void
     {
-        $beers->add(Argument::exact(Beer::add(new Name('King of Hop'), new Abv(5))))->shouldBeCalled();
+        $beers->add(Argument::exact(Beer::add(
+            new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'),
+            new Name('King of Hop'),
+            new Abv(5)
+        )))->shouldBeCalled();
 
         $eventBus
             ->dispatch(Argument::that(function (BeerAdded $beerAdded) {
                 return
+                    $beerAdded->id() == new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59') &&
                     $beerAdded->name() == new Name('King of Hop') &&
                     $beerAdded->abv() == new Abv(5)
                 ;
@@ -41,7 +47,11 @@ final class AddBeerHandlerSpec extends ObjectBehavior
             ->shouldBeCalled()
         ;
 
-        $this(AddBeer::create(new Name('King of Hop'), new Abv(5)));
+        $this(AddBeer::create(
+            new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'),
+            new Name('King of Hop'),
+            new Abv(5)
+        ));
     }
 
     function it_does_not_dispatch_event_if_adding_beer_would_fail(EventBus $eventBus, Beers $beers): void
@@ -51,7 +61,11 @@ final class AddBeerHandlerSpec extends ObjectBehavior
 
         $this
             ->shouldThrow(\InvalidArgumentException::class)
-            ->during('__invoke', [AddBeer::create(new Name('King of Hop'), new Abv(5))])
+            ->during('__invoke', [AddBeer::create(
+                new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'),
+                new Name('King of Hop'),
+                new Abv(5)
+            )])
         ;
     }
 }

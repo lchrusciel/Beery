@@ -10,6 +10,7 @@ use App\Application\Event\ConnoisseurRegistered;
 use App\Application\Repository\Connoisseurs;
 use App\Domain\Model\Connoisseur;
 use App\Domain\Model\Email;
+use App\Domain\Model\Id;
 use App\Domain\Model\Name;
 use App\Domain\Model\Password;
 use PhpSpec\ObjectBehavior;
@@ -32,6 +33,7 @@ final class RegisterConnoisseurHandlerSpec extends ObjectBehavior
     {
         $connoisseurs
             ->add(Argument::exact(Connoisseur::register(
+                new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'),
                 new Name('Krzysztof Krawczyk'),
                 new Email('krawczyk@biale.pl'),
                 new Password('$2a$04$N2x1MTIgy8fth66TdWZ1NeHIjJIrK7Ns09I9xk1PDRn8IqkQSckua'))
@@ -50,6 +52,7 @@ final class RegisterConnoisseurHandlerSpec extends ObjectBehavior
         ;
 
         $this(RegisterConnoisseur::create(
+            new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'),
             new Name('Krzysztof Krawczyk'),
             new Email('krawczyk@biale.pl'),
             new Password('$2a$04$N2x1MTIgy8fth66TdWZ1NeHIjJIrK7Ns09I9xk1PDRn8IqkQSckua')
@@ -67,6 +70,7 @@ final class RegisterConnoisseurHandlerSpec extends ObjectBehavior
         $this
             ->shouldThrow(\InvalidArgumentException::class)
             ->during('__invoke', [RegisterConnoisseur::create(
+                new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'),
                 new Name('Krzysztof Krawczyk'),
                 new Email('krawczyk@biale.pl'),
                 new Password('$2a$04$N2x1MTIgy8fth66TdWZ1NeHIjJIrK7Ns09I9xk1PDRn8IqkQSckua')

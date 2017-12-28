@@ -4,8 +4,9 @@ doctrine:
         url: '%env(DATABASE_URL)%'
         types:
             abv: App\Infrastructure\Doctrine\Type\AbvType
-            name: App\Infrastructure\Doctrine\Type\NameType
             email: App\Infrastructure\Doctrine\Type\EmailType
+            id_binary: App\Infrastructure\Doctrine\Type\IdBinaryType
+            name: App\Infrastructure\Doctrine\Type\NameType
             password: App\Infrastructure\Doctrine\Type\PasswordType
     orm:
         auto_generate_proxy_classes: '%kernel.debug%'

@@ -7,8 +7,10 @@ namespace Tests\Behat\Context\Application;
 use App\Application\Command\RegisterConnoisseur;
 use App\Application\Event\ConnoisseurRegistered;
 use App\Domain\Model\Email;
+use App\Domain\Model\Id;
 use App\Domain\Model\Name;
 use App\Domain\Model\Password;
+use App\Infrastructure\Generator\UuidGeneratorInterface;
 use Behat\Behat\Context\Context;
 use Prooph\ServiceBus\CommandBus;
 use Tests\Service\Prooph\Plugin\EventsRecorder;
@@ -22,10 +24,14 @@ final class ConnoisseurContext implements Context
     /** @var EventsRecorder */
     private $eventsRecorder;
 
-    public function __construct(CommandBus $commandBus, EventsRecorder $eventsRecorder)
+    /** @var UuidGeneratorInterface */
+    private $uuidGenerator;
+
+    public function __construct(CommandBus $commandBus, EventsRecorder $eventsRecorder, UuidGeneratorInterface $uuidGenerator)
     {
         $this->commandBus = $commandBus;
         $this->eventsRecorder = $eventsRecorder;
+        $this->uuidGenerator = $uuidGenerator;
     }
 
     /**
@@ -34,6 +40,7 @@ final class ConnoisseurContext implements Context
     public function iRegisterTheConnoisseurWithTheEmailAndTheEmail(string $name, string $email, string $password): void
     {
         $this->commandBus->dispatch(RegisterConnoisseur::create(
+            new Id($this->uuidGenerator->generate()),
             new Name($name),
             new Email($email),
             new Password(password_hash($password, PASSWORD_BCRYPT))

@@ -8,7 +8,9 @@ use App\Application\Command\AddBeer;
 use App\Application\Event\BeerAdded;
 use App\Domain\Model\Abv;
 use App\Domain\Model\Beer;
+use App\Domain\Model\Id;
 use App\Domain\Model\Name;
+use App\Infrastructure\Generator\UuidGeneratorInterface;
 use Behat\Behat\Context\Context;
 use Prooph\ServiceBus\CommandBus;
 use Tests\Service\Prooph\Plugin\EventsRecorder;
@@ -22,10 +24,14 @@ final class BeerContext implements Context
     /** @var EventsRecorder */
     private $eventsRecorder;
 
-    public function __construct(CommandBus $commandBus, EventsRecorder $eventsRecorder)
+    /** @var UuidGeneratorInterface */
+    private $generator;
+
+    public function __construct(CommandBus $commandBus, EventsRecorder $eventsRecorder, UuidGeneratorInterface $generator)
     {
         $this->commandBus = $commandBus;
         $this->eventsRecorder = $eventsRecorder;
+        $this->generator = $generator;
     }
 
     /**
@@ -33,7 +39,7 @@ final class BeerContext implements Context
      */
     public function iAddANewBeerWhichHasAbv(string $beerName, int $abv): void
     {
-        $this->commandBus->dispatch(AddBeer::create(new Name($beerName), new Abv($abv)));
+        $this->commandBus->dispatch(AddBeer::create(new Id($this->generator->generate()), new Name($beerName), new Abv($abv)));
     }
 
     /**

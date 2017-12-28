@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://symfony.com/schema/dic/services">
+    <services>
+        <service id="tests.behat.context.setup.beer_context" class="Tests\Behat\Context\Setup\BeerContext">
+            <argument type="service" id="__symfony__.prooph_service_bus.app_command_bus" />
+            <argument type="service" id="__symfony__.App\Infrastructure\Generator\UuidGeneratorInterface" />
+            <tag name="fob.context_service" />
+        </service>
+
+        <service id="tests.behat.context.setup.connoisseur_context" class="Tests\Behat\Context\Setup\ConnoisseurContext">
+            <argument type="service" id="__symfony__.prooph_service_bus.app_command_bus" />
+            <argument type="service" id="__symfony__.App\Infrastructure\Security\ConnoisseurPasswordHasher" />
+            <argument type="service" id="__symfony__.App\Infrastructure\Generator\UuidGeneratorInterface" />
+            <tag name="fob.context_service" />
+        </service>
+    </services>
+</container>

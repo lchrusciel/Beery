@@ -323,9 +323,6 @@
     "symfony/inflector": {
         "version": "v3.4.0-beta4"
     },
-    "symfony/lts": {
-        "version": "v3"
-    },
     "symfony/monolog-bridge": {
         "version": "v3.4.0-beta2"
     },
@@ -343,9 +340,6 @@
     },
     "symfony/orm-pack": {
         "version": "v1.0.4"
-    },
-    "symfony/polyfill-apcu": {
-        "version": "v1.6.0"
     },
     "symfony/polyfill-mbstring": {
         "version": "v1.6.0"
@@ -407,6 +401,9 @@
     "symfony/yaml": {
         "version": "v3.4.0-beta2"
     },
+    "symplify/better-reflection-docblock": {
+        "version": "v3.1.0"
+    },
     "symplify/coding-standard": {
         "version": "v2.5.9"
     },
@@ -415,6 +412,9 @@
     },
     "symplify/package-builder": {
         "version": "v2.5.9"
+    },
+    "symplify/token-runner": {
+        "version": "v3.0.2"
     },
     "webmozart/assert": {
         "version": "1.2.0"

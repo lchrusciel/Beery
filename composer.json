@@ -9,15 +9,14 @@
         "lexik/jwt-authentication-bundle": "^2.4",
         "prooph/service-bus-symfony-bundle": "^0.6",
         "ramsey/uuid-doctrine": "^1.4",
-        "symfony/console": "^3.4",
+        "symfony/console": "^4.0",
         "symfony/flex": "^1.0",
-        "symfony/framework-bundle": "^3.4",
-        "symfony/lts": "^3",
-        "symfony/monolog-bundle": "^3.1",
+        "symfony/framework-bundle": "^4.0",
+        "symfony/monolog-bundle": "^3",
         "symfony/orm-pack": "^1.0",
-        "symfony/security-bundle": "^3.4",
-        "symfony/serializer": "^3",
-        "symfony/yaml": "^3.4"
+        "symfony/security-bundle": "^4.0",
+        "symfony/serializer": "^4.0",
+        "symfony/yaml": "^4.0"
     },
     "require-dev": {
         "coduo/php-matcher": "^2.3",
@@ -30,10 +29,12 @@
         "phpstan/phpstan": "^0.9",
         "phpstan/phpstan-doctrine": "^0.9",
         "phpstan/phpstan-strict-rules": "^0.9.0",
-        "sylius-labs/coding-standard": "^1.0",
-        "symfony/browser-kit": "^3",
-        "symfony/dotenv": "^3.4"
+        "sylius-labs/coding-standard": "dev-master",
+        "symfony/browser-kit": "^4",
+        "symfony/dotenv": "^4"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "config": {
         "preferred-install": {
             "*": "dist"

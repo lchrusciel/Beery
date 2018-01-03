@@ -5,8 +5,9 @@
     "license": "proprietary",
     "require": {
         "php": "^7.1",
+
         "lexik/jwt-authentication-bundle": "^2.4",
-        "prooph/service-bus-symfony-bundle": "dev-patch-1",
+        "prooph/service-bus-symfony-bundle": "^0.6",
         "ramsey/uuid-doctrine": "^1.4",
         "symfony/console": "^3.4",
         "symfony/flex": "^1.0",

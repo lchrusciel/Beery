@@ -47,4 +47,22 @@ final class ConnoisseurContext implements Context
             new Password(($this->connoisseurPasswordHasher)($password))
         ));
     }
+
+    /**
+     * @Given there is a :name connoisseur
+     */
+    public function thereIsAConnoisseur(string $name): void
+    {
+        $this->commandBus->dispatch(RegisterConnoisseur::create(
+            new Id($this->uuidGenerator->generate()),
+            new Name($name),
+            new Email($this->generateEmail($name)),
+            new Password(($this->connoisseurPasswordHasher)(str_shuffle($name)))
+        ));
+    }
+
+    private function generateEmail(string $name): string
+    {
+        return str_replace(' ', '.', strtolower($name)) . '@example.com';
+    }
 }

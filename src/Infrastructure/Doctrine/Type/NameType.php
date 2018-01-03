@@ -24,6 +24,10 @@ final class NameType extends Type
             return null;
         }
 
+        if (is_string($value)) {
+            $value = new Name($value);
+        }
+
         if ($value instanceof Name) {
             return $value->value();
         }

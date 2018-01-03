@@ -24,6 +24,10 @@ final class EmailType extends Type
             return null;
         }
 
+        if (is_string($value)) {
+            $value = new Email($value);
+        }
+
         if ($value instanceof Email) {
             return $value->value();
         }

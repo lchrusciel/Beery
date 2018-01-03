@@ -8,6 +8,7 @@ use App\Domain\Model\Abv;
 use App\Domain\Model\Beer;
 use App\Domain\Model\Id;
 use App\Domain\Model\Name;
+use App\Domain\Model\Rate;
 use PhpSpec\ObjectBehavior;
 
 final class BeerSpec extends ObjectBehavior
@@ -20,5 +21,10 @@ final class BeerSpec extends ObjectBehavior
     function it_is_initializable(): void
     {
         $this->shouldHaveType(Beer::class);
+    }
+
+    function it_can_be_rated()
+    {
+        $this->rate(new Rate(3.5));
     }
 }

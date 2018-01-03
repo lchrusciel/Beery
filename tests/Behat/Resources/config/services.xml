@@ -7,6 +7,8 @@
     <services>
         <service id="tests.service.json.json_response_asserter" class="Tests\Service\Json\JsonResponseAsserter" />
 
+        <service id="tests.service.in_memory_shared_storage" class="Tests\Service\InMemorySharedStorage" />
+
         <service id="tests.service.json.json_client" class="Tests\Service\Json\JsonClient" >
             <argument type="service" id="__symfony__.test.client" />
         </service>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://symfony.com/schema/dic/services">
+    <services>
+        <service id="tests.behat.context.transform.my_context" class="Tests\Behat\Context\Transform\MyContext">
+            <argument type="service" id="tests.service.in_memory_shared_storage" />
+            <tag name="fob.context_service" />
+        </service>
+
+        <service id="tests.behat.context.transform.beer_context" class="Tests\Behat\Context\Transform\BeerContext">
+            <argument type="service" id="__symfony__.App\Application\Repository\Beers" />
+            <tag name="fob.context_service" />
+        </service>
+
+        <service id="tests.behat.context.transform.connoisseur_context" class="Tests\Behat\Context\Transform\ConnoisseurContext">
+            <argument type="service" id="__symfony__.App\Application\Repository\Connoisseurs" />
+            <tag name="fob.context_service" />
+        </service>
+    </services>
+</container>

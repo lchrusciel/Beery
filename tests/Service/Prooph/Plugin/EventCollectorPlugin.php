@@ -36,7 +36,7 @@ final class EventCollectorPlugin implements Plugin, EventsRecorder
         }
 
         $this->buses[] = $messageBus;
-        if (!$messageBus instanceof NamedMessageBus) {
+        if (! $messageBus instanceof NamedMessageBus) {
             throw new RuntimeException(sprintf(
                 'To use the EventCollector, the Bus "%s" needs to implement "%s"',
                 $messageBus,
@@ -46,7 +46,7 @@ final class EventCollectorPlugin implements Plugin, EventsRecorder
 
         $this->listenerHandlers[] = $messageBus->attach(
             MessageBus::EVENT_FINALIZE,
-            function (ActionEvent $actionEvent) {
+            function (ActionEvent $actionEvent): void {
                 $this->messages->add($this->createContextFromActionEvent($actionEvent));
             },
             MessageBus::PRIORITY_INVOKE_HANDLER - 50

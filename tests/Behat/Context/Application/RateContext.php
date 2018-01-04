@@ -50,7 +50,9 @@ final class RateContext implements Context
             $domainEvent = $message->event();
 
             if ($domainEvent instanceof BeerRated && $domainEvent->beerId() == $beer->id()) {
-                $beerRates[] = $domainEvent->rate()->value();
+                $rate = $domainEvent->rate();
+
+                $beerRates[] = $rate->value();
             }
         }
 

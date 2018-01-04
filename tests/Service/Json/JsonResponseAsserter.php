@@ -37,7 +37,7 @@ final class JsonResponseAsserter implements ResponseAsserter
     {
         $result = $this->matcher->match($response->getContent(), $expectedContent);
 
-        if (!$result) {
+        if (! $result) {
             $diff = new \Diff(explode(PHP_EOL, $expectedContent), explode(PHP_EOL, $response->getContent()), []);
 
             throw new \InvalidArgumentException($diff->render(new \Diff_Renderer_Text_Unified()));
@@ -65,8 +65,10 @@ final class JsonResponseAsserter implements ResponseAsserter
      */
     public function assertResponseHeader(Response $response): void
     {
+        $responseHeaderBag = $response->headers;
+
         Assert::true(
-            $response->headers->contains('Content-Type', 'application/json'),
+            $responseHeaderBag->contains('Content-Type', 'application/json'),
             'Response header doesn\'t contains the \'application/json\' header'
         );
     }

@@ -31,6 +31,8 @@ final class BeerContext implements Context
      */
     public function theBeerWithAbvHasBeenAdded(string $name, int $abv): void
     {
-        $this->commandBus->dispatch(AddBeer::create(new Id($this->generator->generate()), new Name($name), new Abv($abv)));
+        $this->commandBus->dispatch(
+            AddBeer::create(new Id($this->generator->generate()), new Name($name), new Abv($abv))
+        );
     }
 }

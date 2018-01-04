@@ -27,8 +27,11 @@ final class BeerContext implements Context
     /** @var UuidGeneratorInterface */
     private $generator;
 
-    public function __construct(CommandBus $commandBus, EventsRecorder $eventsRecorder, UuidGeneratorInterface $generator)
-    {
+    public function __construct(
+        CommandBus $commandBus,
+        EventsRecorder $eventsRecorder,
+        UuidGeneratorInterface $generator
+    ) {
         $this->commandBus = $commandBus;
         $this->eventsRecorder = $eventsRecorder;
         $this->generator = $generator;
@@ -39,7 +42,9 @@ final class BeerContext implements Context
      */
     public function iAddANewBeerWhichHasAbv(string $beerName, int $abv): void
     {
-        $this->commandBus->dispatch(AddBeer::create(new Id($this->generator->generate()), new Name($beerName), new Abv($abv)));
+        $this->commandBus->dispatch(
+            AddBeer::create(new Id($this->generator->generate()), new Name($beerName), new Abv($abv))
+        );
     }
 
     /**

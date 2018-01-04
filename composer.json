@@ -69,10 +69,10 @@
             "vendor/bin/behat --strict --colors"
         ],
         "fix": [
-            "vendor/bin/ecs check --ansi --no-progress-bar bin public spec src tests --fix"
+            "vendor/bin/ecs check --ansi --no-progress-bar bin public src tests --fix"
         ],
         "analyse": [
-            "vendor/bin/ecs check --ansi --no-progress-bar bin public spec src tests",
+            "vendor/bin/ecs check --ansi --no-progress-bar bin public src tests",
             "vendor/bin/phpstan analyse --ansi --no-progress -c phpstan.neon -l 7 bin public src tests"
         ],
         "auto-scripts": {

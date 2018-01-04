@@ -18,7 +18,7 @@ final class ConnoisseurRegisteredProjector
         $this->connoisseurViews = $connoisseurViews;
     }
 
-    public function __invoke(ConnoisseurRegistered $connoisseurRegistered)
+    public function __invoke(ConnoisseurRegistered $connoisseurRegistered): void
     {
         $name = $connoisseurRegistered->name();
         $email = $connoisseurRegistered->email();

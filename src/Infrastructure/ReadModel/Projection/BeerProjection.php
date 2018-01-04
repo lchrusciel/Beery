@@ -18,7 +18,7 @@ final class BeerProjection
         $this->beerViews = $beerViews;
     }
 
-    public function __invoke(BeerAdded $beerAdded)
+    public function __invoke(BeerAdded $beerAdded): void
     {
         $name = $beerAdded->name();
         $abv = $beerAdded->abv();

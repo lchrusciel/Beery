@@ -14,20 +14,20 @@ final class Id
 
     public function __construct(string $id)
     {
-        if (!Uuid::isValid($id)) {
+        if (! Uuid::isValid($id)) {
             throw new InvalidUuidFormatException();
         }
 
         $this->id = $id;
     }
 
-    public function value(): string
-    {
-        return $this->id;
-    }
-
     public function __toString(): string
     {
         return $this->value();
+    }
+
+    public function value(): string
+    {
+        return $this->id;
     }
 }

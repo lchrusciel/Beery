@@ -47,7 +47,7 @@ final class EmailType extends Type
 
         try {
             return new Email($value);
-        } catch (\InvalidArgumentException $e) {
+        } catch (\InvalidArgumentException $exception) {
             throw ConversionException::conversionFailed($value, static::NAME);
         }
     }

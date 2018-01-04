@@ -47,7 +47,7 @@ final class NameType extends Type
 
         try {
             return new Name($value);
-        } catch (\InvalidArgumentException $e) {
+        } catch (\InvalidArgumentException $exception) {
             throw ConversionException::conversionFailed($value, static::NAME);
         }
     }

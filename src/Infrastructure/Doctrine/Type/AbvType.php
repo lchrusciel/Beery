@@ -43,7 +43,7 @@ final class AbvType extends Type
 
         try {
             return new Abv((float) $value);
-        } catch (\InvalidArgumentException $e) {
+        } catch (\InvalidArgumentException $exception) {
             throw ConversionException::conversionFailed($value, static::NAME);
         }
     }

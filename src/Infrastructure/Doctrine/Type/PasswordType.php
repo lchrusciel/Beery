@@ -43,7 +43,7 @@ final class PasswordType extends Type
 
         try {
             return new Password($value);
-        } catch (\InvalidArgumentException $e) {
+        } catch (\InvalidArgumentException $exception) {
             throw ConversionException::conversionFailed($value, static::NAME);
         }
     }

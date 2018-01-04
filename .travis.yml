@@ -24,5 +24,6 @@ install:
 script:
     - composer validate --strict
     - composer analyse
+    - vendor/bin/phpcs src tests -sp \ --standard=vendor/object-calisthenics/phpcs-calisthenics-rules/src/ObjectCalisthenics/ruleset.xml
     - vendor/bin/phpspec run -fpretty --ansi
     - vendor/bin/behat --strict --colors

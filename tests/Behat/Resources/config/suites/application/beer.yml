@@ -1,7 +1,6 @@
 default:
     suites:
         beer_application_features:
-            paths: ['%paths.base%/features']
             contexts_services:
                 - 'tests.behat.context.application.beer_context'
                 - 'tests.behat.context.application.security_context'

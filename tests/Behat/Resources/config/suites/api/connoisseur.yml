@@ -1,7 +1,6 @@
 default:
     suites:
         connoisseur_api_features:
-            paths: ['%paths.base%/features']
             contexts_services:
                 - 'tests.behat.context.api.connoisseur_context'
                 - 'tests.behat.context.hook.doctrine_context'

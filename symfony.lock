@@ -83,6 +83,9 @@
     "friends-of-behat/cross-container-extension": {
         "version": "v1.0.0"
     },
+    "friends-of-behat/suite-settings-extension": {
+        "version": "v1.0.1"
+    },
     "friends-of-behat/symfony-extension": {
         "version": "v1.0.0"
     },

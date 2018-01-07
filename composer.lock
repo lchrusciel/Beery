@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e257054853c867e3b9befcae4c591d3b",
+    "content-hash": "c3cd337e9417fc2031465b6f3265f384",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -4380,6 +4380,47 @@
             ],
             "description": "Makes possible to inject services and parameters from other containers.",
             "time": "2017-12-04T17:23:54+00:00"
+        },
+        {
+            "name": "friends-of-behat/suite-settings-extension",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfBehat/SuiteSettingsExtension.git",
+                "reference": "d539997fdc6a2730e0c4ae44a026e1d00ee931f4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfBehat/SuiteSettingsExtension/zipball/d539997fdc6a2730e0c4ae44a026e1d00ee931f4",
+                "reference": "d539997fdc6a2730e0c4ae44a026e1d00ee931f4",
+                "shasum": ""
+            },
+            "require": {
+                "behat/behat": "^3.1",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "friends-of-behat/test-context": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FriendsOfBehat\\SuiteSettingsExtension\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kamil Kokot",
+                    "email": "kamil@kokot.me",
+                    "homepage": "http://kamil.kokot.me"
+                }
+            ],
+            "description": "Allows to overwrite suites' default settings.",
+            "time": "2017-07-10T20:43:21+00:00"
         },
         {
             "name": "friends-of-behat/symfony-extension",

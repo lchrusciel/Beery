@@ -9,4 +9,8 @@ use App\Domain\Model\Connoisseur;
 interface Connoisseurs
 {
     public function add(Connoisseur $connoisseur): void;
+
+    public function getOneByEmail(string $email): Connoisseur;
+
+    public function getOneByName(string $connoisseurName): Connoisseur;
 }

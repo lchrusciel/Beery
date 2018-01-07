@@ -1,3 +1,4 @@
+@rate @application
 Feature: Rating a beer
     In order to share my opinion about a beer with the community
     As a Community Member

@@ -15,7 +15,15 @@
             <tag name="fob.context_service" />
         </service>
 
+        <service id="tests.behat.context.application.rate_context" class="Tests\Behat\Context\Application\RateContext">
+            <argument type="service" id="__symfony__.prooph_service_bus.app_command_bus" />
+            <argument type="service" id="__symfony__.tests.service.prooph.plugin.event_collector_plugin" />
+            <tag name="fob.context_service" />
+        </service>
+
         <service id="tests.behat.context.application.security_context" class="Tests\Behat\Context\Application\SecurityContext">
+            <argument type="service" id="tests.service.in_memory_shared_storage" />
+            <argument type="service" id="__symfony__.App\Application\Repository\Connoisseurs" />
             <tag name="fob.context_service" />
         </service>
     </services>

@@ -30,4 +30,9 @@ class Connoisseur
     {
         return new self($id, $name, $email, $password);
     }
+
+    public function id(): Id
+    {
+        return $this->id;
+    }
 }

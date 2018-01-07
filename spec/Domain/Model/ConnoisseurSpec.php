@@ -23,6 +23,16 @@ final class ConnoisseurSpec extends ObjectBehavior
         ]);
     }
 
+    function it_has_id()
+    {
+        $this->id()->shouldBeLike(new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'));
+    }
+
+    function it_has_email()
+    {
+        $this->email()->shouldBeLike(new Email('krawczyk@biale.pl'));
+    }
+
     function it_is_initializable(): void
     {
         $this->shouldHaveType(Connoisseur::class);

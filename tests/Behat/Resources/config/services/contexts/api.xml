@@ -13,6 +13,12 @@
             <tag name="fob.context_service" />
         </service>
 
+        <service id="tests.behat.context.api.rate_context" class="Tests\Behat\Context\Api\RateContext">
+            <argument type="service" id="tests.service.json.json_client" />
+            <argument type="service" id="tests.service.json.json_response_asserter" />
+            <tag name="fob.context_service" />
+        </service>
+
         <service id="tests.behat.context.api.security_context" class="Tests\Behat\Context\Api\SecurityContext">
             <argument type="service" id="tests.service.json.json_client" />
             <argument type="service" id="tests.service.json.json_response_asserter" />

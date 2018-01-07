@@ -35,4 +35,9 @@ class Connoisseur
     {
         return $this->id;
     }
+
+    public function email(): Email
+    {
+        return $this->email;
+    }
 }

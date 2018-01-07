@@ -10,6 +10,7 @@ use App\Application\Event\BeerRated;
 use App\Application\Repository\Beers;
 use App\Application\Repository\Exception\BeerNotFoundException;
 use App\Domain\Model\Beer;
+use App\Domain\Model\Email;
 use App\Domain\Model\Id;
 use App\Domain\Model\Rate;
 use PhpSpec\ObjectBehavior;
@@ -37,7 +38,7 @@ final class RateBeerHandlerSpec extends ObjectBehavior
         $eventBus
             ->dispatch(Argument::that(function (BeerRated $beerRated) {
                 return
-                    $beerRated->connoisseurId() == new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59') &&
+                    $beerRated->connoisseurEmail() == new Email('rick@morty.com') &&
                     $beerRated->beerId() == new Id('02b9ccbc-e30b-4ec2-8fb9-339609f36c65') &&
                     $beerRated->rate() == new Rate(3.5)
                 ;
@@ -46,7 +47,7 @@ final class RateBeerHandlerSpec extends ObjectBehavior
         ;
 
         $this(RateBeer::create(
-            new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'),
+            new Email('rick@morty.com'),
             new Id('02b9ccbc-e30b-4ec2-8fb9-339609f36c65'),
             new Rate(3.5)
         ));
@@ -61,7 +62,7 @@ final class RateBeerHandlerSpec extends ObjectBehavior
         $this
             ->shouldThrow(BeerNotFoundException::class)
             ->during('__invoke', [RateBeer::create(
-                new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'),
+                new Email('rick@morty.com'),
                 new Id('02b9ccbc-e30b-4ec2-8fb9-339609f36c65'),
                 new Rate(3.5)
             )])
@@ -78,7 +79,7 @@ final class RateBeerHandlerSpec extends ObjectBehavior
         $this
             ->shouldThrow(\DomainException::class)
             ->during('__invoke', [RateBeer::create(
-                new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'),
+                new Email('rick@morty.com'),
                 new Id('02b9ccbc-e30b-4ec2-8fb9-339609f36c65'),
                 new Rate(3.5)
             )])

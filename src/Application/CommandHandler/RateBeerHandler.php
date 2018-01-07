@@ -30,7 +30,7 @@ final class RateBeerHandler
         $beer->rate($rateBeer->rate());
 
         $this->eventBus->dispatch(BeerRated::occur(
-            $rateBeer->connoisseurId(),
+            $rateBeer->connoisseurEmail(),
             $rateBeer->beerId(),
             $rateBeer->rate()
         ));

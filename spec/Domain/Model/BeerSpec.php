@@ -23,6 +23,11 @@ final class BeerSpec extends ObjectBehavior
         $this->shouldHaveType(Beer::class);
     }
 
+    function it_has_id()
+    {
+        $this->id()->shouldBeLike(new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'));
+    }
+
     function it_can_be_rated()
     {
         $this->rate(new Rate(3.5));

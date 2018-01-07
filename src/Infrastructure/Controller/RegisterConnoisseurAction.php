@@ -39,11 +39,13 @@ final class RegisterConnoisseurAction
 
     public function __invoke(Request $request): Response
     {
+        $requestParameterBag = $request->request;
+
         $this->commandBus->dispatch(RegisterConnoisseur::create(
             new Id($this->generator->generate()),
-            new Name($request->request->getAlnum('name')),
-            new Email($request->request->get('email')),
-            new Password(($this->passwordHasher)($request->request->get('password')))
+            new Name($requestParameterBag->getAlnum('name')),
+            new Email($requestParameterBag->get('email')),
+            new Password(($this->passwordHasher)($requestParameterBag->get('password')))
         ));
 
         return new JsonResponse(null, Response::HTTP_CREATED);

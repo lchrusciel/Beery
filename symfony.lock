@@ -146,6 +146,9 @@
     "nikic/php-parser": {
         "version": "v3.1.2"
     },
+    "object-calisthenics/phpcs-calisthenics-rules": {
+        "version": "v3.1.0"
+    },
     "ocramius/package-versions": {
         "version": "1.1.3"
     },

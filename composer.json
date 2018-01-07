@@ -24,6 +24,7 @@
         "friends-of-behat/context-service-extension": "^1.0",
         "friends-of-behat/cross-container-extension": "^1.0",
         "friends-of-behat/symfony-extension": "^1.0",
+        "object-calisthenics/phpcs-calisthenics-rules": "^3.1",
         "phpspec/nyan-formatters": "^2.0",
         "phpspec/phpspec": "^4.2",
         "phpstan/phpstan": "^0.9",
@@ -68,10 +69,10 @@
             "vendor/bin/behat --strict --colors"
         ],
         "fix": [
-            "vendor/bin/ecs check --ansi --no-progress-bar bin public spec src tests --fix"
+            "vendor/bin/ecs check --ansi --no-progress-bar bin public src tests --fix"
         ],
         "analyse": [
-            "vendor/bin/ecs check --ansi --no-progress-bar bin public spec src tests",
+            "vendor/bin/ecs check --ansi --no-progress-bar bin public src tests",
             "vendor/bin/phpstan analyse --ansi --no-progress -c phpstan.neon -l 7 bin public src tests"
         ],
         "auto-scripts": {

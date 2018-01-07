@@ -13,7 +13,7 @@ final class Email
 
     public function __construct(string $value)
     {
-        if ($value === '' || !$this->validateEmail($value)) {
+        if ($value === '' || ! $this->validateEmail($value)) {
             throw new InvalidEmailException();
         }
 

@@ -24,7 +24,7 @@ final class AddBeerHandler
         $this->beers = $beers;
     }
 
-    public function __invoke(AddBeer $addBeer)
+    public function __invoke(AddBeer $addBeer): void
     {
         $this->beers->add(Beer::add(
             $addBeer->id(),

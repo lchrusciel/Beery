@@ -30,10 +30,12 @@ final class AddBeerAction
 
     public function __invoke(Request $request): Response
     {
+        $requestParameterBag = $request->request;
+
         $this->commandBus->dispatch(AddBeer::create(
             new Id($this->generator->generate()),
-            new Name($request->request->getAlnum('beerName')),
-            new Abv((float) $request->request->getDigits('abv'))
+            new Name($requestParameterBag->getAlnum('beerName')),
+            new Abv((float) $requestParameterBag->getDigits('abv'))
         ));
 
         return new JsonResponse(null, Response::HTTP_CREATED);

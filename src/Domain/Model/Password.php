@@ -13,7 +13,7 @@ final class Password
 
     public function __construct(string $value)
     {
-        if ($value === '' || !$this->validatePassword($value)) {
+        if ($value === '' || ! $this->validatePassword($value)) {
             throw new InvalidPasswordException();
         }
 

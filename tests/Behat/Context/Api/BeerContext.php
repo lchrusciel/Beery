@@ -35,7 +35,7 @@ final class BeerContext implements Context
     /**
      * @When I browse the beers catalogue
      */
-    public function iBrowseTheBeersCatalogue()
+    public function iBrowseTheBeersCatalogue(): void
     {
         $this->client->get('beers');
     }
@@ -63,7 +63,7 @@ final class BeerContext implements Context
     /**
      * @Then I should be notified that I'm not allowed to do it
      */
-    public function iShouldBeNotifiedThatImNotAllowedToDoIt()
+    public function iShouldBeNotifiedThatImNotAllowedToDoIt(): void
     {
         $this->jsonAsserter->assertResponseCode(
             $this->client->response(),

@@ -27,8 +27,11 @@ final class ConnoisseurContext implements Context
     /** @var UuidGeneratorInterface */
     private $uuidGenerator;
 
-    public function __construct(CommandBus $commandBus, EventsRecorder $eventsRecorder, UuidGeneratorInterface $uuidGenerator)
-    {
+    public function __construct(
+        CommandBus $commandBus,
+        EventsRecorder $eventsRecorder,
+        UuidGeneratorInterface $uuidGenerator
+    ) {
         $this->commandBus = $commandBus;
         $this->eventsRecorder = $eventsRecorder;
         $this->uuidGenerator = $uuidGenerator;

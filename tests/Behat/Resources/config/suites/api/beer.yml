@@ -1,0 +1,11 @@
+default:
+    suites:
+        beer_api_features:
+            contexts_services:
+                - 'tests.behat.context.api.beer_context'
+                - 'tests.behat.context.api.security_context'
+                - 'tests.behat.context.hook.doctrine_context'
+                - 'tests.behat.context.setup.beer_context'
+                - 'tests.behat.context.setup.connoisseur_context'
+            filters:
+                tags: '@beer && @api'

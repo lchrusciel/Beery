@@ -1,3 +1,6 @@
+imports:
+    - 'tests/Behat/Resources/config/suites.yml'
+
 default:
     extensions:
         FriendsOfBehat\CrossContainerExtension: ~
@@ -9,51 +12,3 @@ default:
         FriendsOfBehat\ContextServiceExtension:
            imports:
                - 'tests/Behat/Resources/config/services.xml'
-    suites:
-        beer_application_features:
-            paths: ['%paths.base%/features']
-            contexts_services:
-                - 'tests.behat.context.application.beer_context'
-                - 'tests.behat.context.application.security_context'
-                - 'tests.behat.context.hook.doctrine_context'
-                - 'tests.behat.context.setup.connoisseur_context'
-            filters:
-                tags: '@beer && @application'
-        connoisseur_application_features:
-            paths: ['%paths.base%/features']
-            contexts_services:
-                - 'tests.behat.context.application.connoisseur_context'
-                - 'tests.behat.context.hook.doctrine_context'
-            filters:
-                tags: '@connoisseur && @application'
-        rate_application_features:
-            paths: ['%paths.base%/features']
-            contexts_services:
-                - 'tests.behat.context.application.rate_context'
-                - 'tests.behat.context.application.security_context'
-                - 'tests.behat.context.hook.doctrine_context'
-                - 'tests.behat.context.setup.beer_context'
-                - 'tests.behat.context.setup.connoisseur_context'
-                - 'tests.behat.context.setup.rate_context'
-                - 'tests.behat.context.transform.beer_context'
-                - 'tests.behat.context.transform.connoisseur_context'
-                - 'tests.behat.context.transform.my_context'
-            filters:
-                tags: '@rate && @application'
-        beer_api_features:
-            paths: ['%paths.base%/features']
-            contexts_services:
-                - 'tests.behat.context.api.beer_context'
-                - 'tests.behat.context.api.security_context'
-                - 'tests.behat.context.hook.doctrine_context'
-                - 'tests.behat.context.setup.beer_context'
-                - 'tests.behat.context.setup.connoisseur_context'
-            filters:
-                tags: '@beer && @api'
-        connoisseur_api_features:
-            paths: ['%paths.base%/features']
-            contexts_services:
-                - 'tests.behat.context.api.connoisseur_context'
-                - 'tests.behat.context.hook.doctrine_context'
-            filters:
-                tags: '@connoisseur && @api'

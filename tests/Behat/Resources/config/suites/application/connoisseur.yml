@@ -1,0 +1,9 @@
+default:
+    suites:
+        connoisseur_application_features:
+            paths: ['%paths.base%/features']
+            contexts_services:
+                - 'tests.behat.context.application.connoisseur_context'
+                - 'tests.behat.context.hook.doctrine_context'
+            filters:
+                tags: '@connoisseur && @application'

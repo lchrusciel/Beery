@@ -1,0 +1,6 @@
+imports:
+    - 'suites/application/beer.yml'
+    - 'suites/application/connoisseur.yml'
+    - 'suites/application/rate.yml'
+    - 'suites/api/beer.yml'
+    - 'suites/api/connoisseur.yml'

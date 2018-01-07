@@ -1,0 +1,11 @@
+default:
+    suites:
+        beer_application_features:
+            paths: ['%paths.base%/features']
+            contexts_services:
+                - 'tests.behat.context.application.beer_context'
+                - 'tests.behat.context.application.security_context'
+                - 'tests.behat.context.hook.doctrine_context'
+                - 'tests.behat.context.setup.connoisseur_context'
+            filters:
+                tags: '@beer && @application'

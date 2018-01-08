@@ -11,6 +11,11 @@
             <tag name="fob.context_service" />
         </service>
 
+        <service id="tests.behat.context.transform.beer_view_context" class="Tests\Behat\Context\Transform\BeerViewContext">
+            <argument type="service" id="__symfony__.App\Infrastructure\Repository\BeerViews" />
+            <tag name="fob.context_service" />
+        </service>
+
         <service id="tests.behat.context.transform.connoisseur_context" class="Tests\Behat\Context\Transform\ConnoisseurContext">
             <argument type="service" id="__symfony__.App\Application\Repository\Connoisseurs" />
             <tag name="fob.context_service" />

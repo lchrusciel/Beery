@@ -28,7 +28,7 @@ final class BeerViewORMRepository implements BeerViews
     {
         $this->objectManager->persist($beerView);
 
-        $this->objectManager->flush();
+        $this->save();
     }
 
     public function getAll(): array
@@ -43,5 +43,19 @@ final class BeerViewORMRepository implements BeerViews
         assert($beerView instanceof BeerView);
 
         return $beerView;
+    }
+
+    public function getByName(string $name): BeerView
+    {
+        $beerView = $this->repository->findOneBy(['name' => $name]);
+
+        assert($beerView instanceof BeerView);
+
+        return $beerView;
+    }
+
+    public function save(): void
+    {
+        $this->objectManager->flush();
     }
 }

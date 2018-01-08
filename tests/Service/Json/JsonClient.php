@@ -12,6 +12,8 @@ final class JsonClient implements HttpClient
 {
     /** @var Client */
     private $client;
+
+    /** @var array */
     private $headers = [];
 
     public function __construct(Client $client)
@@ -21,11 +23,13 @@ final class JsonClient implements HttpClient
 
     public function post(string $url, array $arguments): void
     {
+        $this->client->restart();
         $this->client->request('POST', $url, $arguments, [], $this->headers);
     }
 
     public function get(string $url): void
     {
+        $this->client->restart();
         $this->client->request('GET', $url, [], [], $this->headers);
     }
 

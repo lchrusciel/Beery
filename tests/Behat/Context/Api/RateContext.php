@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tests\Behat\Context\Api;
 
 use App\Domain\Model\Beer;
+use App\Infrastructure\ReadModel\View\BeerView;
 use Behat\Behat\Context\Context;
 use Symfony\Component\HttpFoundation\Response;
 use Tests\Service\HttpClient;
@@ -27,16 +28,26 @@ final class RateContext implements Context
     /**
      * @When I rate the :beer beer :rate
      */
-    public function iRateTheBeer(Beer $beer, float $rate)
+    public function iRateTheBeer(Beer $beer, float $rate): void
     {
         $this->client->post('beers/' . $beer->id() . '/rates', ['rate' => $rate]);
     }
 
     /**
-     * @Then the :beer beer should have average rate :rate
+     * @Then the :beerView beer should have average rate :rate
      */
-    public function theBeerShouldHaveAverageRate(Beer $beer, float $expectedRate)
+    public function theBeerShouldHaveAverageRate(BeerView $beerView, float $rate): void
     {
-        $this->jsonAsserter->assertResponseCode($this->client->response(), Response::HTTP_CREATED);
+        $this->client->get('beers/' . $beerView->getId());
+
+        $this->jsonAsserter->assertResponse(
+            $this->client->response(),
+            Response::HTTP_OK,
+            sprintf(
+                '{"id":"@string@","name":"%s","abv":"@string@","amountOfRates":"@integer@","averageRate":"%.2f"}',
+                $beerView->getName(),
+                $rate
+            )
+        );
     }
 }

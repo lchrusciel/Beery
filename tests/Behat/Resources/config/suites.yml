@@ -4,3 +4,4 @@ imports:
     - 'suites/application/rate.yml'
     - 'suites/api/beer.yml'
     - 'suites/api/connoisseur.yml'
+    - 'suites/api/rate.yml'

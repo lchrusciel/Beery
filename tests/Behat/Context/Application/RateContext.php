@@ -34,7 +34,7 @@ final class RateContext implements Context
      */
     public function iRateTheBeer(Connoisseur $connoisseur, Beer $beer, float $rate)
     {
-        $this->commandBus->dispatch(RateBeer::create($connoisseur->id(), $beer->id(), new Rate($rate)));
+        $this->commandBus->dispatch(RateBeer::create($connoisseur->email(), $beer->id(), new Rate($rate)));
     }
 
     /**

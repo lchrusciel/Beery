@@ -8,6 +8,7 @@
 
         <field name="name" column="name" type="name" />
         <field name="abv" column="abv" type="abv" />
+        <field name="rates" column="rates" type="array" />
     </entity>
 
 </doctrine-mapping>

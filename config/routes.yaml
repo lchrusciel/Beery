@@ -4,6 +4,12 @@ berry_add_connoisseur:
     defaults:
         _controller: 'App\Infrastructure\Controller\RegisterConnoisseurAction'
 
+berry_rate_beer:
+    path: '/beers/{beerId}/rates'
+    methods: ['POST']
+    defaults:
+        _controller: 'App\Infrastructure\Controller\RateBeerAction'
+
 berry_add_beer:
     path: '/beers'
     methods: ['POST']

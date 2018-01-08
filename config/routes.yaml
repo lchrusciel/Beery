@@ -4,11 +4,21 @@ berry_add_connoisseur:
     defaults:
         _controller: 'App\Infrastructure\Controller\RegisterConnoisseurAction'
 
+beery_show_beer:
+    path: '/beers/{beerId}'
+    methods: ['GET']
+    defaults:
+        _controller: 'App\Infrastructure\Controller\ShowBeerAction'
+    requirements:
+        beerId: '([a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}){1}'
+
 berry_rate_beer:
     path: '/beers/{beerId}/rates'
     methods: ['POST']
     defaults:
         _controller: 'App\Infrastructure\Controller\RateBeerAction'
+    requirements:
+        beerId: '([a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}){1}'
 
 berry_add_beer:
     path: '/beers'

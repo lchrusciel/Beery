@@ -20,9 +20,10 @@ final class BeerProjection
 
     public function __invoke(BeerAdded $beerAdded): void
     {
+        $id = $beerAdded->id();
         $name = $beerAdded->name();
         $abv = $beerAdded->abv();
 
-        $this->beerViews->add(new BeerView($name->value(), $abv->value()));
+        $this->beerViews->add(new BeerView($id->value(), $name->value(), $abv->value()));
     }
 }

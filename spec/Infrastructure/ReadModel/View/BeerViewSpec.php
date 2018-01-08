@@ -11,7 +11,7 @@ final class BeerViewSpec extends ObjectBehavior
 {
     function let()
     {
-        $this->beConstructedWith('King of Hop', 5);
+        $this->beConstructedWith('e8a68535-3e17-468f-acc3-8a3e0fa04a59', 'King of Hop', 5);
     }
 
     function it_is_a_beer_view(): void
@@ -26,6 +26,6 @@ final class BeerViewSpec extends ObjectBehavior
 
     function it_has_an_abv()
     {
-        $this->abv()->shouldReturn((float) 5);
+        $this->abv()->shouldReturn('5.00');
     }
 }

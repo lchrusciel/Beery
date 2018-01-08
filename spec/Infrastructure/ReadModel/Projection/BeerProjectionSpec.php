@@ -28,8 +28,16 @@ final class BeerProjectionSpec extends ObjectBehavior
 
     function it_creates_a_beer_view(BeerViews $beerViews)
     {
-        $beerViews->add(Argument::exact(new BeerView('King of Hop', 5)))->shouldBeCalled();
+        $beerViews->add(Argument::exact(new BeerView(
+            'e8a68535-3e17-468f-acc3-8a3e0fa04a59',
+            'King of Hop',
+            5))
+        )->shouldBeCalled();
 
-        $this(BeerAdded::occur(new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'), new Name('King of Hop'), new Abv(5)));
+        $this(BeerAdded::occur(
+            new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'),
+            new Name('King of Hop'),
+            new Abv(5))
+        );
     }
 }

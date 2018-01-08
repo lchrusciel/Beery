@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Behat\Context\Api;
 
+use App\Domain\Model\Beer;
 use Behat\Behat\Context\Context;
 use Symfony\Component\HttpFoundation\Response;
 use Tests\Service\HttpClient;
@@ -41,6 +42,14 @@ final class BeerContext implements Context
     }
 
     /**
+     * @When I check the :beer details
+     */
+    public function iCheckTheDetails(Beer $beer): void
+    {
+        $this->client->get('beers/' . $beer->id());
+    }
+
+    /**
      * @Then the :beerName beer should be available in the catalogue
      */
     public function theBeerShouldBeAvailableInTheCatalogue(string $beerName): void
@@ -56,7 +65,7 @@ final class BeerContext implements Context
         $this->jsonAsserter->assertResponse(
             $this->client->response(),
             Response::HTTP_OK,
-            sprintf('[{"id":@integer@,"name":"%s","abv":5}]', $beerName)
+            sprintf('[{"id":@string@,"name":"%s","abv":"@string@","amountOfRates":0,"rate":"0.00"}]', $beerName)
         );
     }
 
@@ -68,6 +77,28 @@ final class BeerContext implements Context
         $this->jsonAsserter->assertResponseCode(
             $this->client->response(),
             Response::HTTP_UNAUTHORIZED
+        );
+    }
+
+    /**
+     * @Then I should see that the :beerName beer has :abv% ABV, :amountOfRates rates and its average rate is :rate
+     */
+    public function iShouldSeeThatTheBeerHasAbvRatesAndItsAvarageRateIs(
+        string $beerName,
+        int $abv,
+        int $amountOfRates,
+        float $rate
+    ): void {
+        $this->jsonAsserter->assertResponse(
+            $this->client->response(),
+            Response::HTTP_OK,
+            sprintf(
+                '{"id":"@string@","name":"%s","abv":"%.2f","amountOfRates":%d,"rate":"%.2f"}',
+                $beerName,
+                $abv,
+                $amountOfRates,
+                $rate
+            )
         );
     }
 }

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Doctrine\Repository;
 
+use App\Domain\Model\Id;
 use App\Infrastructure\ReadModel\View\BeerView;
 use App\Infrastructure\Repository\BeerViews;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -33,5 +34,14 @@ final class BeerViewORMRepository implements BeerViews
     public function getAll(): array
     {
         return $this->repository->findAll();
+    }
+
+    public function get(Id $id): BeerView
+    {
+        $beerView = $this->repository->find($id);
+
+        assert($beerView instanceof BeerView);
+
+        return $beerView;
     }
 }

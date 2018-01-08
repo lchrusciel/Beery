@@ -3,10 +3,7 @@
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping">
 
     <entity name="App\Infrastructure\ReadModel\View\BeerView" table="app_beer_view">
-        <id name="id" type="integer">
-            <generator strategy="AUTO" />
-        </id>
-
+        <id name="id" column="id" type="string" />
         <field name="name" column="name" type="string" />
         <field name="abv" column="abv" type="float" />
     </entity>

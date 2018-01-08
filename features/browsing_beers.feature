@@ -4,7 +4,7 @@ Feature: Browsing beers
     As a Community Member
     I want to browse all available beers
 
-    Scenario: Adding a new beer
+    Scenario: Browsing beers
         Given the "King of Hop" beer with 5% ABV has been added
         When I browse the beers catalogue
         Then I should see the "King of Hop" beer

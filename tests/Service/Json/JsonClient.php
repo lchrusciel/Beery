@@ -7,6 +7,7 @@ namespace Tests\Service\Json;
 use Symfony\Component\BrowserKit\Client;
 use Symfony\Component\HttpFoundation\Response;
 use Tests\Service\HttpClient;
+use Webmozart\Assert\Assert;
 
 final class JsonClient implements HttpClient
 {
@@ -22,11 +23,13 @@ final class JsonClient implements HttpClient
     public function post(string $url, array $arguments): void
     {
         $this->client->request('POST', $url, $arguments, [], $this->headers);
+        Assert::lessThan($this->response()->getStatusCode(), Response::HTTP_BAD_REQUEST);
     }
 
     public function get(string $url): void
     {
         $this->client->request('GET', $url, [], [], $this->headers);
+        Assert::eq($this->response()->getStatusCode(), Response::HTTP_OK);
     }
 
     public function response(): Response

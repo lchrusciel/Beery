@@ -1,10 +1,9 @@
-@rate @application
+@rate @application @api
 Feature: Rating a beer
     In order to share my opinion about a beer with the community
     As a Community Member
     I want to rate a beer
 
-    @api
     Scenario: Rate from single customer
         Given the "King of Hop" beer with 5% ABV has been added
         And I registered as "Rick Sanchez" with the "rick@morty.com" email and the "birdperson1" password

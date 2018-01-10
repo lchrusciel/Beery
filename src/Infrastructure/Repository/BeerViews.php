@@ -14,4 +14,8 @@ interface BeerViews
     public function getAll(): array;
 
     public function get(Id $id): BeerView;
+
+    public function getByName(string $beerName): BeerView;
+
+    public function save();
 }

@@ -5,11 +5,17 @@ declare(strict_types=1);
 namespace App\Infrastructure\ReadModel\Projection;
 
 use App\Application\Event\BeerAdded;
+use App\Application\Event\BeerRated;
+use App\Infrastructure\Prooph\ApplyMethodDispatcherTrait;
 use App\Infrastructure\ReadModel\View\BeerView;
 use App\Infrastructure\Repository\BeerViews;
 
 final class BeerProjection
 {
+    use ApplyMethodDispatcherTrait {
+        applyMessage as public __invoke;
+    }
+
     /** @var BeerViews */
     private $beerViews;
 
@@ -18,12 +24,23 @@ final class BeerProjection
         $this->beerViews = $beerViews;
     }
 
-    public function __invoke(BeerAdded $beerAdded): void
+    public function applyBeerAdded(BeerAdded $beerAdded): void
     {
         $id = $beerAdded->id();
         $name = $beerAdded->name();
         $abv = $beerAdded->abv();
 
         $this->beerViews->add(new BeerView($id->value(), $name->value(), $abv->value()));
+    }
+
+    public function applyBeerRated(BeerRated $beerRated): void
+    {
+        $rate = $beerRated->rate();
+
+        $beerView = $this->beerViews->get($beerRated->beerId());
+
+        $beerView->rate($rate->value());
+
+        $this->beerViews->save();
     }
 }

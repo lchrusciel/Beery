@@ -65,7 +65,7 @@ final class BeerContext implements Context
         $this->jsonAsserter->assertResponse(
             $this->client->response(),
             Response::HTTP_OK,
-            sprintf('[{"id":@string@,"name":"%s","abv":"@string@","amountOfRates":0,"rate":"0.00"}]', $beerName)
+            sprintf('[{"id":@string@,"name":"%s","abv":"@string@","amountOfRates":0,"averageRate":"0.00"}]', $beerName)
         );
     }
 
@@ -93,7 +93,7 @@ final class BeerContext implements Context
             $this->client->response(),
             Response::HTTP_OK,
             sprintf(
-                '{"id":"@string@","name":"%s","abv":"%.2f","amountOfRates":%d,"rate":"%.2f"}',
+                '{"id":"@string@","name":"%s","abv":"%.2f","amountOfRates":%d,"averageRate":"%.2f"}',
                 $beerName,
                 $abv,
                 $amountOfRates,

@@ -6,6 +6,8 @@
         <id name="id" column="id" type="string" />
         <field name="name" column="name" type="string" />
         <field name="abv" column="abv" type="float" />
+        <field name="amountOfRates" column="amount_of_rates" type="integer" />
+        <field name="averageRate" column="average_rate" type="float" />
     </entity>
 
 </doctrine-mapping>

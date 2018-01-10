@@ -26,11 +26,21 @@ final class BeerContext implements Context
 
     /**
      * @When I add a new :beerName beer which has :abv% ABV
-     * @When I try to add a new :beerName beer which has :abv% ABV
      */
     public function iAddANewBeerWhichHasAbv(string $beerName, int $abv): void
     {
         $this->client->post('beers', ['beerName' => $beerName, 'abv' => $abv]);
+    }
+
+    /**
+     * @When I try to add a new :beerName beer which has :abv% ABV
+     */
+    public function iTryToAddANewBeerWhichHasAbv(string $beerName, int $abv): void
+    {
+        try {
+            $this->client->post('beers', ['beerName' => $beerName, 'abv' => $abv]);
+        } catch (\InvalidArgumentException $exception) {
+        }
     }
 
     /**

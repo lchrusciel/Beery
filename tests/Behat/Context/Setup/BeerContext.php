@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Tests\Behat\Context\Setup;
 
 use App\Application\Command\AddBeer;
-use App\Domain\Model\Abv;
-use App\Domain\Model\Id;
-use App\Domain\Model\Name;
+use App\Domain\Beer\Model\Abv;
+use App\Domain\Beer\Model\Id;
+use App\Domain\Beer\Model\Name;
 use App\Infrastructure\Generator\UuidGeneratorInterface;
 use Behat\Behat\Context\Context;
 use Prooph\ServiceBus\CommandBus;

@@ -4,20 +4,27 @@ doctrine:
         url: '%env(DATABASE_URL)%'
         types:
             abv: App\Infrastructure\Doctrine\Type\AbvType
+            beer_id_binary: App\Infrastructure\Doctrine\Type\BeerIdBinaryType
+            beer_name: App\Infrastructure\Doctrine\Type\BeerNameType
+            connoisseur_id_binary: App\Infrastructure\Doctrine\Type\ConnoisseurIdBinaryType
+            connoisseur_name: App\Infrastructure\Doctrine\Type\ConnoisseurNameType
             email: App\Infrastructure\Doctrine\Type\EmailType
-            id_binary: App\Infrastructure\Doctrine\Type\IdBinaryType
-            name: App\Infrastructure\Doctrine\Type\NameType
             password: App\Infrastructure\Doctrine\Type\PasswordType
     orm:
         auto_generate_proxy_classes: '%kernel.debug%'
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
         mappings:
-            Domain:
+            BeerDomain:
                 is_bundle: false
                 type: xml
-                dir: '%kernel.project_dir%/src/Infrastructure/Resources/config/doctrine/domain'
-                prefix: 'App\Domain\Model'
+                dir: '%kernel.project_dir%/src/Infrastructure/Resources/config/doctrine/domain/beer'
+                prefix: 'App\Domain\Beer\Model'
+            ConnoisseurDomain:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/src/Infrastructure/Resources/config/doctrine/domain/connoisseur'
+                prefix: 'App\Domain\Connoisseur\Model'
             View:
                 type: 'xml'
                 dir: '%kernel.root_dir%/Resources/config/doctrine/view'

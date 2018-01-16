@@ -6,9 +6,9 @@ namespace Tests\Behat\Context\Application;
 
 use App\Application\Command\RateBeer;
 use App\Application\Event\BeerRated;
-use App\Domain\Model\Beer;
-use App\Domain\Model\Connoisseur;
-use App\Domain\Model\Rate;
+use App\Domain\Beer\Model\Beer;
+use App\Domain\Beer\Model\Rate;
+use App\Domain\Connoisseur\Model\Connoisseur;
 use Behat\Behat\Context\Context;
 use Prooph\ServiceBus\CommandBus;
 use Tests\Service\Prooph\Plugin\CollectedMessage;

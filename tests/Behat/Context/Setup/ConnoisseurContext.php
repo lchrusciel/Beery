@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Tests\Behat\Context\Setup;
 
 use App\Application\Command\RegisterConnoisseur;
-use App\Domain\Model\Email;
-use App\Domain\Model\Id;
-use App\Domain\Model\Name;
-use App\Domain\Model\Password;
+use App\Domain\Connoisseur\Model\Email;
+use App\Domain\Connoisseur\Model\Id;
+use App\Domain\Connoisseur\Model\Name;
+use App\Domain\Connoisseur\Model\Password;
 use App\Infrastructure\Generator\UuidGeneratorInterface;
 use App\Infrastructure\Security\ConnoisseurPasswordHasherInterface;
 use Behat\Behat\Context\Context;

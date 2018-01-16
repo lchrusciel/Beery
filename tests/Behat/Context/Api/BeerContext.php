@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Behat\Context\Api;
 
-use App\Domain\Model\Beer;
+use App\Domain\Beer\Model\Beer;
 use Behat\Behat\Context\Context;
 use Symfony\Component\HttpFoundation\Response;
 use Tests\Service\HttpClient;

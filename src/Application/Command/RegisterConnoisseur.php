@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Application\Command;
 
-use App\Domain\Model\Email;
-use App\Domain\Model\Id;
-use App\Domain\Model\Name;
-use App\Domain\Model\Password;
+use App\Domain\Connoisseur\Model\Email;
+use App\Domain\Connoisseur\Model\Id;
+use App\Domain\Connoisseur\Model\Name;
+use App\Domain\Connoisseur\Model\Password;
 use Prooph\Common\Messaging\Command;
 use Prooph\Common\Messaging\PayloadTrait;
 

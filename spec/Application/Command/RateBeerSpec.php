@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace spec\App\Application\Command;
 
-use App\Domain\Model\Email;
-use App\Domain\Model\Id;
-use App\Domain\Model\Rate;
+use App\Domain\Beer\Model\Id;
+use App\Domain\Beer\Model\Rate;
+use App\Domain\Connoisseur\Model\Email;
 use PhpSpec\ObjectBehavior;
 use Prooph\Common\Messaging\Command;
 

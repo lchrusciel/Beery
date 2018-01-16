@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace spec\App\Infrastructure\ReadModel\Projection;
 
 use App\Application\Event\ConnoisseurRegistered;
-use App\Domain\Model\Email;
-use App\Domain\Model\Id;
-use App\Domain\Model\Name;
-use App\Domain\Model\Password;
+use App\Domain\Connoisseur\Model\Email;
+use App\Domain\Connoisseur\Model\Id;
+use App\Domain\Connoisseur\Model\Name;
+use App\Domain\Connoisseur\Model\Password;
 use App\Infrastructure\ReadModel\Projection\ConnoisseurRegisteredProjector;
 use App\Infrastructure\ReadModel\Repository\ConnoisseurViews;
 use App\Infrastructure\ReadModel\View\ConnoisseurView;

@@ -5,8 +5,7 @@ declare(strict_types=1);
 namespace App\Infrastructure\Doctrine\Repository;
 
 use App\Application\Repository\Connoisseurs;
-use App\Domain\Model\Connoisseur;
-use App\Domain\Model\Email;
+use App\Domain\Connoisseur\Model\Connoisseur;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\Persistence\ObjectRepository;
 

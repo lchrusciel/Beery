@@ -6,10 +6,9 @@ namespace Tests\Behat\Context\Application;
 
 use App\Application\Command\AddBeer;
 use App\Application\Event\BeerAdded;
-use App\Domain\Model\Abv;
-use App\Domain\Model\Beer;
-use App\Domain\Model\Id;
-use App\Domain\Model\Name;
+use App\Domain\Beer\Model\Abv;
+use App\Domain\Beer\Model\Id;
+use App\Domain\Beer\Model\Name;
 use App\Infrastructure\Generator\UuidGeneratorInterface;
 use Behat\Behat\Context\Context;
 use Prooph\ServiceBus\CommandBus;

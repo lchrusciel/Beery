@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\Behat\Context\Transform;
 
 use App\Application\Repository\Beers;
-use App\Domain\Model\Beer;
+use App\Domain\Beer\Model\Beer;
 use Behat\Behat\Context\Context;
 
 final class BeerContext implements Context

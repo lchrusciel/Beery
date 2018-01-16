@@ -6,11 +6,11 @@ namespace spec\App\Infrastructure\ReadModel\Projection;
 
 use App\Application\Event\BeerAdded;
 use App\Application\Event\BeerRated;
-use App\Domain\Model\Abv;
-use App\Domain\Model\Email;
-use App\Domain\Model\Id;
-use App\Domain\Model\Name;
-use App\Domain\Model\Rate;
+use App\Domain\Beer\Model\Abv;
+use App\Domain\Beer\Model\Id;
+use App\Domain\Beer\Model\Name;
+use App\Domain\Beer\Model\Rate;
+use App\Domain\Connoisseur\Model\Email;
 use App\Infrastructure\ReadModel\Projection\BeerProjection;
 use App\Infrastructure\ReadModel\View\BeerView;
 use App\Infrastructure\Repository\BeerViews;

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Application\Event;
 
-use App\Domain\Model\Email;
-use App\Domain\Model\Id;
-use App\Domain\Model\Name;
-use App\Domain\Model\Password;
+use App\Domain\Connoisseur\Model\Email;
+use App\Domain\Connoisseur\Model\Id;
+use App\Domain\Connoisseur\Model\Name;
+use App\Domain\Connoisseur\Model\Password;
 use Prooph\Common\Messaging\DomainEvent;
 use Prooph\Common\Messaging\PayloadTrait;
 
@@ -46,7 +46,7 @@ final class ConnoisseurRegistered extends DomainEvent
         return new Email($this->payload()['email']);
     }
 
-    public function password(): password
+    public function password(): Password
     {
         return new Password($this->payload()['password']);
     }

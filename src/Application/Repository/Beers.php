@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Application\Repository;
 
-use App\Domain\Model\Beer;
-use App\Domain\Model\Id;
+use App\Domain\Beer\Model\Beer;
+use App\Domain\Beer\Model\Id;
 
 interface Beers
 {

@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace App\Infrastructure\Controller;
 
 use App\Application\Command\RateBeer;
-use App\Domain\Model\Email;
-use App\Domain\Model\Id;
-use App\Domain\Model\Rate;
+use App\Domain\Beer\Model\Id;
+use App\Domain\Beer\Model\Rate;
+use App\Domain\Connoisseur\Model\Email;
 use App\Infrastructure\Security\ConnoisseurSecurity;
 use Prooph\ServiceBus\CommandBus;
 use Symfony\Component\HttpFoundation\JsonResponse;

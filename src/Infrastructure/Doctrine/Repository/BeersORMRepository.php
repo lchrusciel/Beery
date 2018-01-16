@@ -6,8 +6,8 @@ namespace App\Infrastructure\Doctrine\Repository;
 
 use App\Application\Repository\Beers;
 use App\Application\Repository\Exception\BeerNotFoundException;
-use App\Domain\Model\Beer;
-use App\Domain\Model\Id;
+use App\Domain\Beer\Model\Beer;
+use App\Domain\Beer\Model\Id;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\Persistence\ObjectRepository;
 

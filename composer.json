@@ -8,6 +8,7 @@
 
         "lexik/jwt-authentication-bundle": "^2.4",
         "prooph/service-bus-symfony-bundle": "^0.6",
+        "prooph/event-store-symfony-bundle": "dev-feature/symfony4",
         "ramsey/uuid-doctrine": "^1.4",
         "symfony/console": "^4.0",
         "symfony/flex": "^1.0",
@@ -46,7 +47,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/lchrusciel/service-bus-symfony-bundle"
+            "url": "https://github.com/kejwmen/event-store-symfony-bundle"
         }
     ],
     "autoload": {

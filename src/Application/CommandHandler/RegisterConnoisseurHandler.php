@@ -7,7 +7,7 @@ namespace App\Application\CommandHandler;
 use App\Application\Command\RegisterConnoisseur;
 use App\Application\Event\ConnoisseurRegistered;
 use App\Application\Repository\Connoisseurs;
-use App\Domain\Model\Connoisseur;
+use App\Domain\Connoisseur\Model\Connoisseur;
 use Prooph\ServiceBus\EventBus;
 
 final class RegisterConnoisseurHandler

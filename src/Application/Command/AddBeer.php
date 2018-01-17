@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Application\Command;
 
-use App\Domain\Model\Abv;
-use App\Domain\Model\Id;
-use App\Domain\Model\Name;
+use App\Domain\Beer\Model\Abv;
+use App\Domain\Beer\Model\Id;
+use App\Domain\Beer\Model\Name;
 use Prooph\Common\Messaging\Command;
 use Prooph\Common\Messaging\PayloadTrait;
 

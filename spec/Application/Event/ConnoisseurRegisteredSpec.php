@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace spec\App\Application\Event;
 
-use App\Domain\Model\Email;
-use App\Domain\Model\Id;
-use App\Domain\Model\Name;
-use App\Domain\Model\Password;
+use App\Domain\Connoisseur\Model\Email;
+use App\Domain\Connoisseur\Model\Id;
+use App\Domain\Connoisseur\Model\Name;
+use App\Domain\Connoisseur\Model\Password;
 use PhpSpec\ObjectBehavior;
 use Prooph\Common\Messaging\DomainEvent;
 

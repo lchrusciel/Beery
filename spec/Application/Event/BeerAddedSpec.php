@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace spec\App\Application\Event;
 
-use App\Domain\Model\Abv;
-use App\Domain\Model\Id;
-use App\Domain\Model\Name;
+use App\Domain\Beer\Model\Abv;
+use App\Domain\Beer\Model\Id;
+use App\Domain\Beer\Model\Name;
 use PhpSpec\ObjectBehavior;
 use Prooph\Common\Messaging\DomainEvent;
 

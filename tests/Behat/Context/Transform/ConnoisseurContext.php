@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\Behat\Context\Transform;
 
 use App\Application\Repository\Connoisseurs;
-use App\Domain\Model\Connoisseur;
+use App\Domain\Connoisseur\Model\Connoisseur;
 use Behat\Behat\Context\Context;
 
 final class ConnoisseurContext implements Context

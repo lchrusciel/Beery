@@ -7,7 +7,7 @@ namespace App\Application\CommandHandler;
 use App\Application\Command\AddBeer;
 use App\Application\Event\BeerAdded;
 use App\Application\Repository\Beers;
-use App\Domain\Model\Beer;
+use App\Domain\Beer\Model\Beer;
 use Prooph\ServiceBus\EventBus;
 
 final class AddBeerHandler

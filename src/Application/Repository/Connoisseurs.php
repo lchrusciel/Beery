@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Application\Repository;
 
-use App\Domain\Model\Connoisseur;
+use App\Domain\Connoisseur\Model\Connoisseur;
 
 interface Connoisseurs
 {

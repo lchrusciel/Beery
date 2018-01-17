@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Tests\Behat\Context\Setup;
 
 use App\Application\Command\RateBeer;
-use App\Domain\Model\Beer;
-use App\Domain\Model\Connoisseur;
-use App\Domain\Model\Rate;
+use App\Domain\Beer\Model\Beer;
+use App\Domain\Beer\Model\Rate;
+use App\Domain\Connoisseur\Model\Connoisseur;
 use Behat\Behat\Context\Context;
 use Prooph\ServiceBus\CommandBus;
 

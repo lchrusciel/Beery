@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace spec\App\Infrastructure\ReadModel\Projection;
 
-use App\Application\Event\BeerAdded;
-use App\Application\Event\BeerRated;
+use App\Domain\Beer\Event\BeerAdded;
+use App\Domain\Beer\Event\BeerRated;
 use App\Domain\Beer\Model\Abv;
 use App\Domain\Beer\Model\Id;
 use App\Domain\Beer\Model\Name;
@@ -37,7 +37,7 @@ final class BeerProjectionSpec extends ObjectBehavior
             5))
         )->shouldBeCalled();
 
-        $this(BeerAdded::occur(
+        $this(BeerAdded::withData(
             new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'),
             new Name('King of Hop'),
             new Abv(5))
@@ -51,9 +51,9 @@ final class BeerProjectionSpec extends ObjectBehavior
         $beerView->rate(5)->shouldBeCalled();
         $beerViews->save()->shouldBeCalled();
 
-        $this(BeerRated::occur(
-            new Email('rick@morty.com'),
+        $this(BeerRated::withData(
             new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'),
+            new Email('rick@morty.com'),
             new Rate(5))
         );
     }

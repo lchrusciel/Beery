@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\Behat\Context\Application;
 
 use App\Application\Command\RateBeer;
-use App\Application\Event\BeerRated;
+use App\Domain\Beer\Event\BeerRated;
 use App\Domain\Beer\Model\Beer;
 use App\Domain\Beer\Model\Rate;
 use App\Domain\Connoisseur\Model\Connoisseur;

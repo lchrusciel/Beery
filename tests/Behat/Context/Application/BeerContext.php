@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\Behat\Context\Application;
 
 use App\Application\Command\AddBeer;
-use App\Application\Event\BeerAdded;
+use App\Domain\Beer\Event\BeerAdded;
 use App\Domain\Beer\Model\Abv;
 use App\Domain\Beer\Model\Id;
 use App\Domain\Beer\Model\Name;

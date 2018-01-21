@@ -14,4 +14,6 @@ interface Beers
     public function getByName(string $beerName): Beer;
 
     public function get(Id $id): Beer;
+
+    public function save(Beer $beer): void;
 }

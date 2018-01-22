@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\ReadModel\Projection;
 
+use App\Domain\ApplyMethodDispatcherTrait;
 use App\Domain\Beer\Event\BeerAdded;
 use App\Domain\Beer\Event\BeerRated;
-use App\Infrastructure\Prooph\ApplyMethodDispatcherTrait;
 use App\Infrastructure\ReadModel\View\BeerView;
 use App\Infrastructure\Repository\BeerViews;
 

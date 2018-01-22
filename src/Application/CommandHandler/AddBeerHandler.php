@@ -27,6 +27,5 @@ final class AddBeerHandler
         );
 
         $this->beers->add($beer);
-        $this->beers->save($beer);
     }
 }

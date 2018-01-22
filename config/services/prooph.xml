@@ -10,6 +10,11 @@
             <argument type="service" id="prooph_service_bus.app_event_bus" />
         </service>
 
+        <service class="App\Infrastructure\Prooph\DoctrineTransactionMessageBusPlugin">
+            <argument type="service" id="doctrine.orm.default_entity_manager" />
+            <tag name="prooph_service_bus.command_bus.plugin" />
+        </service>
+
         <service id="Prooph\EventStore\EventStore" public="false" class="Prooph\EventStore\ActionEventEmitterEventStore" lazy="true">
             <argument type="service">
                 <service class="Prooph\EventStore\InMemoryEventStore">

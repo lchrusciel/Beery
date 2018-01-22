@@ -22,7 +22,5 @@ final class RateBeerHandler
         $beer = $this->beers->get($rateBeer->beerId());
 
         $beer->rate($rateBeer->connoisseurEmail(), $rateBeer->rate());
-
-        $this->beers->save($beer);
     }
 }

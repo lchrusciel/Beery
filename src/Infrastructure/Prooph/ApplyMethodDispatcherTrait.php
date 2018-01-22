@@ -5,9 +5,15 @@ declare(strict_types=1);
 namespace App\Infrastructure\Prooph;
 
 use Prooph\Common\Messaging\Message;
+use Prooph\EventSourcing\AggregateChanged;
 
 trait ApplyMethodDispatcherTrait
 {
+    protected function apply(AggregateChanged $event): void
+    {
+        $this->applyMessage($event);
+    }
+
     protected function applyMessage(Message $event): void
     {
         $eventClass = get_class($event);

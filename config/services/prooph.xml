@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<container
+        xmlns="http://symfony.com/schema/dic/services"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd"
+>
+    <services>
+        <service id="Prooph\EventStoreBusBridge\EventPublisher">
+            <argument type="service" id="prooph_service_bus.app_event_bus" />
+        </service>
+
+        <service id="Prooph\EventStore\EventStore" public="false" class="Prooph\EventStore\ActionEventEmitterEventStore" lazy="true">
+            <argument type="service">
+                <service class="Prooph\EventStore\InMemoryEventStore">
+                    <call method="create">
+                        <argument type="service">
+                            <service class="Prooph\EventStore\Stream">
+                                <argument type="service">
+                                    <service class="Prooph\EventStore\StreamName">
+                                        <argument>event_stream</argument>
+                                    </service>
+                                </argument>
+                                <argument type="service">
+                                    <service class="ArrayIterator" />
+                                </argument>
+                            </service>
+                        </argument>
+                    </call>
+                </service>
+            </argument>
+            <argument type="service">
+                <service class="Prooph\Common\Event\ProophActionEventEmitter" />
+            </argument>
+            <configurator service="Prooph\EventStoreBusBridge\EventPublisher" method="attachToEventStore" />
+        </service>
+    </services>
+</container>

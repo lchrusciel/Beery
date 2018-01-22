@@ -4,11 +4,20 @@ declare(strict_types=1);
 
 namespace App\Domain\Beer\Model;
 
+use App\Domain\Beer\Event\BeerAdded;
+use App\Domain\Beer\Event\BeerRated;
+use App\Domain\Connoisseur\Model\Email;
+use App\Domain\RecordsEvents;
+use App\Infrastructure\Prooph\ApplyMethodDispatcherTrait;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Prooph\EventSourcing\Aggregate\EventProducerTrait;
 
-class Beer
+class Beer implements RecordsEvents
 {
+    use EventProducerTrait;
+    use ApplyMethodDispatcherTrait;
+
     /** @var Id */
     private $id;
 
@@ -21,17 +30,13 @@ class Beer
     /** @var Collection */
     private $rates;
 
-    private function __construct(Id $id, Name $name, Abv $abv)
-    {
-        $this->id = $id;
-        $this->name = $name;
-        $this->abv = $abv;
-        $this->rates = new ArrayCollection();
-    }
-
     public static function add(Id $id, Name $name, Abv $abv): self
     {
-        return new self($id, $name, $abv);
+        $beer = new self();
+
+        $beer->recordThat(BeerAdded::withData($id, $name, $abv));
+
+        return $beer;
     }
 
     public function id(): Id
@@ -39,8 +44,26 @@ class Beer
         return $this->id;
     }
 
-    public function rate(Rate $rate): void
+    protected function aggregateId(): string
     {
-        $this->rates->add($rate);
+        return $this->id()->value();
+    }
+
+    public function rate(Email $email, Rate $rate): void
+    {
+        $this->recordThat(BeerRated::withData($this->id(), $email, $rate));
+    }
+
+    protected function applyBeerAdded(BeerAdded $event): void
+    {
+        $this->id = $event->id();
+        $this->name = $event->name();
+        $this->abv = $event->abv();
+        $this->rates = new ArrayCollection();
+    }
+
+    protected function applyBeerRated(BeerRated $event): void
+    {
+        $this->rates->add($event->rate());
     }
 }

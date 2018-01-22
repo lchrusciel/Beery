@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace spec\App\Application\Event;
+namespace spec\App\Domain\Beer\Event;
 
 use App\Domain\Beer\Model\Abv;
 use App\Domain\Beer\Model\Id;
@@ -14,7 +14,7 @@ final class BeerAddedSpec extends ObjectBehavior
 {
     function it_represents_beer_added_event_occurrence()
     {
-        $this->beConstructedThrough('occur', [
+        $this->beConstructedThrough('withData', [
             new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'),
             new Name('King of Hop'),
             new Abv(5),

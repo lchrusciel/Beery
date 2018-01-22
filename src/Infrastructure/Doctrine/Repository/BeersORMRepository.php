@@ -28,8 +28,6 @@ final class BeersORMRepository implements Beers
     public function add(Beer $beer): void
     {
         $this->objectManager->persist($beer);
-
-        $this->objectManager->flush();
     }
 
     public function get(Id $id): Beer
@@ -52,5 +50,10 @@ final class BeersORMRepository implements Beers
         }
 
         return $beer;
+    }
+
+    public function save(Beer $beer): void
+    {
+        $this->objectManager->flush();
     }
 }

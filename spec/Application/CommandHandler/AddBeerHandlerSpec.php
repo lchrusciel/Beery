@@ -18,9 +18,9 @@ use Prophecy\Argument;
 
 final class AddBeerHandlerSpec extends ObjectBehavior
 {
-    function let(EventBus $eventBus, Beers $beers)
+    function let(Beers $beers)
     {
-        $this->beConstructedWith($eventBus, $beers);
+        $this->beConstructedWith($beers);
     }
 
     function it_is_initializable(): void
@@ -28,24 +28,11 @@ final class AddBeerHandlerSpec extends ObjectBehavior
         $this->shouldHaveType(AddBeerHandler::class);
     }
 
-    function it_creates_a_beer(EventBus $eventBus, Beers $beers): void
+    function it_creates_a_beer(Beers $beers): void
     {
-        $beers->add(Argument::exact(Beer::add(
-            new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'),
-            new Name('King of Hop'),
-            new Abv(5)
-        )))->shouldBeCalled();
+        $beers->add(Argument::type(Beer::class))->shouldBeCalled();
 
-        $eventBus
-            ->dispatch(Argument::that(function (BeerAdded $beerAdded) {
-                return
-                    $beerAdded->id() == new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59') &&
-                    $beerAdded->name() == new Name('King of Hop') &&
-                    $beerAdded->abv() == new Abv(5)
-                ;
-            }))
-            ->shouldBeCalled()
-        ;
+        $beers->save(Argument::type(Beer::class))->shouldBeCalled();
 
         $this(AddBeer::create(
             new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'),
@@ -57,7 +44,7 @@ final class AddBeerHandlerSpec extends ObjectBehavior
     function it_does_not_dispatch_event_if_adding_beer_would_fail(EventBus $eventBus, Beers $beers): void
     {
         $beers->add(Argument::any())->willThrow(\InvalidArgumentException::class);
-        $eventBus->dispatch(Argument::any())->shouldNotBeCalled();
+        $beers->save(Argument::any())->shouldNotBeCalled();
 
         $this
             ->shouldThrow(\InvalidArgumentException::class)

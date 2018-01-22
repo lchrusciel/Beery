@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace spec\App\Application\Event;
+namespace spec\App\Domain\Beer\Event;
 
 use App\Domain\Connoisseur\Model\Email;
 use App\Domain\Beer\Model\Id;
@@ -14,9 +14,9 @@ final class BeerRatedSpec extends ObjectBehavior
 {
     function it_represents_beer_added_event_occurrence()
     {
-        $this->beConstructedThrough('occur', [
-            new Email('rick@morty.com'),
+        $this->beConstructedThrough('withData', [
             new Id('02b9ccbc-e30b-4ec2-8fb9-339609f36c65'),
+            new Email('rick@morty.com'),
             new Rate(5),
         ]);
 

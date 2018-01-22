@@ -116,6 +116,9 @@
             "ref": "751ee6748c1026fa4350c155d1b3a77b7ddca69c"
         }
     },
+    "marc-mabe/php-enum": {
+        "version": "v3.0.0"
+    },
     "monolog/monolog": {
         "version": "1.23.0"
     },
@@ -202,6 +205,18 @@
     },
     "prooph/common": {
         "version": "v4.1.0"
+    },
+    "prooph/event-sourcing": {
+        "version": "v5.3.0"
+    },
+    "prooph/event-store": {
+        "version": "v7.3.1"
+    },
+    "prooph/event-store-bus-bridge": {
+        "version": "v3.1.0"
+    },
+    "prooph/event-store-symfony-bundle": {
+        "version": "1.0-dev"
     },
     "prooph/service-bus": {
         "version": "v6.1.1"

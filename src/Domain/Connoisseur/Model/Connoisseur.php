@@ -4,8 +4,16 @@ declare(strict_types=1);
 
 namespace App\Domain\Connoisseur\Model;
 
-class Connoisseur
+use App\Domain\ApplyMethodDispatcherTrait;
+use App\Domain\Connoisseur\Event\ConnoisseurRegistered;
+use App\Domain\RecordsEvents;
+use Prooph\EventSourcing\Aggregate\EventProducerTrait;
+
+class Connoisseur implements RecordsEvents
 {
+    use EventProducerTrait;
+    use ApplyMethodDispatcherTrait;
+
     /** @var Id */
     private $id;
 
@@ -18,17 +26,17 @@ class Connoisseur
     /** @var Password */
     private $password;
 
-    private function __construct(Id $id, Name $name, Email $email, Password $password)
+    private function __construct()
     {
-        $this->id = $id;
-        $this->name = $name;
-        $this->email = $email;
-        $this->password = $password;
     }
 
     public static function register(Id $id, Name $name, Email $email, Password $password): self
     {
-        return new self($id, $name, $email, $password);
+        $connoisseur = new self();
+
+        $connoisseur->recordThat(ConnoisseurRegistered::withData($id, $name, $email, $password));
+
+        return $connoisseur;
     }
 
     public function id(): Id
@@ -39,5 +47,18 @@ class Connoisseur
     public function email(): Email
     {
         return $this->email;
+    }
+
+    protected function aggregateId(): string
+    {
+        return $this->id->value();
+    }
+
+    protected function applyConnoisseurRegistered(ConnoisseurRegistered $connoisseurRegistered): void
+    {
+        $this->id = $connoisseurRegistered->id();
+        $this->name = $connoisseurRegistered->name();
+        $this->email = $connoisseurRegistered->email();
+        $this->password = $connoisseurRegistered->password();
     }
 }

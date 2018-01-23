@@ -32,8 +32,6 @@ final class AddBeerHandlerSpec extends ObjectBehavior
     {
         $beers->add(Argument::type(Beer::class))->shouldBeCalled();
 
-        $beers->save(Argument::type(Beer::class))->shouldBeCalled();
-
         $this(AddBeer::create(
             new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'),
             new Name('King of Hop'),
@@ -44,7 +42,6 @@ final class AddBeerHandlerSpec extends ObjectBehavior
     function it_does_not_dispatch_event_if_adding_beer_would_fail(EventBus $eventBus, Beers $beers): void
     {
         $beers->add(Argument::any())->willThrow(\InvalidArgumentException::class);
-        $beers->save(Argument::any())->shouldNotBeCalled();
 
         $this
             ->shouldThrow(\InvalidArgumentException::class)

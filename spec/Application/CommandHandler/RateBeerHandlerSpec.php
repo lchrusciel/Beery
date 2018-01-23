@@ -35,8 +35,6 @@ final class RateBeerHandlerSpec extends ObjectBehavior
 
         $beer->rate(Argument::exact(new Email('rick@morty.com')), Argument::exact(new Rate(3.5)))->shouldBeCalled();
 
-        $beers->save(Argument::type(Beer::class))->shouldBeCalled();
-
         $this(RateBeer::create(
             new Email('rick@morty.com'),
             new Id('02b9ccbc-e30b-4ec2-8fb9-339609f36c65'),

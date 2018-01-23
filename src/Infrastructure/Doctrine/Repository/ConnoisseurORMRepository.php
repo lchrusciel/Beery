@@ -26,8 +26,6 @@ final class ConnoisseurORMRepository implements Connoisseurs
     public function add(Connoisseur $connoisseur): void
     {
         $this->objectManager->persist($connoisseur);
-
-        $this->objectManager->flush();
     }
 
     public function getOneByEmail(string $email): Connoisseur

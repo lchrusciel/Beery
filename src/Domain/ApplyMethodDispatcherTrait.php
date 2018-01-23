@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastructure\Prooph;
+namespace App\Domain;
 
 use Prooph\Common\Messaging\Message;
 use Prooph\EventSourcing\AggregateChanged;

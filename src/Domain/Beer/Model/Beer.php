@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Domain\Beer\Model;
 
+use App\Domain\ApplyMethodDispatcherTrait;
 use App\Domain\Beer\Event\BeerAdded;
 use App\Domain\Beer\Event\BeerRated;
 use App\Domain\Connoisseur\Model\Email;
 use App\Domain\RecordsEvents;
-use App\Infrastructure\Prooph\ApplyMethodDispatcherTrait;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Prooph\EventSourcing\Aggregate\EventProducerTrait;

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Infrastructure\ReadModel\Projection;
 
 use App\Application\Event\ConnoisseurRegistered;
-use App\Infrastructure\Prooph\ApplyMethodDispatcherTrait;
+use App\Domain\ApplyMethodDispatcherTrait;
 use App\Infrastructure\ReadModel\Repository\ConnoisseurViews;
 use App\Infrastructure\ReadModel\View\ConnoisseurView;
 

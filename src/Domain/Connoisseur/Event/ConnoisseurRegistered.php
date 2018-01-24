@@ -2,29 +2,19 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Event;
+namespace App\Domain\Connoisseur\Event;
 
 use App\Domain\Connoisseur\Model\Email;
 use App\Domain\Connoisseur\Model\Id;
 use App\Domain\Connoisseur\Model\Name;
 use App\Domain\Connoisseur\Model\Password;
-use Prooph\Common\Messaging\DomainEvent;
-use Prooph\Common\Messaging\PayloadTrait;
+use Prooph\EventSourcing\AggregateChanged;
 
-final class ConnoisseurRegistered extends DomainEvent
+final class ConnoisseurRegistered extends AggregateChanged
 {
-    use PayloadTrait;
-
-    private function __construct(array $payload)
+    public static function withData(Id $id, Name $name, Email $email, Password $password)
     {
-        $this->init();
-        $this->setPayload($payload);
-    }
-
-    public static function occur(Id $id, Name $name, Email $email, Password $password)
-    {
-        return new self([
-            'id' => $id->value(),
+        return self::occur($id->value(), [
             'name' => $name->value(),
             'email' => $email->value(),
             'password' => $password->value(),
@@ -33,7 +23,7 @@ final class ConnoisseurRegistered extends DomainEvent
 
     public function id(): Id
     {
-        return new Id($this->payload()['id']);
+        return new Id($this->aggregateId());
     }
 
     public function name(): Name

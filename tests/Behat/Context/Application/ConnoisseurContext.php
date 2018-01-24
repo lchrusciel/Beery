@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\Behat\Context\Application;
 
 use App\Application\Command\RegisterConnoisseur;
-use App\Application\Event\ConnoisseurRegistered;
+use App\Domain\Connoisseur\Event\ConnoisseurRegistered;
 use App\Domain\Connoisseur\Model\Email;
 use App\Domain\Connoisseur\Model\Id;
 use App\Domain\Connoisseur\Model\Name;

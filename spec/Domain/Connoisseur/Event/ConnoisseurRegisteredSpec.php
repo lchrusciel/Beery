@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace spec\App\Application\Event;
+namespace spec\App\Domain\Connoisseur\Event;
 
 use App\Domain\Connoisseur\Model\Email;
 use App\Domain\Connoisseur\Model\Id;
@@ -15,7 +15,7 @@ final class ConnoisseurRegisteredSpec extends ObjectBehavior
 {
     function it_represents_connoisseur_registerded_event_occurrence()
     {
-        $this->beConstructedThrough('occur', [
+        $this->beConstructedThrough('withData', [
             new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'),
             new Name('Krzysztof Krawczyk'),
             new Email('krawczyk@biale.pl'),

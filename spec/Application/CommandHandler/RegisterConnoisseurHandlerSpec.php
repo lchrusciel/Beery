@@ -29,7 +29,11 @@ final class RegisterConnoisseurHandlerSpec extends ObjectBehavior
 
     function it_creates_a_connoisseur(Connoisseurs $connoisseurs): void
     {
-        $connoisseurs->add(Argument::type(Connoisseur::class))->shouldBeCalled();
+        $connoisseurs->add(Argument::that(
+            function (Connoisseur $connoisseur) {
+                return $connoisseur->id() == new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59');
+            })
+        )->shouldBeCalled();
 
         $this(RegisterConnoisseur::create(
             new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'),

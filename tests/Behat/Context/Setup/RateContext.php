@@ -23,6 +23,7 @@ final class RateContext implements Context
 
     /**
      * @Given the :connoisseur connoisseur rated the :beer beer :rate
+     * @Given /^(I) rated the ("[^"]+" beer) (\d+)$/
      */
     public function theBeerWithAbvHasBeenAdded(Connoisseur $connoisseur, Beer $beer, float $rate): void
     {

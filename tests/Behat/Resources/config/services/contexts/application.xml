@@ -21,6 +21,10 @@
             <tag name="fob.context_service" />
         </service>
 
+        <service id="tests.behat.context.application.recommendation_context" class="Tests\Behat\Context\Application\RecommendationContext">
+            <tag name="fob.context_service" />
+        </service>
+
         <service id="tests.behat.context.application.security_context" class="Tests\Behat\Context\Application\SecurityContext">
             <argument type="service" id="tests.service.in_memory_shared_storage" />
             <argument type="service" id="__symfony__.App\Application\Repository\Connoisseurs" />

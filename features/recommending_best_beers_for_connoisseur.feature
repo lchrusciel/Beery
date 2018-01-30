@@ -1,3 +1,4 @@
+@application @recommendation
 Feature: Recommending best beers for connoisseur
     In order to make better choices when trying new beer
     As a Connoisseur

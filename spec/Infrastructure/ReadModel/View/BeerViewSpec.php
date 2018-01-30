@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace spec\App\Infrastructure\ReadModel\View;
 
-use App\Infrastructure\ReadModel\View\BeerView;
 use PhpSpec\ObjectBehavior;
 
 final class BeerViewSpec extends ObjectBehavior

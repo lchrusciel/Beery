@@ -9,13 +9,13 @@ use App\Domain\Connoisseur\Model\Email;
 use App\Domain\Connoisseur\Model\Id;
 use App\Domain\Connoisseur\Model\Name;
 use App\Domain\Connoisseur\Model\Password;
-use App\Infrastructure\ReadModel\Projection\ConnoisseurRegisteredProjector;
+use App\Infrastructure\ReadModel\Projection\ConnoisseurProjector;
 use App\Infrastructure\ReadModel\Repository\ConnoisseurViews;
 use App\Infrastructure\ReadModel\View\ConnoisseurView;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
-final class ConnoisseurRegisteredProjectorSpec extends ObjectBehavior
+final class ConnoisseurProjectorSpec extends ObjectBehavior
 {
     function let(ConnoisseurViews $connoisseurViews)
     {
@@ -24,10 +24,10 @@ final class ConnoisseurRegisteredProjectorSpec extends ObjectBehavior
 
     function it_is_a_connoisseur_projection(): void
     {
-        $this->shouldHaveType(ConnoisseurRegisteredProjector::class);
+        $this->shouldHaveType(ConnoisseurProjector::class);
     }
 
-    function it_creates_a_beer_view(ConnoisseurViews $connoisseurViews)
+    function it_creates_a_connoisseur_view(ConnoisseurViews $connoisseurViews)
     {
         $connoisseurViews
             ->add(Argument::exact(new ConnoisseurView(

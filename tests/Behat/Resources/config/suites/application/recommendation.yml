@@ -1,0 +1,16 @@
+default:
+    suites:
+        recommendation_application_features:
+            contexts_services:
+                - 'tests.behat.context.application.recommendation_context'
+                - 'tests.behat.context.application.security_context'
+                - 'tests.behat.context.hook.doctrine_context'
+                - 'tests.behat.context.hook.graph_context'
+                - 'tests.behat.context.setup.beer_context'
+                - 'tests.behat.context.setup.connoisseur_context'
+                - 'tests.behat.context.setup.rate_context'
+                - 'tests.behat.context.transform.beer_context'
+                - 'tests.behat.context.transform.connoisseur_context'
+                - 'tests.behat.context.transform.my_context'
+            filters:
+                tags: '@recommendation && @application'

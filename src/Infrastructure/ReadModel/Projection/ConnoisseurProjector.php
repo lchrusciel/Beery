@@ -9,7 +9,7 @@ use App\Domain\Connoisseur\Event\ConnoisseurRegistered;
 use App\Infrastructure\ReadModel\Repository\ConnoisseurViews;
 use App\Infrastructure\ReadModel\View\ConnoisseurView;
 
-final class ConnoisseurRegisteredProjector
+final class ConnoisseurProjector
 {
     use ApplyMethodDispatcherTrait {
         applyMessage as public __invoke;

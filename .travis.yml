@@ -3,6 +3,9 @@ language: php
 php:
     - 7.1
 
+services:
+  - neo4j
+
 cache:
     directories:
         - vendor

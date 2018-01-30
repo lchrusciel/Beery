@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Infrastructure\RecommendationEngine\View;
 
 use GraphAware\Neo4j\OGM\Annotations as OGM;
+use GraphAware\Neo4j\OGM\Common\Collection;
 
 /**
  * @OGM\Node(label="Connoisseur")
@@ -25,9 +26,16 @@ class ConnoisseurView
      */
     private $email;
 
-    public function __construct(string $id, string $email)
+    /**
+     * @var BeerRatingView[]|Collection
+     *
+     * @OGM\Relationship(relationshipEntity="BeerRatingView", type="RATED", direction="OUTGOING", collection=true, mappedBy="connoisseur")     *
+     */
+    private $ratedBeers;
+
+    public function __construct(string $email)
     {
-        $this->id = $id;
         $this->email = $email;
+        $this->ratedBeers = new Collection();
     }
 }

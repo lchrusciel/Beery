@@ -25,13 +25,16 @@ Feature: Recommending best beers for connoisseur
 
     Scenario: Getting an advance recommendation
         Given the "armin@van.kraken" connoisseur rated the "ANTYbiotyk" beer 3.5
-        And the "armin@van.kraken" connoisseur rated the "Kasztelan Niepasteryzowane" beer 2
+        And the "armin@van.kraken" connoisseur rated the "PROpaganda" beer 4
         And the "armin@van.kraken" connoisseur rated the "Kasztelan Niepasteryzowane" beer 2
         And the "pamile@krawczyk.pl" connoisseur rated the "ANTYbiotyk" beer 4
+        And the "pamile@krawczyk.pl" connoisseur rated the "PROpaganda" beer 4.5
         And the "pamile@krawczyk.pl" connoisseur rated the "Kasztelan Niepasteryzowane" beer 1
         And the "janke@mops.com" connoisseur rated the "ANTYbiotyk" beer 2
+        And the "janke@mops.com" connoisseur rated the "PROpaganda" beer 4
         And the "janke@mops.com" connoisseur rated the "Kasztelan Niepasteryzowane" beer 5
         And the "zaleslaw@middleage.com" connoisseur rated the "ANTYbiotyk" beer 4
         And the "zaleslaw@middleage.com" connoisseur rated the "Kasztelan Niepasteryzowane" beer 1
+        And I rated the "PROpaganda" beer 4
         When I ask for a beer recommendation
         Then the "ANTYbiotyk" beer should be suggested

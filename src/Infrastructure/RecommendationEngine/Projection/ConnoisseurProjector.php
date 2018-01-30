@@ -25,15 +25,9 @@ final class ConnoisseurProjector
 
     public function applyConnoisseurRegistered(ConnoisseurRegistered $connoisseurRegistered): void
     {
-        $id = $connoisseurRegistered->id();
         $email = $connoisseurRegistered->email();
 
-        $this->entityManager->persist(
-            new ConnoisseurView(
-                $id->value(),
-                $email->value()
-            )
-        );
+        $this->entityManager->persist(new ConnoisseurView($email->value()));
 
         $this->entityManager->flush();
     }

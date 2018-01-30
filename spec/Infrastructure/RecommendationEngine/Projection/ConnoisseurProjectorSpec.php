@@ -27,15 +27,9 @@ final class ConnoisseurProjectorSpec extends ObjectBehavior
         $this->shouldHaveType(ConnoisseurProjector::class);
     }
 
-    function it_creates_a_connoisseur_view(EntityManagerInterface $entityManager)
+    function it_creates_a_connoisseur_view(EntityManagerInterface $entityManager): void
     {
-        $entityManager
-            ->persist(Argument::exact(new ConnoisseurView(
-                'e8a68535-3e17-468f-acc3-8a3e0fa04a59',
-                'krawczyk@biale.pl'
-            )))
-            ->shouldBeCalled()
-        ;
+        $entityManager->persist(Argument::exact(new ConnoisseurView('krawczyk@biale.pl')))->shouldBeCalled();
 
         $entityManager->flush()->shouldBeCalled();
 

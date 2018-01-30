@@ -5,6 +5,8 @@
     "license": "proprietary",
     "require": {
         "php": "^7.1",
+
+        "graphaware/neo4j-php-ogm": "^1.0@rc",
         "lexik/jwt-authentication-bundle": "^2.4",
         "prooph/event-sourcing": "^5.3",
         "prooph/event-store-bus-bridge": "^3.1",

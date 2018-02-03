@@ -19,9 +19,16 @@
             <tag name="fob.context_service" />
         </service>
 
-        <service id="tests.behat.context.api.security_context" class="Tests\Behat\Context\Api\SecurityContext">
+        <service id="tests.behat.context.api.recommendation_context" class="Tests\Behat\Context\Api\RecommendationContext">
             <argument type="service" id="tests.service.json.json_client" />
             <argument type="service" id="tests.service.json.json_response_asserter" />
+            <tag name="fob.context_service" />
+        </service>
+
+        <service id="tests.behat.context.api.security_context" class="Tests\Behat\Context\Api\SecurityContext">
+            <argument type="service" id="tests.service.json.json_client" />
+            <argument type="service" id="tests.service.in_memory_shared_storage" />
+            <argument type="service" id="__symfony__.App\Application\Repository\Connoisseurs" />
             <tag name="fob.context_service" />
         </service>
     </services>

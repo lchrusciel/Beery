@@ -58,7 +58,7 @@ final class BeerProjectionSpec extends ObjectBehavior
         BeerView $beerView,
         ConnoisseurView $connoisseurView
     ): void {
-        $beerRepository->findOneBy(['uuid' => 'e8a68535-3e17-468f-acc3-8a3e0fa04a59'])->willReturn($beerView);
+        $beerRepository->findOneBy(['beerIdentifier' => 'e8a68535-3e17-468f-acc3-8a3e0fa04a59'])->willReturn($beerView);
         $connoisseurRepository->findOneBy(['email' => 'rick@morty.com'])->willReturn($connoisseurView);
 
         $beerView->rate(Argument::exact(new BeerRatingView(

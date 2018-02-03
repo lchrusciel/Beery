@@ -5,9 +5,11 @@
         xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd"
 >
     <services>
-        <service id="GraphAware\Neo4j\OGM\EntityManagerInterface" public="false" lazy="true">
+        <service id="GraphAware\Neo4j\OGM\EntityManager" public="false" lazy="true">
             <factory class="GraphAware\Neo4j\OGM\EntityManager" method="create" />
             <argument type="string">%env(NEO4J_HOST)%</argument>
         </service>
+
+        <service id="GraphAware\Neo4j\OGM\EntityManagerInterface" alias="GraphAware\Neo4j\OGM\EntityManager" />
     </services>
 </container>

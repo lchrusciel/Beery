@@ -5,10 +5,14 @@ default:
                 - 'tests.behat.context.api.beer_context'
                 - 'tests.behat.context.api.rate_context'
                 - 'tests.behat.context.api.security_context'
+
                 - 'tests.behat.context.hook.doctrine_context'
+                - 'tests.behat.context.hook.graph_context'
+
                 - 'tests.behat.context.setup.beer_context'
                 - 'tests.behat.context.setup.connoisseur_context'
                 - 'tests.behat.context.setup.rate_context'
+
                 - 'tests.behat.context.transform.beer_context'
                 - 'tests.behat.context.transform.beer_view_context'
                 - 'tests.behat.context.transform.connoisseur_context'

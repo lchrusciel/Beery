@@ -1,4 +1,4 @@
-@application @recommendation
+@api @recommendation
 Feature: Recommending best beers for connoisseur
     In order to make better choices when trying new beer
     As a Connoisseur
@@ -32,7 +32,7 @@ Feature: Recommending best beers for connoisseur
         And the "pamile@krawczyk.pl" connoisseur rated the "Kasztelan Niepasteryzowane" beer 1
         And the "janke@mops.com" connoisseur rated the "ANTYbiotyk" beer 2
         And the "janke@mops.com" connoisseur rated the "PROpaganda" beer 4
-        And the "janke@mops.com" connoisseur rated the "Kasztelan Niepasteryzowane" beer 5
+        And the "janke@mops.com" connoisseur rated the "Kasztelan Niepasteryzowane" beer 3
         And the "zaleslaw@middleage.com" connoisseur rated the "ANTYbiotyk" beer 4
         And the "zaleslaw@middleage.com" connoisseur rated the "Kasztelan Niepasteryzowane" beer 1
         And I rated the "PROpaganda" beer 4

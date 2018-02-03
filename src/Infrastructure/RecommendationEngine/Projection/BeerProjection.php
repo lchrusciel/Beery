@@ -10,6 +10,7 @@ use App\Domain\Beer\Event\BeerRated;
 use App\Infrastructure\RecommendationEngine\View\BeerRatingView;
 use App\Infrastructure\RecommendationEngine\View\BeerView;
 use App\Infrastructure\RecommendationEngine\View\ConnoisseurView;
+use Doctrine\ORM\EntityRepository;
 use GraphAware\Neo4j\OGM\EntityManagerInterface;
 use GraphAware\Neo4j\OGM\Repository\BaseRepository;
 
@@ -22,10 +23,10 @@ final class BeerProjection
     /** @var EntityManagerInterface */
     private $entityManager;
 
-    /** @var BaseRepository */
+    /** @var BaseRepository|EntityRepository */
     private $beerRepository;
 
-    /** @var BaseRepository */
+    /** @var BaseRepository|EntityRepository */
     private $connoisseurRepository;
 
     public function __construct(EntityManagerInterface $entityManager)
@@ -46,8 +47,16 @@ final class BeerProjection
 
     public function applyBeerRated(BeerRated $beerRated): void
     {
-        $beerView = $this->beerRepository->findOneBy(['uuid' => $beerRated->beerId()->value()]);
-        $connoisseurView = $this->connoisseurRepository->findOneBy(['email' => $beerRated->connoisseurEmail()->value()]);
+        $id = $beerRated->beerId();
+        $email = $beerRated->connoisseurEmail();
+
+        /** @var BeerView $beerView */
+        $beerView = $this->beerRepository->findOneBy(['beerIdentifier' => $id->value()]);
+
+        /** @var ConnoisseurView $connoisseurView */
+        $connoisseurView = $this->connoisseurRepository->findOneBy([
+            'email' => $email->value(),
+        ]);
 
         $rate = $beerRated->rate();
 

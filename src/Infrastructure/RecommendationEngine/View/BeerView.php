@@ -24,7 +24,7 @@ class BeerView
      *
      * @OGM\Property(type="string")
      */
-    private $uuid;
+    private $beerIdentifier;
 
     /**
      * @var string
@@ -36,13 +36,19 @@ class BeerView
     /**
      * @var BeerRatingView[]|Collection
      *
-     * @OGM\Relationship(relationshipEntity="MovieRating", type="RATED", direction="INCOMING", collection=true, mappedBy="beer")
+     * @OGM\Relationship(
+     *     relationshipEntity="BeerRatingView",
+     *     type="RATED",
+     *     direction="INCOMING",
+     *     collection=true,
+     *     mappedBy="beer"
+     * )
      */
     private $rates;
 
     public function __construct(string $id, string $name)
     {
-        $this->uuid = $id;
+        $this->beerIdentifier = $id;
         $this->name = $name;
         $this->rates = new Collection();
     }
@@ -50,5 +56,10 @@ class BeerView
     public function rate(BeerRatingView $beerRatingView): void
     {
         $this->rates->add($beerRatingView);
+    }
+
+    public function beerIdentifier(): string
+    {
+        return $this->beerIdentifier;
     }
 }

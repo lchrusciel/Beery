@@ -29,7 +29,13 @@ class ConnoisseurView
     /**
      * @var BeerRatingView[]|Collection
      *
-     * @OGM\Relationship(relationshipEntity="BeerRatingView", type="RATED", direction="OUTGOING", collection=true, mappedBy="connoisseur")     *
+     * @OGM\Relationship(
+     *     relationshipEntity="BeerRatingView",
+     *     type="RATED",
+     *     direction="OUTGOING",
+     *     collection=true,
+     *     mappedBy="connoisseur"
+     * )
      */
     private $ratedBeers;
 

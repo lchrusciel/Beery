@@ -36,6 +36,11 @@ final class BeerViewORMRepository implements BeerViews
         return $this->repository->findAll();
     }
 
+    public function getAllById(array $ids): array
+    {
+        return $this->repository->findBy(['id' => $ids]);
+    }
+
     public function get(Id $id): BeerView
     {
         $beerView = $this->repository->find($id);

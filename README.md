@@ -34,6 +34,8 @@ Backend application for sharing beers information and rating them.
 
 ### Installation
 
+Run local instance of neo4j and MySQL database.
+
 ```bash
 $ composer install --prefer-dist
 $ bin/console doctrine:database:create

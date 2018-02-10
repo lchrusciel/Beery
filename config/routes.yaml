@@ -4,6 +4,12 @@ berry_add_connoisseur:
     defaults:
         _controller: 'App\Infrastructure\Controller\RegisterConnoisseurAction'
 
+berry_my_recommendation:
+    path: '/me/recommendations/'
+    methods: ['GET']
+    defaults:
+        _controller: 'App\Infrastructure\Controller\RecommendBeersAction'
+
 beery_show_beer:
     path: '/beers/{beerId}'
     methods: ['GET']

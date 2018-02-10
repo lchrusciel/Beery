@@ -3,6 +3,8 @@ default:
         connoisseur_api_features:
             contexts_services:
                 - 'tests.behat.context.api.connoisseur_context'
+
                 - 'tests.behat.context.hook.doctrine_context'
+                - 'tests.behat.context.hook.graph_context'
             filters:
                 tags: '@connoisseur && @api'

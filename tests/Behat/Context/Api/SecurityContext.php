@@ -4,17 +4,27 @@ declare(strict_types=1);
 
 namespace Tests\Behat\Context\Api;
 
+use App\Application\Repository\Connoisseurs;
 use Behat\Behat\Context\Context;
 use Tests\Service\HttpClient;
+use Tests\Service\SharedStorage;
 
 final class SecurityContext implements Context
 {
     /** @var HttpClient */
     private $client;
 
-    public function __construct(HttpClient $client)
+    /** @var SharedStorage */
+    private $sharedStorage;
+
+    /** @var Connoisseurs */
+    private $connoisseurs;
+
+    public function __construct(HttpClient $client, SharedStorage $sharedStorage, Connoisseurs $connoisseurs)
     {
         $this->client = $client;
+        $this->sharedStorage = $sharedStorage;
+        $this->connoisseurs = $connoisseurs;
     }
 
     /**
@@ -27,5 +37,6 @@ final class SecurityContext implements Context
         $response = $this->client->decodedResponseContent();
 
         $this->client->addHeader('HTTP_Authorization', 'Bearer ' . $response['token']);
+        $this->sharedStorage->set('connoisseur', $this->connoisseurs->getOneByEmail($email));
     }
 }

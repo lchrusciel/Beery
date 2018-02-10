@@ -63,6 +63,10 @@ final class ConnoisseurContext implements Context
 
     private function generateEmail(string $name): string
     {
+        if (filter_var($name, FILTER_VALIDATE_EMAIL)) {
+            return $name;
+        }
+
         return str_replace(' ', '.', strtolower($name)) . '@example.com';
     }
 }

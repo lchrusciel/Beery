@@ -34,8 +34,8 @@ final class BeerProjectionSpec extends ObjectBehavior
         $beerViews->add(Argument::exact(new BeerView(
             'e8a68535-3e17-468f-acc3-8a3e0fa04a59',
             'King of Hop',
-            5))
-        )->shouldBeCalled();
+            5
+        )))->shouldBeCalled();
 
         $this(BeerAdded::withData(
             new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'),

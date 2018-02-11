@@ -7,10 +7,10 @@ namespace spec\App\Infrastructure\RecommendationEngine\Projection;
 use App\Domain\Beer\Event\BeerAdded;
 use App\Domain\Beer\Event\BeerRated;
 use App\Domain\Beer\Model\Abv;
+use App\Domain\Beer\Model\Connoisseur;
 use App\Domain\Beer\Model\Id;
 use App\Domain\Beer\Model\Name;
 use App\Domain\Beer\Model\Rate;
-use App\Domain\Connoisseur\Model\Email;
 use App\Infrastructure\RecommendationEngine\Projection\BeerProjection;
 use App\Infrastructure\RecommendationEngine\View\BeerRatingView;
 use App\Infrastructure\RecommendationEngine\View\BeerView;
@@ -71,7 +71,7 @@ final class BeerProjectionSpec extends ObjectBehavior
 
         $this(BeerRated::withData(
             new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'),
-            new Email('rick@morty.com'),
+            new Connoisseur('rick@morty.com'),
             new Rate(5))
         );
     }

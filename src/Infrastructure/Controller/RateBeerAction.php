@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace App\Infrastructure\Controller;
 
 use App\Application\Command\RateBeer;
+use App\Domain\Beer\Model\Connoisseur;
 use App\Domain\Beer\Model\Id;
 use App\Domain\Beer\Model\Rate;
-use App\Domain\Connoisseur\Model\Email;
 use App\Infrastructure\Security\ConnoisseurSecurity;
 use Prooph\ServiceBus\CommandBus;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -43,7 +43,7 @@ final class RateBeerAction
         $connoisseurEmail = $connoisseurSecurity->getUsername();
 
         $this->commandBus->dispatch(RateBeer::create(
-            new Email($connoisseurEmail),
+            new Connoisseur($connoisseurEmail),
             new Id($attributesParameterBag->get('beerId')),
             new Rate((float) $requestParameterBag->getDigits('rate'))
         ));

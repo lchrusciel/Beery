@@ -8,6 +8,7 @@ use App\Domain\Beer\Event\BeerAdded;
 use App\Domain\Beer\Event\BeerRated;
 use App\Domain\Beer\Exception\InvalidAbvValueException;
 use App\Domain\Beer\Model\Abv;
+use App\Domain\Beer\Model\Connoisseur;
 use App\Domain\Beer\Model\Id;
 use App\Domain\Beer\Model\Name;
 use App\Domain\Beer\Model\Rate;
@@ -42,13 +43,13 @@ final class BeerSpec extends ObjectBehavior
 
     function it_can_be_rated(): void
     {
-        $this->rate(new Email('rick@morty.com'), new Rate(4));
+        $this->rate(new Connoisseur('rick@morty.com'), new Rate(4));
 
         (new AggregateAsserter())->assertAggregateHasProducedEvent(
             $this->getWrappedObject(),
             BeerRated::withData(
                 new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'),
-                new Email('rick@morty.com'),
+                new Connoisseur('rick@morty.com'),
                 new Rate(4)
             )
         );

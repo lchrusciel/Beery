@@ -7,6 +7,7 @@ namespace Tests\Behat\Context\Application;
 use App\Application\Command\RateBeer;
 use App\Domain\Beer\Event\BeerRated;
 use App\Domain\Beer\Model\Beer;
+use App\Domain\Beer\Model\Connoisseur as BeerConnoisseur;
 use App\Domain\Beer\Model\Rate;
 use App\Domain\Connoisseur\Model\Connoisseur;
 use Behat\Behat\Context\Context;
@@ -34,7 +35,13 @@ final class RateContext implements Context
      */
     public function iRateTheBeer(Connoisseur $connoisseur, Beer $beer, float $rate)
     {
-        $this->commandBus->dispatch(RateBeer::create($connoisseur->email(), $beer->id(), new Rate($rate)));
+        $email = $connoisseur->email();
+
+        $this->commandBus->dispatch(RateBeer::create(
+            new BeerConnoisseur($email->value()),
+            $beer->id(),
+            new Rate($rate))
+        );
     }
 
     /**

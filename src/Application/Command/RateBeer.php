@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Application\Command;
 
+use App\Domain\Beer\Model\Connoisseur;
 use App\Domain\Beer\Model\Id;
 use App\Domain\Beer\Model\Rate;
-use App\Domain\Connoisseur\Model\Email;
 use Prooph\Common\Messaging\Command;
 use Prooph\Common\Messaging\PayloadTrait;
 
@@ -20,7 +20,7 @@ final class RateBeer extends Command
         $this->setPayload($payload);
     }
 
-    public static function create(Email $connoisseurEmail, Id $beerId, Rate $rate): self
+    public static function create(Connoisseur $connoisseurEmail, Id $beerId, Rate $rate): self
     {
         return new self([
             'connoisseur_email' => $connoisseurEmail->value(),
@@ -29,9 +29,9 @@ final class RateBeer extends Command
         ]);
     }
 
-    public function connoisseurEmail(): Email
+    public function connoisseurEmail(): Connoisseur
     {
-        return new Email($this->payload()['connoisseur_email']);
+        return new Connoisseur($this->payload()['connoisseur_email']);
     }
 
     public function beerId(): Id

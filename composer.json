@@ -4,7 +4,7 @@
     "type": "project",
     "license": "proprietary",
     "require": {
-        "php": "^7.1",
+        "php": "^7.2",
 
         "graphaware/neo4j-php-ogm": "^1.0@rc",
         "lexik/jwt-authentication-bundle": "^2.4",

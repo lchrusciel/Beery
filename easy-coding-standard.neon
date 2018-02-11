@@ -1,5 +1,7 @@
 includes:
     - vendor/sylius-labs/coding-standard/easy-coding-standard.neon
+    - vendor/symplify/easy-coding-standard/config/php_codesniffer/psr2.neon
+    - vendor/symplify/easy-coding-standard/config/php_cs_fixer/psr2.neon
 
 checkers:
     # All rules with default values

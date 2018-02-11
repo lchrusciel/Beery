@@ -33,7 +33,7 @@ final class RateContext implements Context
         $this->commandBus->dispatch(RateBeer::create(
             new BeerConnoisseur($email->value()),
             $beer->id(),
-            new Rate($rate))
-        );
+            new Rate($rate)
+        ));
     }
 }

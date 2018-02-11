@@ -6,6 +6,7 @@ namespace Tests\Behat\Context\Setup;
 
 use App\Application\Command\RateBeer;
 use App\Domain\Beer\Model\Beer;
+use App\Domain\Beer\Model\Connoisseur as BeerConnoisseur;
 use App\Domain\Beer\Model\Rate;
 use App\Domain\Connoisseur\Model\Connoisseur;
 use Behat\Behat\Context\Context;
@@ -27,6 +28,12 @@ final class RateContext implements Context
      */
     public function theBeerWithAbvHasBeenAdded(Connoisseur $connoisseur, Beer $beer, float $rate): void
     {
-        $this->commandBus->dispatch(RateBeer::create($connoisseur->email(), $beer->id(), new Rate($rate)));
+        $email = $connoisseur->email();
+
+        $this->commandBus->dispatch(RateBeer::create(
+            new BeerConnoisseur($email->value()),
+            $beer->id(),
+            new Rate($rate))
+        );
     }
 }

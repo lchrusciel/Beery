@@ -7,7 +7,6 @@ namespace App\Domain\Beer\Model;
 use App\Domain\ApplyMethodDispatcherTrait;
 use App\Domain\Beer\Event\BeerAdded;
 use App\Domain\Beer\Event\BeerRated;
-use App\Domain\Connoisseur\Model\Email;
 use App\Domain\RecordsEvents;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -49,7 +48,7 @@ class Beer implements RecordsEvents
         return $this->id()->value();
     }
 
-    public function rate(Email $email, Rate $rate): void
+    public function rate(Connoisseur $email, Rate $rate): void
     {
         $this->recordThat(BeerRated::withData($this->id(), $email, $rate));
     }

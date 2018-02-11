@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace spec\App\Domain\Beer\Event;
 
+use App\Domain\Beer\Model\Connoisseur;
 use App\Domain\Connoisseur\Model\Email;
 use App\Domain\Beer\Model\Id;
 use App\Domain\Beer\Model\Rate;
@@ -16,11 +17,11 @@ final class BeerRatedSpec extends ObjectBehavior
     {
         $this->beConstructedThrough('withData', [
             new Id('02b9ccbc-e30b-4ec2-8fb9-339609f36c65'),
-            new Email('rick@morty.com'),
+            new Connoisseur('rick@morty.com'),
             new Rate(5),
         ]);
 
-        $this->connoisseurEmail()->shouldBeLike(new Email('rick@morty.com'));
+        $this->connoisseurEmail()->shouldBeLike(new Connoisseur('rick@morty.com'));
         $this->beerId()->shouldBeLike(new Id('02b9ccbc-e30b-4ec2-8fb9-339609f36c65'));
         $this->rate()->shouldBeLike(new Rate(5));
     }

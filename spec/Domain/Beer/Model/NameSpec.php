@@ -14,12 +14,12 @@ final class NameSpec extends ObjectBehavior
         $this->beConstructedWith('Krzysztof Krawczyk');
     }
 
-    function it_is_a_name()
+    function it_is_a_name(): void
     {
         $this->value()->shouldReturn('Krzysztof Krawczyk');
     }
 
-    function it_cannot_be_empty()
+    function it_cannot_be_empty(): void
     {
         $this->shouldThrow(EmptyNameException::class)->during('__construct', ['']);
     }

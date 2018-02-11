@@ -14,12 +14,12 @@ final class PasswordSpec extends ObjectBehavior
         $this->beConstructedWith('$2a$04$N2x1MTIgy8fth66TdWZ1NeHIjJIrK7Ns09I9xk1PDRn8IqkQSckua');
     }
 
-    function it_is_a_password()
+    function it_is_a_password(): void
     {
         $this->value()->shouldReturn('$2a$04$N2x1MTIgy8fth66TdWZ1NeHIjJIrK7Ns09I9xk1PDRn8IqkQSckua');
     }
 
-    function it_throws_exception_if_password_is_invalid()
+    function it_throws_an_exception_if_a_password_is_invalid(): void
     {
         $this->shouldThrow(InvalidPasswordException::class)->during('__construct', ['parostatkiem']);
         $this->shouldThrow(InvalidPasswordException::class)->during('__construct', ['paros1a']);

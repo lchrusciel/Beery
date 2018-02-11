@@ -14,7 +14,7 @@ use Tests\Service\Prooph\Spec\AggregateAsserter;
 
 final class ConnoisseurSpec extends ObjectBehavior
 {
-    function let()
+    function let(): void
     {
         $this->beConstructedThrough('register', [
             new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'),
@@ -34,12 +34,12 @@ final class ConnoisseurSpec extends ObjectBehavior
         );
     }
 
-    function it_has_id()
+    function it_has_id(): void
     {
         $this->id()->shouldBeLike(new Id('e8a68535-3e17-468f-acc3-8a3e0fa04a59'));
     }
 
-    function it_has_email()
+    function it_has_email(): void
     {
         $this->email()->shouldBeLike(new Email('krawczyk@biale.pl'));
     }

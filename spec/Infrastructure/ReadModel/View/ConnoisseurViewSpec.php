@@ -8,7 +8,7 @@ use PhpSpec\ObjectBehavior;
 
 final class ConnoisseurViewSpec extends ObjectBehavior
 {
-    function it_a_connoisseur_projection()
+    function it_a_connoisseur_projection(): void
     {
         $this->beConstructedWith(
             'Krzysztof Krawczyk',

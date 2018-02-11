@@ -9,28 +9,28 @@ use PhpSpec\ObjectBehavior;
 
 final class RateSpec extends ObjectBehavior
 {
-    function it_is_a_rate()
+    function it_is_a_rate(): void
     {
         $this->beConstructedWith(4.56);
 
         $this->value()->shouldReturn(4.56);
     }
 
-    function it_has_minimal_value_1()
+    function it_has_minimal_value_1(): void
     {
         $this->beConstructedWith(1);
 
         $this->value()->shouldReturn(1.0);
     }
 
-    function it_has_maximal_value_5()
+    function it_has_maximal_value_5(): void
     {
         $this->beConstructedWith(5);
 
         $this->value()->shouldReturn(5.0);
     }
 
-    function it_throws_exception_if_rate_is_invalid()
+    function it_throws_an_exception_if_a_rate_is_invalid(): void
     {
         $this->shouldThrow(InvalidRateValueException::class)->during('__construct', [-0.1]);
         $this->shouldThrow(InvalidRateValueException::class)->during('__construct', [6]);

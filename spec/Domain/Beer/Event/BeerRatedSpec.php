@@ -12,7 +12,7 @@ use Prooph\Common\Messaging\DomainEvent;
 
 final class BeerRatedSpec extends ObjectBehavior
 {
-    function it_represents_beer_added_event_occurrence()
+    function it_represents_beer_added_event_occurrence(): void
     {
         $this->beConstructedThrough('withData', [
             new Id('02b9ccbc-e30b-4ec2-8fb9-339609f36c65'),

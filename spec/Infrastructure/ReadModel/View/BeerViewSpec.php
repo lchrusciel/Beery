@@ -8,12 +8,12 @@ use PhpSpec\ObjectBehavior;
 
 final class BeerViewSpec extends ObjectBehavior
 {
-    function let()
+    function let(): void
     {
         $this->beConstructedWith('e8a68535-3e17-468f-acc3-8a3e0fa04a59', 'King of Hop', 5);
     }
 
-    function it_is_simplified_beer_view()
+    function it_is_simplified_beer_view(): void
     {
         $this->getId()->shouldReturn('e8a68535-3e17-468f-acc3-8a3e0fa04a59');
         $this->getName()->shouldReturn('King of Hop');
@@ -22,7 +22,7 @@ final class BeerViewSpec extends ObjectBehavior
         $this->getAverageRate()->shouldReturn('0.00');
     }
 
-    function it_can_be_rated()
+    function it_can_be_rated(): void
     {
         $this->rate(5);
         $this->rate(3);

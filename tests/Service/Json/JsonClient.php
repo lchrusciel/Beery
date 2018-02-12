@@ -26,14 +26,12 @@ final class JsonClient implements HttpClient
     {
         $this->client->restart();
         $this->client->request('POST', $url, $arguments, [], $this->headers);
-        Assert::lessThan($this->response()->getStatusCode(), Response::HTTP_BAD_REQUEST);
     }
 
     public function get(string $url): void
     {
         $this->client->restart();
         $this->client->request('GET', $url, [], [], $this->headers);
-        Assert::eq($this->response()->getStatusCode(), Response::HTTP_OK);
     }
 
     public function response(): Response

@@ -27,6 +27,7 @@ final class RateContext implements Context
 
     /**
      * @When I rate the :beer beer :rate
+     * @When I try to rate the :beer beer :rate
      */
     public function iRateTheBeer(Beer $beer, float $rate): void
     {

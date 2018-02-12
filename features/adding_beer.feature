@@ -11,6 +11,6 @@ Feature: Adding a beer
         When I add a new "King of Hop" beer which has 5% ABV
         Then the "King of Hop" beer should be available in the catalogue
 
-    Scenario: It is impossible to add a new beer if customer is not registered
+    Scenario: It is impossible to add a new beer if customer is not logged in
         When I try to add a new "King of Hop" beer which has 5% ABV
         Then I should be notified that I'm not allowed to do it

@@ -7,7 +7,6 @@ namespace Tests\Service\Json;
 use Symfony\Component\BrowserKit\Client;
 use Symfony\Component\HttpFoundation\Response;
 use Tests\Service\HttpClient;
-use Webmozart\Assert\Assert;
 
 final class JsonClient implements HttpClient
 {

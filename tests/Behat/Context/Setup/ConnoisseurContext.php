@@ -50,15 +50,18 @@ final class ConnoisseurContext implements Context
 
     /**
      * @Given there is a :name connoisseur
+     * @Given there are :firstName, :secondName, :thirdName, :fourName connoisseurs
      */
-    public function thereIsAConnoisseur(string $name): void
+    public function thereIsAConnoisseur(string ...$names): void
     {
-        $this->commandBus->dispatch(RegisterConnoisseur::create(
-            new Id($this->uuidGenerator->generate()),
-            new Name($name),
-            new Email($this->generateEmail($name)),
-            new Password(($this->connoisseurPasswordHasher)(str_shuffle($name)))
-        ));
+        foreach ($names as $name) {
+            $this->commandBus->dispatch(RegisterConnoisseur::create(
+                new Id($this->uuidGenerator->generate()),
+                new Name($name),
+                new Email($this->generateEmail($name)),
+                new Password(($this->connoisseurPasswordHasher)(str_shuffle($name)))
+            ));
+        }
     }
 
     private function generateEmail(string $name): string

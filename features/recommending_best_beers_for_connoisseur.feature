@@ -8,10 +8,7 @@ Feature: Recommending best beers for connoisseur
         Given the "ANTYbiotyk" beer with 7% ABV has been added
         And the "PROpaganda" beer with 6.8% ABV has been added
         And the "Kasztelan Niepasteryzowane" beer with 5.7% ABV has been added
-        And there is a "armin@van.kraken" connoisseur
-        And there is a "pamile@krawczyk.pl" connoisseur
-        And there is a "janke@mops.com" connoisseur
-        And there is a "zaleslaw@middleage.com" connoisseur
+        And there are "armin@van.kraken", "pamile@krawczyk.pl", "janke@mops.com", "zaleslaw@middleage.com" connoisseurs
 
     Scenario: It is impossible to get a beer recommendation if customer is not logged in
         When I try to ask for a beer recommendation

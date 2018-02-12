@@ -4,6 +4,7 @@ imports:
 default:
     extensions:
         FriendsOfBehat\CrossContainerExtension: ~
+        FriendsOfBehat\VariadicExtension: ~
         FriendsOfBehat\SymfonyExtension:
             kernel:
                 bootstrap: 'vendor/autoload.php'

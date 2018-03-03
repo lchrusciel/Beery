@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tests\Behat\Context\Api;
 
 use Behat\Behat\Context\Context;
+use Symfony\Component\HttpFoundation\Response;
 use Tests\Service\HttpClient;
 use Tests\Service\ResponseAsserter;
 
@@ -24,10 +25,22 @@ final class RecommendationContext implements Context
 
     /**
      * @When I ask for a beer recommendation
+     * @When I try to ask for a beer recommendation
      */
     public function iAskForABeerRecommendation(): void
     {
         $this->client->get('/me/recommendations/');
+    }
+
+    /**
+     * @Then I should be notified that I'm not allowed to do it
+     */
+    public function iShouldBeNotifiedThatImNotAllowedToDoIt(): void
+    {
+        $this->jsonAsserter->assertResponseCode(
+            $this->client->response(),
+            Response::HTTP_UNAUTHORIZED
+        );
     }
 
     /**

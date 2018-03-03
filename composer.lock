@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6f1257f56ca69918028ccfdd93ef39b3",
+    "content-hash": "c2caee10b1b6e993779f8744339f54b0",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -5892,6 +5892,47 @@
             ],
             "description": "Integrates Behat with Symfony (both 2 and 3).",
             "time": "2017-07-10T21:45:28+00:00"
+        },
+        {
+            "name": "friends-of-behat/variadic-extension",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfBehat/VariadicExtension.git",
+                "reference": "ba3964027fef9a4c77c57693ac22bd67eb6b22e2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfBehat/VariadicExtension/zipball/ba3964027fef9a4c77c57693ac22bd67eb6b22e2",
+                "reference": "ba3964027fef9a4c77c57693ac22bd67eb6b22e2",
+                "shasum": ""
+            },
+            "require": {
+                "behat/behat": "^3.1",
+                "php": "^7.1",
+                "symfony/dependency-injection": "^2.8|^3.0"
+            },
+            "require-dev": {
+                "friends-of-behat/test-context": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FriendsOfBehat\\VariadicExtension\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Łukasz Chruściel",
+                    "email": "lchrusciel@gmail.com"
+                }
+            ],
+            "description": "Variadic support for behat context arguments",
+            "time": "2017-07-10T20:43:33+00:00"
         },
         {
             "name": "friendsofphp/php-cs-fixer",

@@ -10,7 +10,9 @@ default:
 
                 - 'tests.behat.context.setup.beer_context'
                 - 'tests.behat.context.setup.connoisseur_context'
+                - 'tests.behat.context.setup.rate_context'
 
                 - 'tests.behat.context.transform.beer_context'
+                - 'tests.behat.context.transform.connoisseur_context'
             filters:
                 tags: '@beer && @api'

@@ -31,6 +31,7 @@
         "friends-of-behat/symfony-extension": "^1.0",
         "friends-of-behat/variadic-extension": "^1.0",
         "object-calisthenics/phpcs-calisthenics-rules": "^3.1",
+        "phploc/phploc": "^4.0",
         "phpspec/nyan-formatters": "^2.0",
         "phpspec/phpspec": "^4.2",
         "phpstan/phpstan": "^0.9",

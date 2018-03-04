@@ -30,6 +30,7 @@
         "friends-of-behat/suite-settings-extension": "^1.0",
         "friends-of-behat/symfony-extension": "^1.0",
         "friends-of-behat/variadic-extension": "^1.0",
+        "leanphp/phpspec-code-coverage": "^4.0",
         "object-calisthenics/phpcs-calisthenics-rules": "^3.1",
         "phploc/phploc": "^4.0",
         "phpspec/nyan-formatters": "^2.0",
@@ -74,6 +75,9 @@
         "test": [
             "vendor/bin/phpspec run -fpretty --ansi",
             "vendor/bin/behat --strict --colors"
+        ],
+        "spec-coverage": [
+            "vendor/bin/phpspec run -c phpspec-with-test-coverage.yml.dist --ansi"
         ],
         "fix": [
             "vendor/bin/ecs check --ansi --no-progress-bar bin public src tests --fix"

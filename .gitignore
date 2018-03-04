@@ -10,3 +10,9 @@
 .php_cs
 .php_cs.cache
 ###< friendsofphp/php-cs-fixer ###
+
+coverage/*
+!coverage/.gitkeep
+
+infection/*
+!infection/.gitkeep

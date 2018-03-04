@@ -76,6 +76,9 @@
             "vendor/bin/phpspec run -fpretty --ansi",
             "vendor/bin/behat --strict --colors"
         ],
+        "spec-coverage": [
+            "vendor/bin/phpspec run -c phpspec-with-test-coverage.yml.dist --ansi"
+        ],
         "fix": [
             "vendor/bin/ecs check --ansi --no-progress-bar bin public src tests --fix"
         ],

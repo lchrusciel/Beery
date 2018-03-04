@@ -1,0 +1,13 @@
+suites:
+    main:
+        namespace: App
+        psr4_prefix: App
+
+extensions:
+    PhpSpec\NyanFormattersExtension\Extension: ~
+    LeanPHP\PhpSpec\CodeCoverage\CodeCoverageExtension:
+        whitelist:
+            - src/Domain
+            - src/Application
+
+formatter.name: nyan.cat

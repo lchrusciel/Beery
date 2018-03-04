@@ -52,3 +52,14 @@ To run existing tests, type in console:
 $ source .test.env
 $ composer test
 ```
+
+### Infection
+```warning
+This configuration requires pre installed infection library on local environment!
+```
+
+Basic configuration for mutation testing framework has been deliver together with this library. In order to run infection
+framework one has to rename `phpspec-with-test-coverage.yml.dist` to `phpspec.yml` and run following command:
+```bash
+$ infection --test-framework=phpspec
+```

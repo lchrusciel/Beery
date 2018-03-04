@@ -13,3 +13,6 @@
 
 coverage/*
 !coverage/.gitkeep
+
+infection/*
+!infection/.gitkeep

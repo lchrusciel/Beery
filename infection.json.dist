@@ -1,0 +1,15 @@
+{
+    "timeout": 25,
+    "source": {
+        "directories": [
+            "src/Domain",
+            "src/Application"
+        ]
+    },
+    "logs": {
+        "text": "infection/infection-log.txt",
+        "summary": "infection/summary-log.txt",
+        "debug": "infection/debug-log.txt"
+    },
+    "tmpDir": "var/cache/infection"
+}

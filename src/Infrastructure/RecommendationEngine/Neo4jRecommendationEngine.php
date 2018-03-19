@@ -20,16 +20,19 @@ final class Neo4jRecommendationEngine implements RecommendationEngine
     public function getRecommendationFor(string $connoisseur): array
     {
         $cql = '
-            MATCH (:Connoisseur{email: {email}})-[r1:RATED]->(rated:Beer)<-[r2:RATED]-()-[r3:RATED]->(unrated:Beer)
-            WHERE r1.rate >= 4
-            AND r2.rate >= 4
-            AND r3.rate >= 4
-            AND NOT ((:Connoisseur{email: {email}})-[:RATED]->(unrated))
-            RETURN unrated
+            MATCH (unrated:Beer)<-[r:RATED]-(c:Connoisseur)-[s:SIMILARITY]-(subject:Connoisseur{email: {email}})
+            WHERE NOT ((subject)-[:RATED]->(unrated))
+            WITH unrated, s.similarity AS similarity, r.rate AS rate
+            ORDER BY unrated.name, similarity DESC
+            WITH unrated as beer, COLLECT(rate)[0..3] AS rates
+            WITH beer, REDUCE(s = 0, i IN rates | s + i) * 1.0 / LENGTH(rates) AS recommendation
+            WHERE recommendation >= 3
+            RETURN beer
+            ORDER BY recommendation DESC
         ';
 
         $query = $this->entityManager->createQuery($cql);
-        $query->addEntityMapping('rated', BeerView::class);
+        $query->addEntityMapping('beer', BeerView::class);
         $query->addEntityMapping('unrated', BeerView::class);
         $query->setParameter('email', $connoisseur);
 

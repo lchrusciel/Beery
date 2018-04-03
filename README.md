@@ -3,6 +3,8 @@
 
 Backend application for sharing beers information and rating them. 
 
+This project was built as a master thesis project and was described in "Modern methods of software development based on recommendation platform". The whole master thesis is available here: https://github.com/lchrusciel/MasterThesis
+
 ### Roadmap
 
 **0.1.0**
